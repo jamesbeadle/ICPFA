@@ -1,4 +1,5 @@
 <script>
+  import "../app.css";
     import { onMount } from "svelte";
     import { initJuno } from "@junobuild/core";
     import Navbar from "./Navbar.svelte";
@@ -16,4 +17,5 @@
   <Navbar />
   <slot />
   <Footer />
+  
   

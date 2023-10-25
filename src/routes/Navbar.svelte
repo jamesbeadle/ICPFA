@@ -8,23 +8,35 @@
 </nav>
 
 <style>
-  /* Add your styling here */
+
   nav {
     background-color: #333;
     color: white;
-    padding: 1em;
   }
+
   ul {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
+    justify-content: space-around;
   }
+
   li {
     margin: 0 1em;
   }
+
   a {
     color: white;
     text-decoration: none;
   }
+
+  @media (max-width: 768px) {
+    ul {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  
 </style>
