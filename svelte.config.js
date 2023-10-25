@@ -9,7 +9,7 @@ const config = {
   kit: {
     adapter: adapter(),
     vite: defineConfig({
-		plugins: [WindiCSS()],
+		  plugins: [WindiCSS()],
     }),
   },
 };
