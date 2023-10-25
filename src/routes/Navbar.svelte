@@ -1,42 +1,46 @@
-<nav>
-  <ul>
-    <li><a href="/">ICP FA</a></li>
-    <li><a href="/projects">Our Projects</a></li>
-    <li><a href="/community-fund">Community Fund</a></li>
-    <li><a href="/shop">Shop</a></li>
-  </ul>
-</nav>
-
-<style>
-
-  nav {
-    background-color: #333;
-    color: white;
-  }
-
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: space-around;
-  }
-
-  li {
-    margin: 0 1em;
-  }
-
-  a {
-    color: white;
-    text-decoration: none;
-  }
-
-  @media (max-width: 768px) {
-    ul {
-      flex-direction: column;
-      align-items: center;
-    }
-  }
-
+<script lang="ts">
+  import { onMount } from "svelte";
   
+  let menu: HTMLUListElement | null = null;
+
+  onMount(() => {
+    function resizeMenu() {
+      if (menu) {
+        if (window.innerWidth <= 768) {
+          menu.classList.remove("flex");
+          menu.classList.add("flex-col", "items-center", "w-full");
+        } else {
+          menu.classList.remove("flex-col", "items-center", "w-full");
+          menu.classList.add("flex");
+        }
+      }
+    }
+
+    window.addEventListener("resize", resizeMenu);
+    resizeMenu(); // Call once to set initial state
+
+    return () => { window.removeEventListener("resize", resizeMenu); };
+  });
+</script>
+
+
+<nav class="bg-gray-800 text-white">
+  <div class="container mx-auto px-4 flex justify-between items-center">
+    <a href="/" class="text-white hover:text-gray-400">
+      <img src="logo.png" alt="Logo" class="h-8 w-auto logo">
+    </a>
+    <ul bind:this={menu} class="flex">
+      <li class="mx-2"><a href="/" class="text-white hover:text-gray-400">ICP FA</a></li>
+      <li class="mx-2"><a href="/projects" class="text-white hover:text-gray-400">Our Projects</a></li>
+      <li class="mx-2"><a href="/community-fund" class="text-white hover:text-gray-400">Community Fund</a></li>
+      <li class="mx-2"><a href="/shop" class="text-white hover:text-gray-400">Shop</a></li>
+    </ul>
+  </div>
+</nav>
+<style>
+  .logo {
+    width: 144px;
+    height: auto;
+    padding: 16px;
+  }
 </style>
