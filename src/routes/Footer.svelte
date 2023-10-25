@@ -1,8 +1,6 @@
 <footer>
     <div>
-      <p>&copy; 2023 ICP FA. All Rights Reserved.</p>
-      <p>Email: info@icpfa.com</p>
-      <p>Phone: +44 1234 567 890</p>
+      <p>ICPFA</p>
     </div>
   </footer>
   
