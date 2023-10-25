@@ -1,6 +1,9 @@
 <script>
     import { onMount } from "svelte";
     import { initJuno } from "@junobuild/core";
+    import Navbar from "./Navbar.svelte";
+    import Footer from "./Footer.svelte";
+
   
     onMount(
       async () =>
@@ -9,5 +12,8 @@
         })
     );
   </script>
-  
+
+  <Navbar />
   <slot />
+  <Footer />
+  
