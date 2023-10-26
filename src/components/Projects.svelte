@@ -10,8 +10,10 @@
             <div class="p-6">
                 <div class="flex justify-between items-center mb-1">
                     <h2 class="tracking-widest text-xs title-font font-medium text-white">{project.name}</h2>
-                    {#if project.showNFTMapping}
-                        <button type="button" class="text-xs px-2 py-3 text-white custom-button rounded focus:outline-none" disabled>Map NFT to IID</button>
+                    {#if project.showButton}
+                        <a href="/{project.redirect}">
+                            <button type="button" class="text-xs px-2 py-3 text-white custom-button rounded focus:outline-none">{project.buttonText}</button>
+                        </a>
                     {/if}
                 </div>
                 <h1 class="title-font text-lg font-medium text-white mb-3">{project.description}</h1>

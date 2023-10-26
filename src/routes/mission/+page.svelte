@@ -1,4 +1,4 @@
-<section class="text-white-600 p-8 shadow-md">
+<section class="text-white-600 p-8">
     <h1 class="text-4xl font-bold mb-4">The Mission</h1>
     
     <p class="mb-4 text-lg">
@@ -55,8 +55,8 @@
             <img src="dfd.jpg" alt="James Beadle" class="w-24 h-24 rounded-full mx-auto mb-4">
             <h3 class="text-2xl font-bold mb-2">X: @dfinitydesigner</h3>
             <p class="text-xl mb-2">Designer</p>
-            <p class="text-base">DfinityDesigner has created a long list of beautiful brands & user experiences for the ICP community. OpenFPL & the ICPFA site are no different, 
-                creating both a unique brand & UI. Having him part of our team will ensure brand consistency across our portfolio.</p>
+            <p class="text-base">The DfinityDesigner is dedicated to transforming the Internet Computer through a user-centered, minimalist design approach. Crafting innovative online products, redefining user experiences, and creating unique brands for the ICP community are his expertise. Projects like OpenFPL and the ICPFA site exemplify his ability to ensure consistent brand identities and unique UI designs. Partnering with him guarantees a cohesive brand identity across our portfolio.
+            </p>
           </div>
 
           <div class="text-center">

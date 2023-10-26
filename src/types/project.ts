@@ -5,5 +5,7 @@ export type Project = {
     url: string;
     imagePath: string;
     releaseDate: string;
-    showNFTMapping: boolean;
+    showButton: boolean;
+    buttonText: string;
+    redirect: string;
 };
