@@ -6,7 +6,7 @@
     let projects: Project[] = [
         { name: 'OpenFPL', description: 'Decentralised Fantasy Football', releaseDate: 'August 2023', url: 'openfpl.xyz', detailedDescription: '', imagePath: 'OpenFPL.png' },
         { name: 'FootballGod', description: 'Prediction Games', releaseDate: 'May 2023', url: 'footballgod.xyz', detailedDescription: '', imagePath: 'FootballGod.png' },
-        { name: 'The OpenFPL Podcast', description: 'Our weekly football podcast.', releaseDate: 'Jan 2024', url: 'Coming Soon', detailedDescription: '', imagePath: 'Podcast.png' },
+        { name: 'The OpenFPL Podcast', description: 'Our weekly football podcast.', releaseDate: 'Jan 2024', url: 'Coming Soon', detailedDescription: '', imagePath: 'Podcast.jpg' },
         { name: 'Football News', description: 'A football news site is in the design phase.', releaseDate: 'Mar 2024', url: 'Coming Soon', detailedDescription: '', imagePath: 'News.png' },
         { name: 'Euro 2024', description: 'A Euro 2024 fanasy football game is in the planning phase.', releaseDate: 'May 2024', url: 'Coming Soon', detailedDescription: '', imagePath: 'Euro2024.png' }
     ];

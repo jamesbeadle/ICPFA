@@ -1,5 +1,5 @@
 <div class="hero relative">
-  <img src="hero.png" alt="Hero Background" class="absolute inset-0 w-full h-full object-cover" loading="lazy">
+  <img src="hero.jpg" alt="Hero Background" class="absolute inset-0 w-full h-full object-cover" loading="lazy">
   <div class="absolute inset-0 bg-black opacity-50"></div>
   <div class="relative z-10 flex flex-col justify-center items-center h-full text-white">
       <img src="logo.png" alt="Logo" class="h-8 w-auto logo">
