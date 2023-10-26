@@ -16,7 +16,7 @@
         </div>
         <div>
           <button class="custom-button text-white font-bold py-2 px-4 rounded">
-            Supported Projects
+            View Projects
           </button>
         </div>
       </div>
