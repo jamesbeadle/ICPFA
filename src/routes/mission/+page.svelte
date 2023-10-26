@@ -1,27 +1,81 @@
-
-<section class="text-gray-600 body-font">
-    <h1>The Mission</h1>
-    <p>The ICPFA has been created to bring decentralised internet services to football fans around the world. 
-        Our aim is to change the current system of exploiting fans around the world for profit and use the commercial value of their
-        engagement to reward them and footballing communities around the world.
+<section class="text-white-600 p-8 shadow-md">
+    <h1 class="text-4xl font-bold mb-4">The Mission</h1>
+    
+    <p class="mb-4 text-lg">
+        Football is the world's most-watched sport, attracting an estimated 4 billion fans. Beyond the pitch, football acts as a powerful catalyst for social improvement, community development, and providing promising young talent with avenues to success.
+    </p>
+   
+    
+    <p class="mb-4 text-lg">
+        We have created the ICPFA to provide this huge fanbase a range of high quality apps, decentralised internet services and investment opportunities. 
+        We feel doing this will attract a large number of new users to the ICP ecosystem. Our first DAO, OpenFPL, is improving on an existing Web2 service with 10m users.
     </p>
 
-    <p>The ICPFA Community Fund has been created for football related charitable projects around the world. 
+    <h2 class="text-3xl font-bold mt-6 mb-4">ICPFA Community Fund</h2>
+
+    <p class="mb-4 text-lg">
+        The ICPFA Community Fund has been created for football related charitable projects around the world. 
         This fund will be used to make a positive impact to people's lives using football. 
-    <p>
-        The ICPFA Community Fund will be funded by the ICPFA founder, James Beadle. 
-            For each ICPFA project that generates maturity interest or revenue, James will deposit 25% of his share into the ICPFA community fund. 
     </p>
+  
+    <p class="mb-4 text-lg">
+        The ICPFA Community Fund will be funded by the ICPFA founder, James Beadle. 
+        For each ICPFA project that generates maturity interest or revenue, James will deposit 25% of his share into the ICPFA community fund.
+    </p>
+  
+    <p class="mb-4 text-lg">
+        100% of the revenue from the FootballGod platform will also be added to the ICPFA community fund.
+    </p>
+  
+    <h2 class="text-3xl font-bold mt-6 mb-4">Our Team</h2>
+    <br />
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+        <div class="text-center">
+          <img src="james.png" alt="James Beadle" class="w-24 h-24 rounded-full mx-auto mb-4">
+          <h3 class="text-2xl font-bold mb-2">James Beadle</h3>
+          <p class="text-xl mb-2">Founder</p>
+          <p class="text-base">James has been building software solutions for 15 years. In his early career, he spent his time building financial systems in the energy sector, 
+            later moving on to creating interactive experiences for Arcstream AV up until the end of 2022. Working alongside large brands such as Ford, Coca-Cola, McKinsey, GSK, 
+            and more has equipped him with the skills to ensure products are beautifully designed and intrinsically easy to use. 
+            Since discovering the Internet Computer blockchain earlier this year, James has ceased developing on web2 altogether. 
+            The principles of the IC resonate strongly with his own personal beliefs, and he feels extremely lucky to be able to contribute to our decentralised future.</p>
+        </div>
+        
+        <div class="text-center">
+            <img src="daydrinkr.jpg" alt="James Beadle" class="w-24 h-24 rounded-full mx-auto mb-4">
+            <h3 class="text-2xl font-bold mb-2">X: @daydrinkr</h3>
+            <p class="text-xl mb-2">Community Manager</p>
+            <p class="text-base">George has been in Crypto since 2020 and a part of the ICP community since 2021. A lifelong fan of all things football, 
+                he’s actively involved in the fantasy game, watching live football as well as playing for a local club! 
+                A computer science graduate, George combines his passion for technology with his enthusiasm for the game. 
+            </p>
+          </div>
 
-    <p>100% of the revenue from the FootballGod platform will also be added to the ICPFA community fund.</p>
+          <div class="text-center">
+            <img src="dfd.jpg" alt="James Beadle" class="w-24 h-24 rounded-full mx-auto mb-4">
+            <h3 class="text-2xl font-bold mb-2">X: @dfinitydesigner</h3>
+            <p class="text-xl mb-2">Designer</p>
+            <p class="text-base">DfinityDesigner has created a long list of beautiful brands & user experiences for the ICP community. OpenFPL & the ICPFA site are no different, 
+                creating both a unique brand & UI. Having him part of our team will ensure brand consistency across our portfolio.</p>
+          </div>
 
-    <h2>Our Team</h2>
+          <div class="text-center">
+            <img src="icpinsider.jpg" alt="James Beadle" class="w-24 h-24 rounded-full mx-auto mb-4">
+            <h3 class="text-2xl font-bold mb-2">X: @ICP_Insider</h3>
+            <p class="text-xl mb-2">Community Ambassador</p>
+            <p class="text-base">ICP_Insider has been part of the ICP community since genesis, forming strong connections within all areas of the ICP ecosystem.
+                Time and again he has provided valuable community connections along with playing an important role in the promotion of ICPFA services.</p>
+          </div>
 
-    <h3>James Beadle</h3>
-    <h3>@daydrinkr</h3>
-    <h3>@dfinitydesigner</h3>
-    <h3>@madmaxic</h3>
-    <h3>@icp_insider</h3>
+          <div class="text-center">
+            <img src="max.jpg" alt="James Beadle" class="w-24 h-24 rounded-full mx-auto mb-4">
+            <h3 class="text-2xl font-bold mb-2">X: @madmaxic</h3>
+            <p class="text-xl mb-2">Blockchain Promoter</p>
+            <p class="text-base">Peter is cool.</p>
+          </div>
+    
+    
+      </div>
 
-
-</section>
+  </section>
+  

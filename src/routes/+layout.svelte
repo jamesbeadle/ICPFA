@@ -13,9 +13,15 @@
         })
     );
   </script>
+<div class="flex flex-col h-screen">
+  <div class="flex-grow">
+    <Navbar />
+    <slot />
+  </div>
+  <footer class="w-full">
+    <Footer />
+  </footer>
+</div>
 
-  <Navbar />
-  <slot />
-  <Footer />
   
   

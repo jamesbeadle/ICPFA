@@ -36,7 +36,7 @@
   }
 </style>
 
-<footer class="footer">
+<footer class="footer w-full py-4">
   <div class="footer-left">
       <a href="/"><img src="logo.png" alt="Logo" class="footer-logo"></a>
       <a target="_blank" class="icon" href="https://twitter.com/ICP_FA"><img src="twitter.png" alt="Twitter Icon"></a>
