@@ -30,6 +30,7 @@
       <img src="logo.png" alt="Logo" class="h-8 w-auto logo">
     </a>
     <ul bind:this={menu} class="flex">
+      <li class="mx-2"><a href="/mission" class="text-white hover:text-gray-400">The Mission</a></li>
       <li class="mx-2"><a href="/projects" class="text-white hover:text-gray-400">Our Projects</a></li>
       <li class="mx-2"><a href="/community-fund" class="text-white hover:text-gray-400">Community Fund</a></li>
       <li class="mx-2"><a href="/shop" class="text-white hover:text-gray-400">Shop</a></li>
