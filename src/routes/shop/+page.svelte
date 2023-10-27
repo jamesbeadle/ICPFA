@@ -156,7 +156,7 @@
     let selectedTeams: number[] = [];
 
     let showTeams = false;
-    let numberFilter = -1;
+    let numberFilter = "-1";
     let filteredProducts: Product[] = products;
 
     let availableNumbers: number[] = [];
@@ -178,8 +178,8 @@
             filteredProducts = filteredProducts.filter(product => selectedTeams.includes(product.teamId));
         }
 
-        if (numberFilter > -1) {
-            filteredProducts = filteredProducts.filter(product => product.shirtNumber && product.shirtNumber == numberFilter);
+        if (numberFilter != "-1") {
+            filteredProducts = filteredProducts.filter(product => product.shirtNumber && product.shirtNumber == Number(numberFilter));
         }
         console.log(selectedTeams)
     }
@@ -381,15 +381,17 @@
                 {/each}
             </div>
         {/if}
-
-
-        <h3>BY NUMBER</h3>
-        <select bind:value={numberFilter} class="w-full py-1 px-2 rounded border focus:outline-none focus:border-blue-500 mt-2">
+        
+        <h3 class="mt-4">BY NUMBER</h3>
+        <select bind:value={numberFilter} 
+                class="w-full py-1 px-2 rounded border bg-gray-900 text-white focus:outline-none focus:border-blue-500 mt-2">
             <option value="-1">All</option>
             {#each availableNumbers as number}
                 <option value={number}>{number}</option>
             {/each}
         </select>
+
+
     </div>
     
     <!-- Right Grid: Products -->
