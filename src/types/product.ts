@@ -1,5 +1,10 @@
 export type Product = {
+    id: number;
+    type: string;
     image: string;
-    title: string;
+    name: string;
     price: number;
+    category: string;
+    teamId: number;
+    shirtNumber: number;
 };
