@@ -1,7 +1,14 @@
 <script lang="ts">
   import { onMount } from "svelte";
+  import { page } from '$app/stores';
   
   let menu: HTMLUListElement | null = null;
+  const routes = ["/mission", "/projects", "/community-fund", "/shop"];
+  let currentClass: string[] = [];
+
+  $: {
+    currentClass = routes.map(route => $page.url.pathname === route ? 'active' : '');
+  }
 
   onMount(() => {
     function resizeMenu() {
@@ -23,24 +30,27 @@
   });
 </script>
 
-
 <nav class="text-white">
   <div class="container mx-auto px-4 flex justify-between items-center">
     <a href="/" class="text-white hover:text-gray-400">
       <img src="logo.png" alt="Logo" class="h-8 w-auto logo">
     </a>
     <ul bind:this={menu} class="flex">
-      <li class="mx-2"><a href="/mission" class="text-white hover:text-gray-400">The Mission</a></li>
-      <li class="mx-2"><a href="/projects" class="text-white hover:text-gray-400">Our Projects</a></li>
-      <li class="mx-2"><a href="/community-fund" class="text-white hover:text-gray-400">Community Fund</a></li>
-      <li class="mx-2"><a href="/shop" class="text-white hover:text-gray-400">Shop</a></li>
+      <li class="mx-2"><a href="/mission" class="text-white hover:text-gray-400 {currentClass[0]}">The Mission</a></li>
+      <li class="mx-2"><a href="/projects" class="text-white hover:text-gray-400 {currentClass[1]}">Our Projects</a></li>
+      <li class="mx-2"><a href="/community-fund" class="text-white hover:text-gray-400 {currentClass[2]}">Community Fund</a></li>
+      <li class="mx-2"><a href="/shop" class="text-white hover:text-gray-400 {currentClass[3]}">Shop</a></li>
     </ul>
   </div>
 </nav>
+
 <style>
   .logo {
     width: 144px;
     height: auto;
     padding: 16px;
+  }
+  .active {
+    color: #3C71FA;
   }
 </style>

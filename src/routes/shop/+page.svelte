@@ -181,6 +181,14 @@
         if (numberFilter != "-1") {
             filteredProducts = filteredProducts.filter(product => product.shirtNumber && product.shirtNumber == Number(numberFilter));
         }
+        
+        if (selectedCategory === "Clothing") {
+            productTypes = ["All", "Shirts"];
+        } else {
+            productTypes = ["Coming Soon"];
+        }
+        selectedProductType = "All";
+   
     }
 
 
