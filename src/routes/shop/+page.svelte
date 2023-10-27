@@ -181,7 +181,6 @@
         if (numberFilter != "-1") {
             filteredProducts = filteredProducts.filter(product => product.shirtNumber && product.shirtNumber == Number(numberFilter));
         }
-        console.log(selectedTeams)
     }
 
 
