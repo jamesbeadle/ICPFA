@@ -18,7 +18,6 @@
 <style>
     
     .image-button {
-        border: none;
         background: none;
         padding: 0;
         cursor: pointer;
@@ -39,11 +38,11 @@
         
             <!-- Thumbnail Images -->
             <div class="flex gap-2 mb-3">
-                <button class={`image-button focus:outline-none p-1 rounded transition-all duration-200 ${activeImages[i] === `front_${i}` ? 'border-2 border-blue-500' : 'border border-gray-300'}`} on:click={() => activeImages[i] = `front_${i}`}>
+                <button class={`image-button focus:outline-none p-1 rounded transition-all duration-200 ${activeImages.includes(`front_${i}`) ? 'border-2 border-gray-500' : 'border-none'}`} on:click={() => activeImages[i] = `front_${i}`}>
                     <img class="w-16 h-16 object-cover" src={`/shirts/shirt_${product.teamId}_front.jpg`} alt="Thumbnail 1">
                 </button>
     
-                <button class={`image-button focus:outline-none p-1 rounded transition-all duration-200 ${activeImages[i] === `back_${i}` ? 'border-2 border-blue-500' : 'border border-gray-300'}`} on:click={() => activeImages[i] = `back_${i}`}>
+                <button class={`image-button focus:outline-none p-1 rounded transition-all duration-200 ${activeImages.includes(`back_${i}`) ? 'border-2 border-gray-500' : 'border-none'}`} on:click={() => activeImages[i] = `back_${i}`}>
                     <img class="w-16 h-16 object-cover" src={`/shirts/shirt_${product.teamId}_back.jpg`} alt="Thumbnail 2">
                 </button>   
             </div>
