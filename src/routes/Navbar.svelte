@@ -44,11 +44,11 @@
 </nav>
 
 <style>
-  
-.mobile-menu {
-    display: none;
-    /* ... other styles ... */
-}
+    
+  .mobile-menu {
+      display: none;
+  }
+
   .logo {
     width: 144px;
     height: auto;
@@ -57,7 +57,7 @@
   .active {
     color: #3C71FA;
   }
-  /* Hide menu by default on mobile */
+  
   .menu {
     display: none;
     flex-direction: column;
@@ -69,7 +69,6 @@
     display: flex;
   }
 
-  /* Display menu on desktop */
   @media (min-width: 768px) {
     .menu {
       display: flex;
@@ -92,25 +91,27 @@
 
   .mobile-menu {
     display: none;
-    position: absolute;  /* Make it float */
-    top: 50px;  /* Adjust as per your header height */
-    right: 10px;  /* Adjust gap from right */
-    background-color: #000;  /* Adjust background color */
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    background-color: #000;
     border-radius: 10px;
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
-    z-index: 1000;  /* Make sure it floats on top */
+    z-index: 1000;
   }
 
   .mobile-menu li {
-    padding: 10px 20px;  /* Padding for each menu item */
+    padding: 10px 20px;
   }
 
   .menu-open .mobile-menu {
     display: block;
   }
+
   @media (min-width: 768px) { 
-    .mobile-menu {
-        display: none !important; 
-    }
-}
+      .mobile-menu {
+          display: none !important; 
+      }
+  }
+  
 </style>

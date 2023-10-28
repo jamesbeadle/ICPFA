@@ -1,4 +1,3 @@
-
 <style>
     .mission-section {
         position: relative;
@@ -39,6 +38,19 @@
     h1, p {
         padding: 10px;
         border-radius: 5px;
+    }
+
+    /* Mobile optimization */
+    @media (max-width: 768px) {
+        .content {
+            position: relative;
+            padding-top: 20px;
+            top: unset;
+        }
+
+        .image-container::before {
+            background-color: rgba(0, 0, 0, 0.6);
+        }
     }
 </style>
 
