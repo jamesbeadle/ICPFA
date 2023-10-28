@@ -315,7 +315,7 @@
     {/each}
 </div>
 <div class="banner">
-    <img src="ShopBanner.png" alt="Banner background" class="banner-background">
+    <img src="ShopBanner.jpg" alt="Banner background" class="banner-background">
 
     <div class="banner-content">
         <h1>Exclusive OpenFPL shirts!</h1>
