@@ -1,39 +1,61 @@
 <style>
   .footer {
-      background-color: #2c2c2c;
-      padding: 20px 40px; 
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-  }
+    background-color: #2c2c2c;
+    padding: 20px 40px; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-  .footer-left {
-      display: flex;
-      align-items: center;
-  }
+.footer-left {
+    display: flex;
+    align-items: center;
+}
 
-  .footer-left > * {
-      margin-right: 20px; 
-  }
+.footer-left > * {
+    margin-right: 20px; 
+}
 
-  .footer-right {
-      display: flex;
-      align-items: center;
-  }
+.footer-right {
+    display: flex;
+    align-items: center;
+}
 
-  .footer-logo {
-      width: 100px; 
-  }
+.footer-logo {
+    width: 100px; 
+}
 
-  .juno-logo {
-      margin-left: 10px; 
-  }
+.juno-logo {
+    margin-left: 10px; 
+}
 
-  .icon {
-      width: 24px; 
-      height: 24px;
-      margin-right: 10px; 
-  }
+.icon {
+    width: 24px; 
+    height: 24px;
+    margin-right: 10px; 
+}
+
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .footer-left, .footer-right {
+        margin-bottom: 10px;
+    }
+
+    .footer-right span {
+        font-size: 12px;
+    }
+
+    .icon {
+        width: 18px;
+        height: 18px;
+    }
+}
+
 </style>
 
 <footer class="footer w-full py-4">
