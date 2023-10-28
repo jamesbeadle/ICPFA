@@ -86,7 +86,7 @@
     display: flex;
     flex-direction: column;
     align-items: center; /* Horizontal centering */
-    justify-content: flex-start;
+    justify-content: flex-start; /* Top align */
     gap: 10px; /* Gap between child elements */
 }
 .profile-text {

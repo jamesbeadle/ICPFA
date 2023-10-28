@@ -50,7 +50,6 @@
     padding-left: 20px;
     padding-right: 20px;
     border-radius: 5px;
-    background: rgba(255, 255, 255, 0.1);
 }
 
 .stat {
@@ -92,7 +91,7 @@ section.text-white {
         <img src="merchandising.jpg" alt="Community Fund" />
 
         <div class="content">
-            <h1 class="text-3xl font-bold my-8 mb-8">The ICPFA Community Fund</h1>
+            <h1 class="text-2xl font-bold">The ICPFA Community Fund</h1>
             <div class="stats">
                 <div class="stat">
                     <p class="text-xs text-row-item">Balance</p>
@@ -107,9 +106,9 @@ section.text-white {
                     <p class="text-lg text-row-item">{amountSpent} ICP</p>
                 </div>
             </div>
-            <section class="text-white p-8 rounded-lg">
-                <h2 class="text-2xl font-semibold mb-2">How Good Causes Are Chosen</h2>
-                <p class="mb-4 text-lg">
+            <section class="text-white rounded-lg">
+                <h2 class="text-xl font-semibold mb-2">How Good Causes Are Chosen</h2>
+                <p class="mb-4 text-md">
                     The ICPFA will issue NFTs through a process to be confirmed in 2024. These NFTs will be used to raise proposals for grassroots football causes that require funding.
                 </p>
             </section>
