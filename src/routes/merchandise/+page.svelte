@@ -65,7 +65,7 @@
         <img src="merchandising.jpg" alt="Community Fund" />
 
         <div class="content">
-            <h1 class="text-4xl font-bold my-8 mb-8">OpenFPL Merchandising NFTs</h1>
+            <h1 class="text-3xl font-bold my-8 mb-8">OpenFPL Merchandising NFTs</h1>
             <p class="mb-4 text-lg">
                 OpenFPL is proud to introduce its unique Merchandising NFTs designed to financially reward NFT holders through merchandising sales on the ICPFA website.
             </p>

@@ -59,7 +59,7 @@
         <img src="community-fund.jpg" alt="Community Fund" />
 
         <div class="content">
-            <h1 class="text-4xl font-bold my-8 mb-8">NFT Mapping</h1>
+            <h1 class="text-3xl font-bold my-8 mb-8">NFT Mapping</h1>
             
     <p class="mb-4 text-lg">
         You will be able to map your OpenFPL funded.app NFT to your NNS Principal ID here just before the decentralisation sale to receive your $FPL neurons.
