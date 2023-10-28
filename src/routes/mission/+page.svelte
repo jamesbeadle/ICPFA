@@ -53,29 +53,29 @@
       
       <div class="content">
         <h1 class="text-4xl font-bold mb-4">The Mission</h1>
-        <p class="mb-4 text-xl">
+        <p class="mb-4 text-lg">
         Football is the world's most-watched sport, attracting an estimated 4 billion fans. Beyond the pitch, football acts as a powerful catalyst for social improvement, community development, and providing promising young talent with avenues to success.
     </p>
    
     
-    <p class="mb-4 text-xl">
+    <p class="mb-4 text-lg">
         We have created the ICPFA to provide this huge fanbase a range of high quality apps, decentralised internet services and investment opportunities. 
         We feel doing this will attract a large number of new users to the ICP ecosystem. Our first DAO, OpenFPL, is improving on an existing Web2 service with 10m users.
     </p>
 
     <h2 class="text-3xl font-bold mt-6 mb-4">ICPFA Community Fund</h2>
 
-    <p class="mb-4 text-xl">
+    <p class="mb-4 text-lg">
         The ICPFA Community Fund has been created for football related charitable projects around the world. 
         This fund will be used to make a positive impact to people's lives using football. 
     </p>
   
-    <p class="mb-4 text-xl">
+    <p class="mb-4 text-lg">
         The ICPFA Community Fund will be funded by the ICPFA founder, James Beadle. 
         For each ICPFA project that generates maturity interest or revenue, James will deposit 25% of his share into the ICPFA community fund.
     </p>
   
-    <p class="mb-4 text-xl">
+    <p class="mb-4 text-lg">
         100% of the revenue from the FootballGod platform will also be added to the ICPFA community fund.
     </p>
 
