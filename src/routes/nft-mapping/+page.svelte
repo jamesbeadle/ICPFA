@@ -56,7 +56,7 @@
 
 <section class="mission-section">
     <div class="image-container">
-        <img src="community-fund.jpg" alt="Community Fund" />
+        <img src="merchandising.jpg" alt="Community Fund" />
 
         <div class="content">
             <h1 class="text-3xl font-bold my-8 mb-8">NFT Mapping</h1>

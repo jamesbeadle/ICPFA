@@ -227,36 +227,53 @@
     }
 
     .banner {
-        position: relative;
-        overflow: hidden;
-    }
+    position: relative;
+    overflow: hidden;
+}
 
-    .banner-background {
-        width: 100%;
-        height: auto;
-        z-index: 1;
-    }
+.banner-background {
+    width: 100%;
+    height: auto;
+    z-index: 1;
+}
 
+.banner-content {
+    position: absolute;
+    top: 50%; 
+    left: 65%;
+    transform: translateY(-50%);
+    z-index: 2;
+    color: white;
+}
+
+.banner-cta {
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    font-weight: bold;
+    z-index: 3;
+}
+
+/* Mobile view adjustments */
+@media (max-width: 768px) {
     .banner-content {
-        position: absolute;
-        top: 50%; 
-        left: 65%;
-        transform: translateY(-50%);
-        z-index: 2;
-        color: white;
+        left: 55%; /* Center the content horizontally */
+    }
+    
+    .banner-cta {
+        font-size: 0.7rem; /* Smaller font size */
+        padding: 0.2rem 1rem; /* Smaller padding */
     }
 
-    .banner-cta {
-        background-color: transparent;
-        border: 2px solid white;
-        color: white;
-        padding: 0.75rem 1.5rem;
-        font-size: 1rem;
-        cursor: pointer;
-        transition: background-color 0.3s, color 0.3s;
-        font-weight: bold;
-        z-index: 3;
+    .banner-header{
+        font-size: 0.7rem;
     }
+}
+
 
     .container {
         display: flex;
@@ -313,7 +330,7 @@
     <img src="ShopBanner.jpg" alt="Banner background" class="banner-background">
 
     <div class="banner-content">
-        <h1>Exclusive OpenFPL shirts!</h1>
+        <h1 class="banner-header">Exclusive OpenFPL shirts!</h1>
         <button type="button" class="banner-cta mt-4 rounded focus:outline-none" disabled>Pre-order<br /><small>(Coming Soon)</small></button>
     </div>
 </div>

@@ -50,68 +50,112 @@
         .image-container::before {
             background-color: rgba(0, 0, 0, 0.6);
         }
+        
+        .profile-text{
+            font-size: 0.8rem !important;
+        }
+
+        .profile-image{
+            width: 15rem !important;
+            height: auto !important;
+        }
     }
-    
-    /* rest of your styles remain unchanged */
+
+    @media (min-width: 769px) {
+        
+
+.profile-image{
+            width: 10rem !important;
+            height: auto !important;
+        }   
+    }
+
+    .text-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+        
+.profile-text{
+            font-size: 0.8rem !important;
+        }
+
+        .text-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Horizontal centering */
+    justify-content: flex-start;
+    gap: 10px; /* Gap between child elements */
+}
+.profile-text {
+    font-size: 0.8rem;
+}
+
+    .title-text{
+        padding: 0px !important;
+    }
+
   </style>
   <section class="team-section">
     <div class="image-container">
       <img src="mission.jpg" alt="Football Morning" />
       
-      <div class="content">
-        <h1 class="text-4xl font-bold mb-4">Our Team</h1>
-        <p class="mb-4 text-lg">
+        <div class="content">
+            <h1 class="text-4xl font-bold mb-1">Our Team</h1>
+            <p class="mb-4 text-lg">
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
+                <div class="text-center">
+                <img src="james.png" alt="James Beadle" class="rounded-full profile-image">
+                <h3 class="text-2xl font-bold title-text">James Beadle</h3>
+                <p class="text-xl title-text">Founder</p>
+                <p class="profile-text">James spent his early career building financial solutions in the energy sector and then moved into building interactive experiences for Arcstream AV 
+                    up until the end of 2022. Working alongside large brands such as Ford, Coca-Cola, McKinsey, GSK 
+                    and more has equipped him with the skills to ensure products are beautifully designed and intrinsically easy to use. 
+                    James discovered the Internet Computer blockchain in early 2023, with the principles of the IC resonating strongly with his personal beliefs. 
+                    He feels extremely lucky to be able to contribute to our decentralised future.</p>
+                </div>
+                
+                <div class="text-center">
+                    <img src="daydrinkr.jpg" alt="James Beadle" class="rounded-full mb-4 p-4 profile-image">
+                    <h3 class="text-2xl font-bold mb-2 title-text">X: @daydrinkr</h3>
+                    <p class="text-xl mb-2 title-text">Community Manager</p>
+                    <p class="profile-text">George has been in Crypto since 2020 and a part of the ICP community since 2021. A lifelong fan of all things football, 
+                        he’s actively involved in the fantasy game, watching live football as well as playing for a local club! 
+                        A computer science graduate, George combines his passion for technology with his enthusiasm for the game. 
+                    </p>
+                </div>
+
+                <div class="text-center">
+                    <img src="dfd.jpg" alt="James Beadle" class="rounded-full mb-4 p-4 profile-image">
+                    <h3 class="text-2xl font-bold mb-2 title-text">X: @dfinitydesigner</h3>
+                    <p class="text-xl mb-2 title-text">Designer</p>
+                    <p class="profile-text">The DfinityDesigner is dedicated to transforming the Internet Computer through a user-centered, minimalist design approach. Crafting innovative online products, redefining user experiences, and creating unique brands for the ICP community are his expertise. Projects like OpenFPL and the ICPFA site exemplify his ability to ensure consistent brand identities and unique UI designs. Partnering with him guarantees a cohesive brand identity across our portfolio.
+                    </p>
+                </div>
+
+                <div class="text-center">
+                    <img src="icpinsider.jpg" alt="James Beadle" class="rounded-full mb-4 p-4 profile-image">
+                    <h3 class="text-2xl font-bold mb-2 title-text">X: @ICP_Insider</h3>
+                    <p class="text-xl mb-2 title-text">Community Ambassador</p>
+                    <p class="profile-text">ICP_Insider has been part of the ICP community since genesis, forming strong connections within all areas of the ICP ecosystem.
+                        Time and again he has provided valuable community connections along with playing an important role in the promotion of ICPFA services.</p>
+                </div>
+
+                <div class="text-center">
+                    <img src="max.jpg" alt="James Beadle" class="rounded-full mb-4 p-4 profile-image">
+                    <h3 class="text-2xl font-bold mb-2 title-text">X: @madmaxic</h3>
+                    <p class="text-xl mb-2 title-text">Gameplay Designer</p>
+                    <p class="profile-text">MadMax is a former avid player of Football Manager who now makes key contributions to OpenFPL gameplay rules. 
+                        He entered the crypto space with Ethereum in 2015 and deepened his involvement in 2019 with the Internet Computer Protocol. 
+                        Committed to creating a middleman-free, autonomous world, he prioritizes technology and science over money.
+                    </p>
+                </div>
+                <br />
         
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
-        <div class="text-center">
-          <img src="james.png" alt="James Beadle" class="rounded-full mb-4 p-4">
-          <h3 class="text-2xl font-bold mb-2">James Beadle</h3>
-          <p class="text-xl mb-2">Founder</p>
-          <p class="text-base">James spent his early career building financial solutions in the energy sector and then moved into building interactive experiences for Arcstream AV 
-            up until the end of 2022. Working alongside large brands such as Ford, Coca-Cola, McKinsey, GSK 
-            and more has equipped him with the skills to ensure products are beautifully designed and intrinsically easy to use. 
-            James discovered the Internet Computer blockchain in early 2023, with the principles of the IC resonating strongly with his personal beliefs. 
-            He feels extremely lucky to be able to contribute to our decentralised future.</p>
-        </div>
-        
-        <div class="text-center">
-            <img src="daydrinkr.jpg" alt="James Beadle" class="rounded-full mb-4 p-4">
-            <h3 class="text-2xl font-bold mb-2">X: @daydrinkr</h3>
-            <p class="text-xl mb-2">Community Manager</p>
-            <p class="text-base">George has been in Crypto since 2020 and a part of the ICP community since 2021. A lifelong fan of all things football, 
-                he’s actively involved in the fantasy game, watching live football as well as playing for a local club! 
-                A computer science graduate, George combines his passion for technology with his enthusiasm for the game. 
-            </p>
-          </div>
-
-          <div class="text-center">
-            <img src="dfd.jpg" alt="James Beadle" class="rounded-full mb-4 p-4">
-            <h3 class="text-2xl font-bold mb-2">X: @dfinitydesigner</h3>
-            <p class="text-xl mb-2">Designer</p>
-            <p class="text-base">The DfinityDesigner is dedicated to transforming the Internet Computer through a user-centered, minimalist design approach. Crafting innovative online products, redefining user experiences, and creating unique brands for the ICP community are his expertise. Projects like OpenFPL and the ICPFA site exemplify his ability to ensure consistent brand identities and unique UI designs. Partnering with him guarantees a cohesive brand identity across our portfolio.
-            </p>
-          </div>
-
-          <div class="text-center">
-            <img src="icpinsider.jpg" alt="James Beadle" class="rounded-full mb-4 p-4">
-            <h3 class="text-2xl font-bold mb-2">X: @ICP_Insider</h3>
-            <p class="text-xl mb-2">Community Ambassador</p>
-            <p class="text-base">ICP_Insider has been part of the ICP community since genesis, forming strong connections within all areas of the ICP ecosystem.
-                Time and again he has provided valuable community connections along with playing an important role in the promotion of ICPFA services.</p>
-          </div>
-
-          <div class="text-center">
-            <img src="max.jpg" alt="James Beadle" class="rounded-full mb-4 p-4">
-            <h3 class="text-2xl font-bold mb-2">X: @madmaxic</h3>
-            <p class="text-xl mb-2">Gameplay Designer</p>
-            <p class="text-base">MadMax is a former avid player of Football Manager who now makes key contributions to OpenFPL gameplay rules. 
-                He entered the crypto space with Ethereum in 2015 and deepened his involvement in 2019 with the Internet Computer Protocol. 
-                Committed to creating a middleman-free, autonomous world, he prioritizes technology and science over money.
-            </p>
-          </div>
-          <br />
-    
-      </div> 
-   
-
+            </div> 
+        </div> 
+    </div> 
   </section>
