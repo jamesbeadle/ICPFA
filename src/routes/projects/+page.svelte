@@ -4,8 +4,8 @@
 
     let projects: Project[] = [
         { name: 'OpenFPL', description: 'Decentralised Fantasy Football', releaseDate: 'August 2023', url: 'openfpl.xyz', detailedDescription: '', imagePath: 'OpenFPL.png', showButton: true, buttonText: 'Map NFT to IID', redirect: 'nft-mapping' },
+        { name: 'OpenFPL Merchandising NFTs', description: 'NFTs with lifetime OpenFPL merchandising rights.', releaseDate: 'November 2023', url: 'toniq.io/OpenFPL', detailedDescription: '', showButton: true, imagePath: 'NFT.jpg', buttonText: 'Details', redirect: 'merchandise' },
         { name: 'FootballGod', description: 'Prediction Games', releaseDate: 'May 2023', url: 'footballgod.xyz', detailedDescription: '', imagePath: 'FootballGod.jpg', showButton: false, buttonText: '', redirect: '' },
-        { name: 'OprnFPL Merchandising NFTs', description: 'NFTs with lifetime OpenFPL merchandising rights.', releaseDate: 'November 2023', url: 'toniq.io/OpenFPL', detailedDescription: '', showButton: true, imagePath: 'NFT.jpg', buttonText: 'Details', redirect: 'merchandise' },
         { name: 'The OpenFPL Podcast', description: 'Our weekly football podcast.', releaseDate: 'Jan 2024', url: 'Coming Soon', detailedDescription: '', imagePath: 'Podcast.jpg', showButton: false, buttonText: '', redirect: ''  },
         { name: 'Football News', description: 'A football news site is in the design phase.', releaseDate: 'Mar 2024', url: 'Coming Soon', detailedDescription: '', imagePath: 'News.jpg', showButton: false, buttonText: '', redirect: ''  },
         { name: 'Euro 2024', description: 'A Euro 2024 fanasy football game is in the planning phase.', releaseDate: 'May 2024', url: 'Coming Soon', detailedDescription: '', imagePath: 'Euro2024.jpg', showButton: false, buttonText: '', redirect: ''  }
