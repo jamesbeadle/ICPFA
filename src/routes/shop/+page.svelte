@@ -323,7 +323,7 @@
     </div>
 </div>
 
-<div class="container">
+<div class="container flex md:flex-row flex-col">
     <!-- Left Sidebar: Filters -->
         
     <div class="sidebar">
