@@ -2,28 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
-/* poppins-regular - latin */
-  @font-face {
-    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 400;
-    src: url('/poppins-v20-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-  }
+@font-face {
+  font-display: swap;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/poppins-v20-latin-regular.woff2') format('woff2');
+}
   
-  html, body {
-    height: 100%;
-    margin: 0;
-  }
-  
-  body {
-    font-family: 'Poppins', sans-serif !important;
-    color: white !important;
-    background-color: #1A1A1D;
-    height: 100vh;
-    margin: 0;
-  }
 
-  .custom-button{
-    background-color: #3C71FA !important;
+html, body {
+  height: 100%;
+  margin: 0;
+}
+  
+body {
+  font-family: 'Poppins', sans-serif !important;
+  color: white !important;
+  background-color: #1A1A1D;
+  height: 100vh;
+  margin: 0;
+}
+
+.custom-button{
+  background-color: #3C71FA !important;
 }
