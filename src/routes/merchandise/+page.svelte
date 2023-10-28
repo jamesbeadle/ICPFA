@@ -51,39 +51,60 @@
             background-color: rgba(0, 0, 0, 0.6);
         }
     }
+
+    .oc-icon{
+        vertical-align: middle;
+        width: 2rem;
+        height: auto;
+        margin-left: 0.5rem;
+    }
 </style>
 
 <section class="mission-section">
     <div class="image-container">
-        <img src="community-fund.jpg" alt="Community Fund" />
+        <img src="merchandising.jpg" alt="Community Fund" />
 
         <div class="content">
             <h1 class="text-4xl font-bold my-8 mb-8">OpenFPL Merchandising NFTs</h1>
             <p class="mb-4 text-lg">
-                The purpose of the OpenFPL Merchandising NFTs is to reward the holder of the NFT when an OpenFPL merchandising purchase is made.
+                OpenFPL is proud to introduce its unique Merchandising NFTs designed to financially reward NFT holders through merchandising sales on the ICPFA website.
             </p>
         
             <p class="mb-4 text-lg">
-                Each NFT relates to a Premier League football club and a specific squad number for that club. When a sale is made through the ICPFA website shop, 10% of the sale price 
-                is immediately sent to the NFT holder's wallet.
+                Our NFT offering consists of 100 unique NFTS, distributed across the 20 Premier League football teams. Each team is represented by specific shirt numbers; for example, Manchester United includes numbers 7,9,10,18,11,16 & 20 - popular legendary numbers.
             </p>
         
             <p class="mb-4 text-lg">
-                The ICPFA will also sell items that are specific to a club only. 10% of these sales are shared equally amoungst the number of club merchandising NFTs that exist.
+                Specific Club & Number Ownership: When a merchandising item associated with a specific shirt number and club is sold, 10% of the sale price is immediately transferred to the NFT holder of that combination.
             </p>
         
-            <p>We are currently working with suppliers to create the perfect initial OpenFPL football shirts, with the first batch being sent to the ICPFA team for quality assessment in early November 2023.
-                When we are happy with the quality, an initial order will be placed for 3,000 shirts. Preorder functionality will be added to the site to enable us to stock the ICPFA shop efficiently.
+            <p>Home Original Collection: We also offer items that don't carry specific shirt numbers. For sales of these unnumbered items from our "Home Original" collection, the 10% revenue share is evenly split among the NFT holders of all the numbers for the corresponding team.
             </p>
             
-            <p class="mb-4 text-lg">We are looking to price our shirts at half the cost of a traditional football shirt, around 10 ICP (Oct 2023)</p>
+            <p class="mb-4 text-lg">We are in the process of having our shirts manufactured, striving for a high quality well fitting training top. Following successful evaluations, an initial batch of 3,000 shirts will be ordered. A pre-order function will be introduced on the ICPFA website for efficient stock management in the coming months.</p>
             
-            <p class="mb-4 text-lg">The ICPFA shop will sell a wide range of merchandising items for each club. We plan to provide fans with clothing, equipment and any other 
-                merchandising items that our community of users would like to see available.</p>
+            <p class="mb-4 text-lg">Our shirts will be priced at approximately 10 ICP (as of October 2023), making them around half as expensive as traditional football shirts.</p>
         
             <p class="mb-4 text-lg">
-                A launchpad will begin on Toniq.io in November 2023.
+                As part of our commitment to social responsibility, each NFT will also fund the kitting out of a Sunday League football team here in the UK. 
+                This initiative aims to provide support to teams in need while also promoting the OpenFPL brand.
             </p>
+
+            <p class="mb-4 text-lg">
+                While our initial focus is on football shirts, our ambition doesn't stop there. We aim to gradually expand our catalog to include a range of additional items, from casual wear like shorts to everyday accessories and memorabilia such as keyrings and water bottles. We're open to community input to ensure we meet the diverse needs and wants of our audience.
+            </p>
+
+            <p class="mb-4 text-lg">
+                Mark your calendars for our launchpad event on Toniq.io in November 2023.
+            </p>
+            
+            <p class="mb-4 text-lg inline-block align-middle">
+                Please join our OpenChat to stay up to date with any developments
+                <a target="_blank" class="oc-icon inline-block align-middle" href="https://oc.app/community/jpibo-3yaaa-aaaar-au7hq-cai/channel/182526718610465230108426284010821007369/?ref=zv6hh-xaaaa-aaaar-ac35q-cai">
+                    <img src="openchat.png" alt="OpenChat">
+                </a>      
+            </p>
+            
         </div>
     </div>
 </section>

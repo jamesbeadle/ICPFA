@@ -109,7 +109,7 @@
                 Committed to creating a middleman-free, autonomous world, he prioritizes technology and science over money.
             </p>
           </div>
-    
+          <br />
     
       </div> 
    

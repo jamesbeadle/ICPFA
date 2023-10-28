@@ -191,14 +191,10 @@
    
     }
 
-
-    
-
-
     function handleKeyDown(event: KeyboardEvent, category: string) {
         if (event.key === 'Enter' || event.key === ' ') {
             selectedCategory = category;
-            event.preventDefault(); // Prevent any default action
+            event.preventDefault();
         }
     }
 </script>
@@ -223,11 +219,11 @@
     }
 
     .filter-item:hover {
-        color: #3C71FA; /* Adjust this for hover color */
+        color: #3C71FA;
     }
 
     .active {
-        color: #3C71FA; /* Adjust this for active category color */
+        color: #3C71FA;
     }
 
     .banner {
@@ -236,26 +232,25 @@
     }
 
     .banner-background {
-        width: 100%;   /* This will make sure the image covers the entire width of its container */
-        height: auto;  /* Keep aspect ratio */
-        z-index: 1;    /* Ensure the image is below the content */
+        width: 100%;
+        height: auto;
+        z-index: 1;
     }
 
     .banner-content {
-        position: absolute; /* Make content overlay the image */
-        top: 50%;          /* Start from 50% of the container's height */
-        left: 65%;         /* Adjust as necessary for desired positioning */
-        transform: translateY(-50%); /* Center content vertically */
-        z-index: 2;        /* Ensure the content is above the image */
+        position: absolute;
+        top: 50%; 
+        left: 65%;
+        transform: translateY(-50%);
+        z-index: 2;
         color: white;
-        /* ... rest of your styles ... */
     }
 
     .banner-cta {
         background-color: transparent;
         border: 2px solid white;
         color: white;
-        padding: 0.75rem 1.5rem; /* Adjust padding */
+        padding: 0.75rem 1.5rem;
         font-size: 1rem;
         cursor: pointer;
         transition: background-color 0.3s, color 0.3s;
@@ -268,22 +263,22 @@
     }
 
     .sidebar {
-        flex-basis: 20%; /* Adjust as needed based on design */
-        padding: 20px;   /* Some padding to space out the content */
-        background-color: #1a1a1a; /* Dark background as in your design */
-        color: white;    /* Text color */
+        flex-basis: 20%; 
+        padding: 20px;  
+        background-color: #1a1a1a; 
+        color: white;    
     }
 
     .products-grid {
-        flex-basis: 80%; /* Adjust as needed based on design */
-        padding: 20px;   /* Some padding to space out the content */
-        background-color: #2a2a2a; /* Slightly lighter background */
-        grid-template-columns: repeat(3, 1fr); /* As there are three products in each row in your design */
-        gap: 20px; /* Some space between products */
+        flex-basis: 80%; 
+        padding: 20px;   
+        background-color: #2a2a2a; 
+        grid-template-columns: repeat(3, 1fr); 
+        gap: 20px; 
     }
 
     .type-filter {
-        margin-bottom: 20px;  /* Space between filters */
+        margin-bottom: 20px;  
     }
 
     .type-filter button {
@@ -298,7 +293,7 @@
 
     .type-filter button.active {
         font-weight: bold;
-        color: #3C71FA;  /* Active color */
+        color: #3C71FA;
     }
 
 
@@ -307,7 +302,7 @@
 <div class="filter-bar">
     {#each categories as category}
         <button 
-            class="filter-item {selectedCategory === category ? 'active' : ''}" 
+            class="filter-item text-xs {selectedCategory === category ? 'active' : ''}" 
             on:click={() => selectedCategory = category}
             on:keydown={(event) => handleKeyDown(event, category)}>
             {category}
@@ -324,11 +319,9 @@
 </div>
 
 <div class="container flex md:flex-row flex-col">
-    <!-- Left Sidebar: Filters -->
         
     <div class="sidebar">
 
-         <!-- Product Type Filter -->
         <div class="type-filter">
             <h3>BY PRODUCT TYPE</h3>
             {#each productTypes as productType}
@@ -346,7 +339,6 @@
             <h3 class="flex justify-between items-center">
                 BY TEAM
                 {#if showTeams}
-                    <!-- Arrow Up (Close) -->
                     <svg class="w-4 h-4" viewBox="0 0 24 24">
                     <path 
                         fill="none" 
@@ -358,7 +350,6 @@
                     ></path>
                     </svg>
                 {:else}
-                    <!-- Arrow Down (Expand) -->
                     <svg class="w-4 h-4" viewBox="0 0 24 24">
                         <path 
                         fill="none" 
@@ -397,11 +388,7 @@
                 <option value={number}>{number}</option>
             {/each}
         </select>
-
-
     </div>
-    
-    <!-- Right Grid: Products -->
         
     <div class="products-grid">
         {#if selectedCategory === 'Clothing'}
