@@ -2,7 +2,7 @@
   import { page } from '$app/stores';
 
   let menuOpen = false;
-  const routes = ["/mission", "/projects", "/community-fund", "/shop"];
+  const routes = ["/mission", "/team", "/projects", "/community-fund", "/shop"];
   let currentClass: string[] = [];
 
   $: currentClass = routes.map(route => $page.url.pathname === route ? 'active' : '');
@@ -26,18 +26,20 @@
     </button>
     <ul class="menu">
       <li class="mx-2"><a href="/mission" class="text-white hover:text-gray-400 {currentClass[0]}">The Mission</a></li>
-      <li class="mx-2"><a href="/projects" class="text-white hover:text-gray-400 {currentClass[1]}">Our Projects</a></li>
-      <li class="mx-2"><a href="/community-fund" class="text-white hover:text-gray-400 {currentClass[2]}">Community Fund</a></li>
-      <li class="mx-2"><a href="/shop" class="text-white hover:text-gray-400 {currentClass[3]}">Shop</a></li>
+      <li class="mx-2"><a href="/team" class="text-white hover:text-gray-400 {currentClass[1]}">Our Team</a></li>
+      <li class="mx-2"><a href="/projects" class="text-white hover:text-gray-400 {currentClass[2]}">Projects</a></li>
+      <li class="mx-2"><a href="/community-fund" class="text-white hover:text-gray-400 {currentClass[3]}">Community Fund</a></li>
+      <li class="mx-2"><a href="/shop" class="text-white hover:text-gray-400 {currentClass[4]}">Shop</a></li>
     </ul>
   </div>
   
   <div class={menuOpen ? 'menu-open' : ''}>
     <ul class="mobile-menu">
       <li><a href="/mission" class="{currentClass[0]}" on:click={toggleMenu}>The Mission</a></li>
-      <li><a href="/projects" class="{currentClass[1]}" on:click={toggleMenu}>Our Projects</a></li>
-      <li><a href="/community-fund" class="{currentClass[2]}" on:click={toggleMenu}>Community Fund</a></li>
-      <li><a href="/shop" class="{currentClass[3]}" on:click={toggleMenu}>Shop</a></li>
+      <li><a href="/team" class="{currentClass[1]}" on:click={toggleMenu}>Our Team</a></li>
+      <li><a href="/projects" class="{currentClass[2]}" on:click={toggleMenu}>Projects</a></li>
+      <li><a href="/community-fund" class="{currentClass[3]}" on:click={toggleMenu}>Community Fund</a></li>
+      <li><a href="/shop" class="{currentClass[4]}" on:click={toggleMenu}>Shop</a></li>
     </ul>
   </div>
 
