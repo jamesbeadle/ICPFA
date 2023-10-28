@@ -29,7 +29,7 @@
     }
   </style>
 <div class="breadcrumb">
-    ICPFA > MARKETPLACE > T-SHIRTS
+    ICPFA > MARKETPLACE > SHIRTS
 </div>
 <div class="item-count mb-4">{products.length} ITEMS</div>
 
