@@ -108,4 +108,9 @@
   .menu-open .mobile-menu {
     display: block;
   }
+  @media (min-width: 768px) { 
+    .mobile-menu {
+        display: none !important; 
+    }
+}
 </style>
