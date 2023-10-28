@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
     let currentMemberIndex = 0;
     const teamMembers = [
         {
@@ -39,6 +39,10 @@
   
     function goNext() {
       currentMemberIndex = (currentMemberIndex + 1) % teamMembers.length;
+    }
+
+    function changeMember(index: number) {
+        currentMemberIndex = index;
     }
   </script>
   
@@ -110,8 +114,8 @@
     }
     .caret {
       display: inline-block;
-      width: 10px;
-      height: 10px;
+      width: 12px;
+      height: 12px;
       background: grey;
       margin: 0 5px;
       border-radius: 50%;
@@ -134,31 +138,37 @@
 
 
   </style>
-  <section>
-  <div class="team-section">
-    <div class="image-container">
-      <img src="mission.jpg" alt="Football Morning" />
-      <div class="content">
-        <h1 class="text-4xl font-bold mb-1">Our Team</h1>
-        <div class="text-center">
-          <img src="{teamMembers[currentMemberIndex].image}" alt="{teamMembers[currentMemberIndex].name}" class="rounded-full profile-image">
-          <h3 class="text-2xl font-bold title-text">{teamMembers[currentMemberIndex].name}</h3>
-          <p class="text-xl title-text">{teamMembers[currentMemberIndex].role}</p>
-          <p class="profile-text">{teamMembers[currentMemberIndex].bio}</p>
+<section>
+    <div class="team-section">
+        <div class="image-container">
+        <img src="mission.jpg" alt="Football Morning" />
+        <div class="content">
+            <h1 class="text-4xl font-bold mb-1">Our Team</h1>
+            <div class="text-center">
+                <img src="{teamMembers[currentMemberIndex].image}" alt="{teamMembers[currentMemberIndex].name}" class="rounded-full profile-image">
+                <h3 class="text-2xl font-bold title-text">{teamMembers[currentMemberIndex].name}</h3>
+                <p class="text-xl title-text">{teamMembers[currentMemberIndex].role}</p>
+                <p class="profile-text">{teamMembers[currentMemberIndex].bio}</p>
+                </div>
+                <!-- Wrap the caret-container with another div -->
+            <div class="caret-wrapper">
+                <div class="caret-container">
+                <button on:click={goPrevious}>&lt;</button> 
+                {#each teamMembers as member, index}
+                    <span class="caret {currentMemberIndex === index ? 'active' : ''}" 
+                    on:click={() => changeMember(index)} 
+                    on:keydown={(event) => event.key === 'Enter' && changeMember(index)}
+                    tabindex="0" 
+                    role="button" 
+                    aria-label="Change to member {member.name}"></span>
+                {/each} 
+                <button on:click={goNext}>&gt;</button>
+                </div>
+            </div>
+    
+            
         </div>
-        <!-- Wrap the caret-container with another div -->
-<div class="caret-wrapper">
-    <div class="caret-container">
-      <button on:click={goPrevious}>&lt;</button> 
-      {#each teamMembers as member, index}
-        <span class="caret {currentMemberIndex === index ? 'active' : ''}"></span>
-      {/each} 
-      <button on:click={goNext}>&gt;</button>
+        </div>
     </div>
-  </div>
-  
-          
-      </div>
-    </div>
-  </div></section>
+</section>
   
