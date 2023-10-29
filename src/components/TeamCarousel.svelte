@@ -52,38 +52,10 @@
         color: #ffffff;
     }
 
-    .image-container {
-        width: 100%;
-        position: relative;
-    }
-
-    .image-container::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        background-color: rgba(0, 0, 0, 0.8);
-        z-index: 1;
-    }
-
-    .image-container img {
-        width: 100%;
-        z-index: 0;
-    }
 
     .content {
-        position: absolute;
-        top: 2%;
-        z-index: 2;
         padding-left: 32px;
         padding-right: 32px;
-    }
-
-    h1, p {
-        padding: 10px;
-        border-radius: 5px;
     }
 
     .text-center {
@@ -93,24 +65,21 @@
         justify-content: center;
     }
 
-        
-    .profile-text{
-        font-size: 0.8rem !important;
-    }
-
     .text-center {
         display: flex;
         flex-direction: column;
-        align-items: center; /* Horizontal centering */
-        justify-content: flex-start; /* Top align */
-        gap: 10px; /* Gap between child elements */
+        align-items: center;
+        justify-content: flex-start;
     }
     .profile-text {
-        font-size: 0.8rem;
+        font-size: 10px !important;
+        min-height: 100px;
     }
 
     .title-text{
+        font-size: 12px !important;
         padding: 0px !important;
+        margin: 0px !important;
     }
     .caret {
       display: inline-block;
@@ -160,9 +129,8 @@
 <section>
     <div class="team-section">
         <div class="image-container">
-        <img src="mission.jpg" alt="Football Morning" />
         <div class="content">
-            <h1 class="text-4xl font-bold mb-1">Our Team</h1>
+            <h1 class="text-4xl font-bold mb-2 mt-1">Our Team</h1>
             <div class="text-center">
                 <img src="{teamMembers[currentMemberIndex].image}" alt="{teamMembers[currentMemberIndex].name}" class="rounded-full profile-image">
                 <h3 class="text-2xl font-bold title-text">{teamMembers[currentMemberIndex].name}</h3>

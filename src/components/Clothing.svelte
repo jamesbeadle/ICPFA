@@ -70,16 +70,15 @@
     {/each}
 
 </div>
-
-
-<div class="flex justify-center mt-4">
-    <button class="bg-custom-blue hover:bg-custom-blue text-white font-bold py-2 px-4 rounded w-32" on:click={() => goToPage(currentPage - 1)} disabled={currentPage === 1}>
+<div class="flex justify-center mt-4 items-center">
+    <button class="bg-custom-blue hover:bg-custom-blue text-white font-bold m-2 py-2 px-2 rounded w-24 text-xs" on:click={() => goToPage(currentPage - 1)} disabled={currentPage === 1}>
         Previous
     </button>
-    <div class="mx-4 p-4">
+    <div class="mx-1 p-0 text-xs flex items-center">
         Page {currentPage}
     </div>
-    <button class="bg-custom-blue hover:bg-custom-blue text-white font-bold py-2 px-4 rounded w-32" on:click={() => goToPage(currentPage + 1)} disabled={currentPage * itemsPerPage >= products.length}>
+    <button class="bg-custom-blue hover:bg-custom-blue text-white font-bold m-2 py-2 px-2 rounded w-24 text-xs" on:click={() => goToPage(currentPage + 1)} disabled={currentPage * itemsPerPage >= products.length}>
         Next
     </button>
 </div>
+
