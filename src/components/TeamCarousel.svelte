@@ -123,19 +123,38 @@
     .caret.active {
       background: white;
     }/* Add this new CSS class */
-.caret-wrapper {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px; /* Optional: Add some top margin for spacing */
-}
-.image-container img {
-    width: 100%;
-    max-width: 400px;  /* or whatever maximum width you prefer */
-    margin: 0 auto;  /* centers the image if it's less than 100% width */
-    z-index: 0;
-    display: block;  /* helps with the centering */
-}
+    .caret-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; /* Optional: Add some top margin for spacing */
+    }
+    .image-container img {
+        width: 100%;
+        max-width: 400px;  /* or whatever maximum width you prefer */
+        margin: 0 auto;  /* centers the image if it's less than 100% width */
+        z-index: 0;
+        display: block;  /* helps with the centering */
+    }
 
+    @media (max-width: 767px) {
+        .image-container img {
+        width: 100%;
+        max-width: 100px;  /* or whatever maximum width you prefer */
+        margin: 0 auto;  /* centers the image if it's less than 100% width */
+        z-index: 0;
+        display: block;  /* helps with the centering */
+        }
+    }
+
+    @media (min-width: 768px) {
+        .image-container img {
+        width: 100%;
+        max-width: 200px;  /* or whatever maximum width you prefer */
+        margin: 0 auto;  /* centers the image if it's less than 100% width */
+        z-index: 0;
+        display: block;  /* helps with the centering */
+    }
+    }
 
   </style>
 <section>
