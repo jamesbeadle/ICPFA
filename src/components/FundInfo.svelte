@@ -20,25 +20,9 @@
 
 <style>
  
-
-  .wallet-address-container {
-    display: flex;
-    align-items: center;
-    word-wrap: wrap;
-  }
-
   .wallet-address {
     flex: 1 1 auto;
     word-wrap: break-word;
-  }
-
-  .copy-icon {
-    flex-shrink: 0; 
-    width: 16px;
-    height: 16px;
-    cursor: pointer;
-    fill: #FFFFFF;
-    margin-left: 8px; /* Space between text and icon */
   }
 
   .copied-text {
@@ -82,10 +66,10 @@
         </g>
       </svg>
     </button>
-    <br /><br />
     {#if copied}
       <p class="copied-text">Copied!</p>
     {/if}
+    <br /><br />
     <h3 class="text-md">Projects Supported: <b>0</b></h3>
     <h3 class="text-md">Fund Balance: <b>0 ICP</b></h3>
   </div>
