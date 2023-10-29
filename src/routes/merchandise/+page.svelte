@@ -80,6 +80,8 @@
         
             <p>Home Original Collection: We also offer items that don't carry specific shirt numbers. For sales of these unnumbered items from our "Home Original" collection, the 10% revenue share is evenly split among the NFT holders of all the numbers for the corresponding team.
             </p>
+        
+            <p>As our merchandising operation grows we will allow a user to select any number for their club's shirt. These additional numbers will be treated in the same way as unnumbered shirts, with the revenue shared equally between the NFT holders for that club.</p>
             
             <p class="mb-4 text-lg">We are in the process of having our shirts manufactured, striving for a high quality well fitting training top. Following successful evaluations, an initial batch of 3,000 shirts will be ordered. A pre-order function will be introduced on the ICPFA website for efficient stock management in the coming months.</p>
             
