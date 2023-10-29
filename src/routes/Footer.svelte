@@ -34,6 +34,24 @@
         height: 24px;
         margin-right: 10px; 
     }
+    
+    @media (max-width: 767px) {
+        .footer {
+            font-size: 8px;
+        }
+    }
+    
+    @media (min-width: 768px) {
+        .footer {
+            font-size: 10px;
+        }
+    }
+
+    @media (min-width: 1200px) {
+        .footer {
+            font-size: 20px;
+        }
+    }
 
 </style>
 
