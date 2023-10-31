@@ -157,38 +157,35 @@
 
     let showTeams = false;
     let numberFilter = "-1";
-    let filteredProducts: Product[] = products;
-
+    let rawProducts: Product[] = products;
+    let productsForCategoryAndTeam: Product[] = [];
+    let filteredProducts: Product[] = [];
     let availableNumbers: number[] = [];
-    $: availableNumbers = [...new Set(filteredProducts.map(p => p.shirtNumber).filter(num => num > 0))].sort((a, b) => a - b);
-
-
     $: {
-        filteredProducts = products;
-        
-        if (selectedCategory !== 'All') {
-            filteredProducts = filteredProducts.filter(product => product.category === selectedCategory);
+        productsForCategoryAndTeam = rawProducts.filter(product => product.category === selectedCategory);
+
+        if (selectedTeams.length) {
+            productsForCategoryAndTeam = productsForCategoryAndTeam.filter(product => selectedTeams.includes(product.teamId));
         }
-        
+
+        availableNumbers = [...new Set(productsForCategoryAndTeam.map(p => p.shirtNumber).filter(num => num > 0))].sort((a, b) => a - b);
+
+        filteredProducts = productsForCategoryAndTeam;
+
         if (selectedProductType !== 'All') {
             filteredProducts = filteredProducts.filter(product => product.type === selectedProductType);
         }
 
-        if (selectedTeams.length) {
-            filteredProducts = filteredProducts.filter(product => selectedTeams.includes(product.teamId));
+        if (numberFilter !== "-1") {
+            filteredProducts = filteredProducts.filter(product => product.shirtNumber === Number(numberFilter));
         }
 
-        if (numberFilter != "-1") {
-            filteredProducts = filteredProducts.filter(product => product.shirtNumber && product.shirtNumber == Number(numberFilter));
-        }
-        
         if (selectedCategory === "Clothing") {
             productTypes = ["All", "Shirts"];
         } else {
             productTypes = ["Coming Soon"];
         }
         selectedProductType = "All";
-   
     }
 
     function handleKeyDown(event: KeyboardEvent, category: string) {
