@@ -956,8 +956,11 @@
         currentPage = page;
     }
 
-    $: paginatedNFTs = selectedCollection.nfts.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
-
+    $: paginatedNFTs = selectedCollection.nfts.sort((a, b) => b.earned - a.earned).slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
+    
+    function getPosition(index: number): number {
+        return (currentPage - 1) * itemsPerPage + index + 1;
+    }
 
     </script>
 
@@ -1000,23 +1003,27 @@
     }
 
     .table-col-1{
-        flex-basis: 25%;
+        flex-basis: 10%;
     }
 
     .table-col-2{
-        flex-basis: 25%;
+        flex-basis: 10%;
     }
 
     .table-col-3{
-        flex-basis: 25%;
+        flex-basis: 30%;
     }
 
     .table-col-4{
-        flex-basis: 25%;
+        flex-basis: 30%;
     }
 
     .table-col-5{
-        flex-basis: 25%;
+        flex-basis: 10%;
+    }
+
+    .table-col-6{
+        flex-basis: 10%;
     }
  
 </style>
@@ -1053,23 +1060,26 @@
                     <div class="mt-2">
                         <br>
                         <h3 class="text-xl font-semibold mb-4">NFTs by ROI</h3>
-                        {#each paginatedNFTs as nft}
+                        {#each paginatedNFTs as nft, index}
                             <div class="flex items-center mb-4 border-b pb-2">
                                 <div class="table-col-1">
-                                    <img src="{nft.imageUrl}" alt="{nft.name}" class="w-16 h-16 rounded shadow mr-4">
+                                    <span>Position: {getPosition(index)}</span>
                                 </div>
                                 <div class="table-col-2">
+                                    <img src="{nft.imageUrl}" alt="{nft.name}" class="w-16 h-16 rounded shadow mr-4">
+                                </div>
+                                <div class="table-col-3">
                                     <div class="flex-1">
                                         <p class="font-medium">{nft.name}</p>
                                     </div>
                                 </div>
-                                <div class="table-col-3">
+                                <div class="table-col-4">
                                     <p class="text-sm">Club: {nft.club} | Shirt Number: {nft.shirtNumber} | Items Sold: {nft.itemsSold}</p>
                                 </div>
-                                <div class="table-col-4">
+                                <div class="table-col-5">
                                     <p class="font-medium ml-4">{nft.earned} ICP Earned</p>
                                 </div>
-                                <div class="table-col-5">
+                                <div class="table-col-6">
                                     <p class="text-indigo-600 ml-4">{nft.roi}% ROI</p>
                                 </div>
                                 
