@@ -956,8 +956,21 @@
         currentPage = page;
     }
 
-    $: paginatedNFTs = selectedCollection.nfts.sort((a, b) => b.earned - a.earned).slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
-    
+    $: paginatedNFTs = selectedCollection.nfts.sort((a, b) => {
+        // First, sort by amount earned
+        if (b.earned !== a.earned) {
+            return b.earned - a.earned;
+        }
+        
+        // If earned is the same, sort by club name
+        if (a.club !== b.club) {
+            return a.club.localeCompare(b.club);
+        }
+
+        // If club name is also the same, sort by shirt number (ascending)
+        return a.shirtNumber - b.shirtNumber;
+    }).slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
+
     function getPosition(index: number): number {
         return (currentPage - 1) * itemsPerPage + index + 1;
     }
@@ -1063,7 +1076,7 @@
                         {#each paginatedNFTs as nft, index}
                             <div class="flex items-center mb-4 border-b pb-2">
                                 <div class="table-col-1">
-                                    <span>Position: {getPosition(index)}</span>
+                                    <span>{getPosition(index)}</span>
                                 </div>
                                 <div class="table-col-2">
                                     <img src="{nft.imageUrl}" alt="{nft.name}" class="w-16 h-16 rounded shadow mr-4">
