@@ -2,7 +2,7 @@
   import { page } from '$app/stores';
 
   let menuOpen = false;
-  const routes = ["/mission", "/team", "/projects", "/community-fund", "/shop"];
+  const routes = ["/mission", "/team", "/projects", "/community-fund", "/nfts", "/shop"];
   let currentClass: string[] = [];
 
   $: currentClass = routes.map(route => $page.url.pathname === route ? 'active' : '');
@@ -29,7 +29,8 @@
       <li class="mx-2"><a href="/team" class="text-white hover:text-gray-400 {currentClass[1]}">Our Team</a></li>
       <li class="mx-2"><a href="/projects" class="text-white hover:text-gray-400 {currentClass[2]}">Projects</a></li>
       <li class="mx-2"><a href="/community-fund" class="text-white hover:text-gray-400 {currentClass[3]}">Community Fund</a></li>
-      <li class="mx-2"><a href="/shop" class="text-white hover:text-gray-400 {currentClass[4]}">Shop</a></li>
+      <li class="mx-2"><a href="/nfts" class="text-white hover:text-gray-400 {currentClass[4]}">NFTs</a></li>
+      <li class="mx-2"><a href="/shop" class="text-white hover:text-gray-400 {currentClass[5]}">Shop</a></li>
     </ul>
   </div>
   
@@ -39,7 +40,8 @@
       <li><a href="/team" class="{currentClass[1]}" on:click={toggleMenu}>Our Team</a></li>
       <li><a href="/projects" class="{currentClass[2]}" on:click={toggleMenu}>Projects</a></li>
       <li><a href="/community-fund" class="{currentClass[3]}" on:click={toggleMenu}>Community Fund</a></li>
-      <li><a href="/shop" class="{currentClass[4]}" on:click={toggleMenu}>Shop</a></li>
+      <li><a href="/nfts" class="{currentClass[4]}" on:click={toggleMenu}>NFTs</a></li>
+      <li><a href="/shop" class="{currentClass[5]}" on:click={toggleMenu}>Shop</a></li>
     </ul>
   </div>
 
