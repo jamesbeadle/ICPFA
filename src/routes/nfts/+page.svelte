@@ -50,7 +50,9 @@
         {
             name: 'Open FPL Merchandising Rights NFT',
             bio: 'The wallet holding an OpenFPL Merchandising Rights NFT will be sent 10% of relevant sales revenue immediately when a purchase is made through the ICPFA shop.',
-            termsAndConditions: 'Each NFT is associated with a specific club and shirt number combination. Relevant sales include any items sold on the ICPFA site pertaining to this combination. If an item is sold that is related to the club of your Merchandising NFT, but not linked to any of the original special shirt numbers, then the revenue will be divided. Every NFT holder for that particular club will receive an equal share of this collective club merchandising revenue.',
+            termsAndConditions: `Each NFT is associated with a specific club and shirt number combination. Relevant sales include any items sold on the ICPFA site pertaining to this combination. If an item is sold that is related to the club of your Merchandising NFT, but not linked to any of the original special shirt numbers, then the revenue will be divided. Every NFT holder for that particular club will receive an equal share of this collective club merchandising revenue.
+            The ICPFA plans to expand its range of fantasy games into all leagues of football, this means that NFTs for relegated teams will still generate revenue while a team is absent from the OpenFPL game.
+            `,
             launchpadPrice: 250.00,
             stoicLink: 'https://stoic.ic0.app/',
             nfts: [
@@ -1071,8 +1073,12 @@
         },
         {
             name: 'Podcast Revenue Share NFT',
-            bio: 'The wallet holding a Podcast Revenue Share NFT will receive a monthly payment related to the podcast revenue generated from The OpenFPL Podcast.',
-            termsAndConditions: 'Each month, revenue figures will be published, and payments will be made to the NFT holders. NFTs are specific to clubs, and we intend to set up satellite fan-specific podcasts. NFT holders will also receive 10% of the revenue from their fan-specific podcast.',
+            bio: 'The wallet holding a Podcast Revenue Share NFT will receive a monthly payment related to the podcast revenue generated from OpenFPL podcasts.',
+            termsAndConditions: `The OpenFPL Podcast is poised to launch initially as an audio podcast, with aspirations to venture into video content as our organisation scales. Our main podcast is designed to offer a vibrant and engaging experience, drawing inspiration from successful formats like Soccer AM. In addition, we have future plans to develop a series of fan-specific podcasts.
+
+Our ambition is to cultivate these fan-centric podcasts to achieve recognition on par with established platforms such as Arsenal Fan TV. We are dedicated to maintaining transparency with our audience. To this end, we will publish revenue figures monthly and ensure timely payments to NFT holders.
+
+As we look to the future, we are excited about the prospect of fully integrating an on-chain podcast infrastructure once it becomes accessible on the Internet Computer (IC) blockchain.`,
             launchpadPrice: 25.00,
             stoicLink: 'https://stoic.ic0.app/',
             nfts: [
