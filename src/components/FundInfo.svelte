@@ -1,5 +1,31 @@
 <script lang="ts">
+  import { onMount } from 'svelte';
+  import { writable } from 'svelte/store';
+  import { AccountIdentifier, LedgerCanister } from "@dfinity/ledger-icp";
+  import { Principal } from "@dfinity/principal";
+
   let copied = false;
+  let walletBalance = writable('0');
+  let loading = writable(true);
+
+  const MY_LEDGER_CANISTER_ID = "ryjl3-tyaaa-aaaaa-aaaba-cai";
+  const WALLET_ACCOUNT_ID = "66d542934fd0be74eaef2f5542b14832799be9f85d256555927a9760dcf2ac96";
+
+  async function fetchWalletBalance() {
+    loading.set(true);
+    const ledger = LedgerCanister.create({ canisterId: Principal.fromText(MY_LEDGER_CANISTER_ID) });
+    let account: AccountIdentifier = AccountIdentifier.fromHex(WALLET_ACCOUNT_ID);
+    const balance = await ledger.accountBalance({ accountIdentifier: account });
+    const balanceNumber = Number(balance);
+    const formattedBalance = (balanceNumber / 1e8).toFixed(2);
+    walletBalance.set(formattedBalance);
+    loading.set(false);
+}
+
+
+  onMount(() => {
+    fetchWalletBalance();
+  });
 
   function copyToClipboard() {
     navigator.clipboard.writeText('66d542934fd0be74eaef2f5542b14832799be9f85d256555927a9760dcf2ac96');
@@ -13,9 +39,7 @@
     if (event.key === 'Enter') {
       copyToClipboard();
     }
-}
-
-
+  }
 </script>
 
 <style>
@@ -71,6 +95,11 @@
     {/if}
     <br /><br />
     <h3 class="text-md">Projects Supported: <b>0</b></h3>
-    <h3 class="text-md">Fund Balance: <b>0 ICP</b></h3>
+    <h3 class="text-md">Fund Balance: {#if $loading}
+      <b>Loading...</b>
+    {:else}
+      <b>{$walletBalance} ICP</b>
+    {/if}
+  </h3>
   </div>
 </div>
