@@ -18,6 +18,9 @@
         launchpadPrice: number;
         stoicLink: string;
         nfts: NFT[];
+        artistName: string;
+        artistBio: string;
+        artistPicture: string;
     };
 
     let teams: Team[] = [
@@ -1051,7 +1054,20 @@
                     itemsSold: 0,
                     teamId: 20
                 }
-            ]
+            ],
+            artistName: 'Ashutosh Yadav',
+            artistBio:`Ashutosh Yadav, based in India, is an exceptionally talented 3D artist currently advancing towards 
+            his bachelor's degree with a deep focus on 3D artwork. 
+            His dedication to mastering his craft is evident as he spends a substantial 
+            amount of time perfecting his artistic skills. 
+            With over a year and a half of experience, Ashutosh has not only made a name for 
+            himself as a freelance artist 
+            but has also ventured into the realm of social media marketing. 
+            His artistry is marked by a unique blend of creativity, hard work, 
+            and strategic thinking, consistently delivering work that surpasses expectations. 
+            His enthusiasm for Dfinity and its ecosystem underscores his forward-thinking approach, 
+            particularly shining through in his remarkable contributions to the NFT art space.`,
+            artistPicture: 'ashutosh.jpg'
         },
         {
             name: 'Podcast Revenue Share NFT',
@@ -1070,7 +1086,15 @@
                     itemsSold: 500,
                     teamId: 1
                 },
-            ]
+            ],
+            artistName: 'Nina',
+            artistBio:
+                `Nina, a pioneering digital artist, started her journey in the world of NFTs in 2019, with a distinct focus on pixel art. She has successfully created three captivating collections:
+                    Football Pixel Stars, featured on OpenSea: http://opensea.io/collection/footballpixelstars
+                    NBA Pixel Stars, also displayed on OpenSea: http://opensea.io/collection/nbapixelstars
+                    A unique collection on OBJKT: http://objkt.com/collection/KT1KUBZVL1NDUoN3nP2hKD8FsM32Jz5apTmB
+                    Nina’s dedication to her art is evident through her innovative designs and meticulous attention to detail. Her ability to blend artistic flair with pixel precision has earned her recognition in the NFT community. She invites enthusiasts to explore her work, and is available for orders and inquiries via Twitter.`,
+                    artistPicture: 'nina.jpg'
         }
     ];
 
@@ -1194,7 +1218,7 @@
         <img src="boardroom.jpg" alt="Community Fund" class="w-full">
         
         <div class="content absolute inset-y-2 w-full px-8 z-10">
-            <div class="container flex md:flex-row flex-col">
+            <div class="container-fluid flex md:flex-row flex-col">
                 <div class="sidebar">
                     <button 
                         on:click="{() => showTeams = !showTeams}" 
@@ -1254,6 +1278,7 @@
                     </select>
                 </div>
                 <div class="p-8 text-left">
+                   
                     <div class="flex space-x-4 mb-6">
                         {#each collections as collection, index}
                             <button 
@@ -1274,6 +1299,17 @@
                         <p class="mb-2">{selectedCollection.bio}</p>
                         <p class="text-sm mb-4">{selectedCollection.termsAndConditions}</p>
                         <p class="mb-4 font-medium">Launchpad Price: {selectedCollection.launchpadPrice} ICP</p>
+                      
+                        <div class="artist-bio bg-gray-800 p-6 rounded shadow mb-6">
+                            <div class="flex items-center px-8">
+                                <img src="{selectedCollection.artistPicture}" alt="Nina" class="rounded-full mr-4">
+                                <div>
+                                    <h2 class="text-xl font-bold">{selectedCollection.artistName}</h2>
+                                    <p class="text-sm">{selectedCollection.artistBio}</p>
+                                </div>
+                            </div>
+                        </div>
+
                         <a href="{selectedCollection.stoicLink}" target="_blank" class="text-indigo-600 underline">View Collection on Stoic</a>
                         
                         <div class="mt-2">
