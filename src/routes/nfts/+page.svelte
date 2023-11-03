@@ -1685,18 +1685,24 @@ As we look to the future, we are excited about the prospect of fully integrating
                                 {/each}
 
                             </div>
-    
                             <div class="flex justify-center items-center mb-4">
-                                <button class="bg-custom-blue hover:bg-custom-blue text-white font-bold m-2 py-2 px-2 rounded w-24 text-xs" on:click={() => goToPage(currentPage - 1)} disabled={currentPage === 1}>
+                                <button
+                                  class="bg-custom-blue hover:bg-custom-blue text-white font-bold m-2 py-2 px-2 rounded w-24 text-xs disabled:bg-gray-400 disabled:text-gray-200"
+                                  on:click={() => goToPage(currentPage - 1)}
+                                  disabled={currentPage === 1}>
                                     Previous
                                 </button>
                                 <div class="mx-1 p-0 text-xs flex items-center">
-                                    Page {currentPage}
+                                  Page {currentPage}
                                 </div>
-                                <button class="bg-custom-blue hover:bg-custom-blue text-white font-bold m-2 py-2 px-2 rounded w-24 text-xs" on:click={() => goToPage(currentPage + 1)} disabled={currentPage * itemsPerPage >= filteredNFTs.length}>
+                                <button
+                                  class="bg-custom-blue hover:bg-custom-blue text-white font-bold m-2 py-2 px-2 rounded w-24 text-xs disabled:bg-gray-400 disabled:text-gray-200"
+                                  on:click={() => goToPage(currentPage + 1)}
+                                  disabled={currentPage * itemsPerPage >= filteredNFTs.length}>
                                     Next
                                 </button>
-                            </div>
+                              </div>
+                              
                        </div>
 
 
