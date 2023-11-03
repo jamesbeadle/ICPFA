@@ -1388,7 +1388,7 @@ As we look to the future, we are excited about the prospect of fully integrating
     }
 
     .table-col-1{
-        flex-basis: 10%;
+        flex-basis: 5%;
     }
 
     .table-col-2{
@@ -1396,7 +1396,7 @@ As we look to the future, we are excited about the prospect of fully integrating
     }
 
     .table-col-3{
-        flex-basis: 30%;
+        flex-basis: 25%;
     }
 
     .table-col-4{
@@ -1404,7 +1404,7 @@ As we look to the future, we are excited about the prospect of fully integrating
     }
 
     .table-col-5{
-        flex-basis: 10%;
+        flex-basis: 15%;
     }
 
     .table-col-6{
@@ -1435,7 +1435,6 @@ As we look to the future, we are excited about the prospect of fully integrating
         border: 1px solid #2E323A !important;
         border-radius: 4px;
         margin: 20px; 
-        padding: 24px;
     }
 
     .artist-about-col{
@@ -1512,6 +1511,10 @@ As we look to the future, we are excited about the prospect of fully integrating
         padding: 20px;
     }
 
+    .panel-content{
+        padding: 24px;
+    }
+
     .side-panel-content{
         padding: 24px;
     }
@@ -1527,7 +1530,7 @@ As we look to the future, we are excited about the prospect of fully integrating
             <div class="container-fluid flex md:flex-row flex-col">
                 <div class="sidebar">
                     <div class="panel-row">
-                        <h2 class="mb-4 text-left">FILTERS</h2>
+                        <h2 class="text-left">FILTERS</h2>
                     </div>
                     <div class="side-panel-content">
                         <button 
@@ -1608,7 +1611,7 @@ As we look to the future, we are excited about the prospect of fully integrating
                                 {/each}
                             </div>
     
-                            <div class="panel-content">
+                            <div>
                                 <div class="top-panel">
                                     <div class="flex justify-between items-center">
                                         <h2 class="text-2xl font-bold">{selectedCollection.name}</h2>
@@ -1645,37 +1648,39 @@ As we look to the future, we are excited about the prospect of fully integrating
                             </div>
                        </div>
                        <div class="nft-table-panel">
-                        <div class="mt-2">
-                            <br>
-                            <h3 class="text-xl font-semibold mb-4">NFTs by ROI</h3>
-                            {#each paginatedNFTs as nft, index}
-                                <div class="flex items-center mb-4 border-b pb-2">
-                                    <div class="table-col-1">
-                                        <span>{getPosition(index)}</span>
-                                    </div>
-                                    <div class="table-col-2">
-                                        <img src="{nft.imageUrl}" alt="{nft.name}" class="rounded shadow mr-4 px-8">
-                                    </div>
-                                    <div class="table-col-3">
-                                        <div class="flex-1">
-                                            <p class="text-sm">{nft.name}</p>
+                            <div class="panel-row mb-4">
+                                <h2 class="text-left">NFTs by ROI</h2>
+                            </div>
+                            <div class="panel-content">
+                                {#each paginatedNFTs as nft, index}
+                                    <div class="flex items-center mb-4 border-b pb-2">
+                                        <div class="table-col-1">
+                                            <span><p class="text-xs">{getPosition(index)}</p></span>
                                         </div>
+                                        <div class="table-col-2">
+                                            <img src="{nft.imageUrl}" alt="{nft.name}" class="rounded shadow mr-4 px-8">
+                                        </div>
+                                        <div class="table-col-3">
+                                            <div class="flex-1">
+                                                <p class="text-xs">{nft.name}</p>
+                                            </div>
+                                        </div>
+                                        <div class="table-col-4">
+                                            <p class="text-xs">Club: <b>{nft.club}</b> | Shirt Number: <b>{nft.shirtNumber}</b> | Items Sold: <b>{nft.itemsSold}</b></p>
+                                        </div>
+                                        <div class="table-col-5">
+                                            <p class="text-xs ml-4">Earned - {nft.earned} ICP</p>
+                                        </div>
+                                        <div class="table-col-6">
+                                            <p class="text-xs text-indigo-600 ml-4">{nft.roi}% ROI</p>
+                                        </div>
+                                        
                                     </div>
-                                    <div class="table-col-4">
-                                        <p class="text-sm">Club: {nft.club} | Shirt Number: {nft.shirtNumber} | Items Sold: {nft.itemsSold}</p>
-                                    </div>
-                                    <div class="table-col-5">
-                                        <p class="font-medium ml-4">{nft.earned} ICP Earned</p>
-                                    </div>
-                                    <div class="table-col-6">
-                                        <p class="text-indigo-600 ml-4">{nft.roi}% ROI</p>
-                                    </div>
-                                    
-                                </div>
-                            {/each}
-                        </div>
+                                {/each}
+
+                            </div>
     
-                        <div class="flex justify-center mt-4 items-center panel-content">
+                        <div class="flex justify-center mt-4 items-center">
                             <button class="bg-custom-blue hover:bg-custom-blue text-white font-bold m-2 py-2 px-2 rounded w-24 text-xs" on:click={() => goToPage(currentPage - 1)} disabled={currentPage === 1}>
                                 Previous
                             </button>
