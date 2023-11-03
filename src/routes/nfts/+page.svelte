@@ -1428,6 +1428,29 @@ As we look to the future, we are excited about the prospect of fully integrating
         margin: 20px; 
         border-radius: 4px;
     }
+
+    .artist-about-col{
+        flex-basis: 30%;
+    }
+
+    .artist-detail-col{
+        flex-basis: 70%;
+        display: flex;
+    }
+
+    .artist-picture-col{
+        flex-basis: 20%;
+    }
+
+    .artist-content-col{
+        flex-basis: 80%;
+    }
+
+    .artist-image{
+        border-radius: 5px;
+        padding-left: 24px;
+        padding-right: 24px;
+    }
  
 </style>
  
@@ -1512,25 +1535,31 @@ As we look to the future, we are excited about the prospect of fully integrating
                         {/each}
                     </div>
 
-                    <div class="p-6 rounded shadow">
+                    <div>
                         <h2 class="text-2xl font-bold">{selectedCollection.name}</h2>
                         <h5 class="text-md font-bold mt-2 mb-4">{selectedCollection.nfts.length} NFTs</h5>
                         <p class="mb-2">{selectedCollection.bio}</p>
                         <p class="text-sm mb-4">{selectedCollection.termsAndConditions}</p>
                         <p class="mb-4 font-medium">Launchpad Price: {selectedCollection.launchpadPrice} ICP</p>
                       
-                        <div class="artist-bio bg-gray-800 p-6 rounded shadow mb-6">
-                            <div class="flex items-center px-8">
-                                <img src="{selectedCollection.artistPicture}" alt="Nina" class="rounded-full mr-4">
-                                <div>
-                                    <h2 class="text-xl font-bold">{selectedCollection.artistName}</h2>
-                                    <p class="text-sm">{selectedCollection.artistBio}</p>
+                        <div class="artist-bio">
+                            <div class="flex">
+                                <div class="artist-about-col">
+                                    <h5>About the Artist</h5>
+                                    <button>View Collection On Toniq</button>
+                                </div>
+                                <div class="artist-detail-col">
+                                    <div class="artist-picture-col">
+                                        <img class="artist-image" src="{selectedCollection.artistPicture}" alt="Ashutosh">
+                                    </div>
+                                    <div class="artist-content-col">
+                                        <h2 class="text-xl font-bold">{selectedCollection.artistName}</h2>
+                                        <p class="text-sm">{selectedCollection.artistBio}</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
-                        <a href="{selectedCollection.stoicLink}" target="_blank" class="text-indigo-600 underline">View Collection on Stoic</a>
-                        
                         <div class="mt-2">
                             <br>
                             <h3 class="text-xl font-semibold mb-4">NFTs by ROI</h3>
