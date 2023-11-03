@@ -1512,7 +1512,8 @@ As we look to the future, we are excited about the prospect of fully integrating
     }
 
     .panel-content{
-        padding: 24px;
+        padding-left: 24px;
+        padding-right: 24px;
     }
 
     .side-panel-content{
@@ -1680,17 +1681,17 @@ As we look to the future, we are excited about the prospect of fully integrating
 
                             </div>
     
-                        <div class="flex justify-center mt-4 items-center">
-                            <button class="bg-custom-blue hover:bg-custom-blue text-white font-bold m-2 py-2 px-2 rounded w-24 text-xs" on:click={() => goToPage(currentPage - 1)} disabled={currentPage === 1}>
-                                Previous
-                            </button>
-                            <div class="mx-1 p-0 text-xs flex items-center">
-                                Page {currentPage}
+                            <div class="flex justify-center items-center mb-4">
+                                <button class="bg-custom-blue hover:bg-custom-blue text-white font-bold m-2 py-2 px-2 rounded w-24 text-xs" on:click={() => goToPage(currentPage - 1)} disabled={currentPage === 1}>
+                                    Previous
+                                </button>
+                                <div class="mx-1 p-0 text-xs flex items-center">
+                                    Page {currentPage}
+                                </div>
+                                <button class="bg-custom-blue hover:bg-custom-blue text-white font-bold m-2 py-2 px-2 rounded w-24 text-xs" on:click={() => goToPage(currentPage + 1)} disabled={currentPage * itemsPerPage >= filteredNFTs.length}>
+                                    Next
+                                </button>
                             </div>
-                            <button class="bg-custom-blue hover:bg-custom-blue text-white font-bold m-2 py-2 px-2 rounded w-24 text-xs" on:click={() => goToPage(currentPage + 1)} disabled={currentPage * itemsPerPage >= filteredNFTs.length}>
-                                Next
-                            </button>
-                        </div>
                        </div>
 
 
