@@ -825,7 +825,7 @@
                     name: 'Nottingham Forest Home 9',
                     club: 'Nottingham Forest',
                     shirtNumber: 9,
-                    imageUrl: 'thumbs/shirts/16_NOT_9.jpg',
+                    imageUrl: 'thumbs/shirts/16_NFO_9.jpg',
                     earned: 0.00,
                     roi: 0,
                     itemsSold: 0,
@@ -835,7 +835,7 @@
                     name: 'Nottingham Forest Home 10',
                     club: 'Nottingham Forest',
                     shirtNumber: 10,
-                    imageUrl: 'thumbs/shirts/16_NOT_10.jpg',
+                    imageUrl: 'thumbs/shirts/16_NFO_10.jpg',
                     earned: 0.00,
                     roi: 0,
                     itemsSold: 0,
@@ -845,7 +845,7 @@
                     name: 'Nottingham Forest Home 7',
                     club: 'Nottingham Forest',
                     shirtNumber: 7,
-                    imageUrl: 'thumbs/shirts/15_NOT_7.jpg',
+                    imageUrl: 'thumbs/shirts/16_NFO_7.jpg',
                     earned: 0.00,
                     roi: 0,
                     itemsSold: 0,
@@ -855,7 +855,7 @@
                     name: 'Nottingham Forest Home 6',
                     club: 'Nottingham Forest',
                     shirtNumber: 6,
-                    imageUrl: 'thumbs/shirts/16_NOT_6.jpg',
+                    imageUrl: 'thumbs/shirts/16_NFO_6.jpg',
                     earned: 0.00,
                     roi: 0,
                     itemsSold: 0,
@@ -872,20 +872,10 @@
                     teamId: 17
                 },
                 {
-                    name: 'Sheffield United Home 10',
+                    name: 'Sheffield United Home 5',
                     club: 'Sheffield United',
-                    shirtNumber: 10,
-                    imageUrl: 'thumbs/shirts/17_SHU_10.jpg',
-                    earned: 0.00,
-                    roi: 0,
-                    itemsSold: 0,
-                    teamId: 17
-                },
-                {
-                    name: 'Sheffield United Home 7',
-                    club: 'Sheffield United',
-                    shirtNumber: 7,
-                    imageUrl: 'thumbs/shirts/17_SHU_7.jpg',
+                    shirtNumber: 5,
+                    imageUrl: 'thumbs/shirts/17_SHU_5.jpg',
                     earned: 0.00,
                     roi: 0,
                     itemsSold: 0,
@@ -896,6 +886,16 @@
                     club: 'Sheffield United',
                     shirtNumber: 6,
                     imageUrl: 'thumbs/shirts/17_SHU_6.jpg',
+                    earned: 0.00,
+                    roi: 0,
+                    itemsSold: 0,
+                    teamId: 17
+                },
+                {
+                    name: 'Sheffield United Home 16',
+                    club: 'Sheffield United',
+                    shirtNumber: 16,
+                    imageUrl: 'thumbs/shirts/17_SHU_16.jpg',
                     earned: 0.00,
                     roi: 0,
                     itemsSold: 0,
@@ -1658,7 +1658,7 @@ As we look to the future, we are excited about the prospect of fully integrating
                                     </div>
                                     <div class="table-col-3">
                                         <div class="flex-1">
-                                            <p class="font-medium">{nft.name}</p>
+                                            <p class="text-sm">{nft.name}</p>
                                         </div>
                                     </div>
                                     <div class="table-col-4">
