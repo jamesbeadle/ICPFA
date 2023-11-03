@@ -1413,20 +1413,20 @@ As we look to the future, we are excited about the prospect of fully integrating
 
     .sidebar {
         flex-basis: 20%; 
-        padding: 20px;  
         background-color: #1a1a1a; 
         color: white;
         margin: 20px;     
         border-radius: 4px;
+        border: 1px solid #2E323A !important;
     }
 
     .collection-detail {
         flex-basis: 80%; 
-        padding: 20px;   
         background-color: #2a2a2a; 
         grid-template-columns: repeat(3, 1fr); 
         margin: 20px; 
         border-radius: 4px;
+        border: 1px solid #2E323A !important;
     }
 
     .artist-about-col{
@@ -1451,6 +1451,15 @@ As we look to the future, we are excited about the prospect of fully integrating
         padding-left: 24px;
         padding-right: 24px;
     }
+
+    .panel-row{
+        background-color: #161819;
+        padding: 20px;
+    }
+
+    .panel-content{
+        padding: 20px;
+    }
  
 </style>
  
@@ -1458,70 +1467,76 @@ As we look to the future, we are excited about the prospect of fully integrating
     <div class="image-container relative">
         <img src="boardroom.jpg" alt="Community Fund" class="w-full">
         
-        <div class="content absolute inset-y-2 w-full px-8 z-10">
+        <div class="content absolute z-10">
             <div class="container-fluid flex md:flex-row flex-col">
                 <div class="sidebar">
-                    <h2 class="mb-4 text-left">FILTERS</h2>
-                    <button 
-                        on:click="{() => showTeams = !showTeams}" 
-                        class="w-full text-left focus:outline-none"
-                    >
-                        <h3 class="flex justify-between items-center">
-                            BY TEAM
-                            {#if showTeams}
-                                <svg class="w-4 h-4" viewBox="0 0 24 24">
-                                <path 
-                                    fill="none" 
-                                    stroke="currentColor" 
-                                    stroke-linecap="round" 
-                                    stroke-linejoin="round" 
-                                    stroke-width="2" 
-                                    d="M19 13l-7-7-7 7"
-                                ></path>
-                                </svg>
-                            {:else}
-                                <svg class="w-4 h-4" viewBox="0 0 24 24">
+                    <div class="panel-row">
+                        <h2 class="mb-4 text-left">FILTERS</h2>
+                    </div>
+                    <div class="panel-content">
+                        <button 
+                            on:click="{() => showTeams = !showTeams}" 
+                            class="w-full text-left focus:outline-none"
+                        >
+                            <h3 class="flex justify-between items-center">
+                                BY TEAM
+                                {#if showTeams}
+                                    <svg class="w-4 h-4" viewBox="0 0 24 24">
                                     <path 
-                                    fill="none" 
-                                    stroke="currentColor" 
-                                    stroke-linecap="round" 
-                                    stroke-linejoin="round" 
-                                    stroke-width="2" 
-                                    d="M7 13l7 7 7-7"
-                                ></path>
-                                </svg>
-                            {/if}
-                        </h3>
-                    </button>
-            
-                    {#if showTeams}
-                        <div class="mt-2 text-left">
-                            {#each teams as team}
-                                <label class="block mb-2">
-                                    <input 
-                                        type="checkbox" 
-                                        class="mr-2" 
-                                        bind:group={selectedTeams} 
-                                        value={team.id}
-                                    >
-                                    {team.name}
-                                </label>
+                                        fill="none" 
+                                        stroke="currentColor" 
+                                        stroke-linecap="round" 
+                                        stroke-linejoin="round" 
+                                        stroke-width="2" 
+                                        d="M19 13l-7-7-7 7"
+                                    ></path>
+                                    </svg>
+                                {:else}
+                                    <svg class="w-4 h-4" viewBox="0 0 24 24">
+                                        <path 
+                                        fill="none" 
+                                        stroke="currentColor" 
+                                        stroke-linecap="round" 
+                                        stroke-linejoin="round" 
+                                        stroke-width="2" 
+                                        d="M7 13l7 7 7-7"
+                                    ></path>
+                                    </svg>
+                                {/if}
+                            </h3>
+                        </button>
+                
+                        {#if showTeams}
+                            <div class="mt-2 text-left">
+                                {#each teams as team}
+                                    <label class="block mb-2">
+                                        <input 
+                                            type="checkbox" 
+                                            class="mr-2" 
+                                            bind:group={selectedTeams} 
+                                            value={team.id}
+                                        >
+                                        {team.name}
+                                    </label>
+                                {/each}
+                            </div>
+                        {/if}
+                        
+                        <h3 class="mt-4 text-left">BY NUMBER</h3>
+                        <select bind:value={numberFilter} 
+                                class="w-full py-1 px-2 rounded border bg-gray-900 text-white focus:outline-none focus:border-custom-blue mt-2">
+                            <option value="-1">All</option>
+                            {#each availableNumbers as number}
+                                <option value={number}>{number}</option>
                             {/each}
-                        </div>
-                    {/if}
+                        </select>
+                        
+                    </div>
                     
-                    <h3 class="mt-4 text-left">BY NUMBER</h3>
-                    <select bind:value={numberFilter} 
-                            class="w-full py-1 px-2 rounded border bg-gray-900 text-white focus:outline-none focus:border-custom-blue mt-2">
-                        <option value="-1">All</option>
-                        {#each availableNumbers as number}
-                            <option value={number}>{number}</option>
-                        {/each}
-                    </select>
                 </div>
-                <div class="collection-detail p-8 text-left">
+                <div class="collection-detail text-left">
                    
-                    <div class="flex space-x-4 mb-6">
+                    <div class="flex space-x-4 mb-6 panel-row">
                         {#each collections as collection, index}
                             <button 
                                 class="px-4 py-2 rounded shadow focus:outline-none {selectedCollection === collection ? 'bg-indigo-600' : 'bg-white border border-gray-300 text-gray-700'}"
@@ -1535,7 +1550,7 @@ As we look to the future, we are excited about the prospect of fully integrating
                         {/each}
                     </div>
 
-                    <div>
+                    <div class="panel-content">
                         <h2 class="text-2xl font-bold">{selectedCollection.name}</h2>
                         <h5 class="text-md font-bold mt-2 mb-4">{selectedCollection.nfts.length} NFTs</h5>
                         <p class="mb-2">{selectedCollection.bio}</p>
@@ -1591,7 +1606,7 @@ As we look to the future, we are excited about the prospect of fully integrating
                         </div>
                     </div>
 
-                    <div class="flex justify-center mt-4 items-center">
+                    <div class="flex justify-center mt-4 items-center panel-content">
                         <button class="bg-custom-blue hover:bg-custom-blue text-white font-bold m-2 py-2 px-2 rounded w-24 text-xs" on:click={() => goToPage(currentPage - 1)} disabled={currentPage === 1}>
                             Previous
                         </button>
