@@ -1460,6 +1460,15 @@ As we look to the future, we are excited about the prospect of fully integrating
     .panel-content{
         padding: 20px;
     }
+
+    .tab-header{
+        background-color: transparent !important;
+        color: white !important;
+    }
+
+    .active-tab{
+        color: #3C71FA !important;
+    }
  
 </style>
  
@@ -1539,7 +1548,7 @@ As we look to the future, we are excited about the prospect of fully integrating
                     <div class="flex space-x-4 mb-6 panel-row">
                         {#each collections as collection, index}
                             <button 
-                                class="px-4 py-2 rounded shadow focus:outline-none {selectedCollection === collection ? 'bg-indigo-600' : 'bg-white border border-gray-300 text-gray-700'}"
+                                class="px-4 py-2 rounded shadow tab-header {selectedCollection === collection ? 'active-tab' : ''}"
                                 on:click={() => { 
                                     selectedCollection = collection; 
                                     currentPage = 1; 
@@ -1551,10 +1560,12 @@ As we look to the future, we are excited about the prospect of fully integrating
                     </div>
 
                     <div class="panel-content">
-                        <h2 class="text-2xl font-bold">{selectedCollection.name}</h2>
-                        <h5 class="text-md font-bold mt-2 mb-4">{selectedCollection.nfts.length} NFTs</h5>
-                        <p class="mb-2">{selectedCollection.bio}</p>
-                        <p class="text-sm mb-4">{selectedCollection.termsAndConditions}</p>
+                        <div class="flex justify-between items-center">
+                            <h2 class="text-2xl font-bold">{selectedCollection.name}</h2>
+                            <h5 class="text-md mt-2 mb-4">{selectedCollection.nfts.length} Total</h5>
+                        </div>
+                        <p class="mt-4 mb-4 mr-8">{selectedCollection.bio}</p>
+                        <p class="text-sm mb-4 mr-8">{selectedCollection.termsAndConditions}</p>
                         <p class="mb-4 font-medium">Launchpad Price: {selectedCollection.launchpadPrice} ICP</p>
                       
                         <div class="artist-bio">
