@@ -1304,6 +1304,7 @@ As we look to the future, we are excited about the prospect of fully integrating
     const itemsPerPage = 10; 
     
     let showTeams = false;
+    let showNumberFilter = false;
     let numberFilter = "-1";
     let availableNumbers: number[] = [];
     let selectedTeams: number[] = [];
@@ -1324,6 +1325,8 @@ As we look to the future, we are excited about the prospect of fully integrating
         if (numberFilter !== "-1") {
             filteredNFTs = filteredNFTs.filter(nft => nft.shirtNumber === Number(numberFilter));
         }
+
+        showNumberFilter = filteredNFTs.filter(nft => nft.shirtNumber > 0).length > 0;
     }
 
     // Reactive statement for pagination, which only works on filtered results
@@ -1582,6 +1585,7 @@ As we look to the future, we are excited about the prospect of fully integrating
                             </div>
                         {/if}
                         
+                        {#if showNumberFilter}
                         <h3 class="mt-4 text-left">BY NUMBER</h3>
                         <select bind:value={numberFilter} 
                                 class="w-full py-1 px-2 rounded border bg-gray-900 text-white focus:outline-none focus:border-custom-blue mt-2">
@@ -1590,6 +1594,7 @@ As we look to the future, we are excited about the prospect of fully integrating
                                 <option value={number}>{number}</option>
                             {/each}
                         </select>
+                        {/if}
                         
                     </div>
                     
