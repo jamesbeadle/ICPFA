@@ -1446,12 +1446,12 @@ As we look to the future, we are excited about the prospect of fully integrating
 
     .artist-content-col{
         flex-basis: 80%;
+        padding-left: 24px;
+        padding-right: 24px;
     }
 
     .artist-image{
-        border-radius: 5px;
-        padding-left: 24px;
-        padding-right: 24px;
+        border-radius: 8px !important;
     }
 
     .panel-row{
@@ -1477,6 +1477,33 @@ As we look to the future, we are excited about the prospect of fully integrating
         align-items: center;
         justify-content: flex-start;
     }
+
+    .artist-bio {
+        display: flex;
+        flex-direction: column; 
+    }
+
+    .artist-about-col {
+        flex: 1;
+        position: relative;  
+    }
+
+    .action-button {
+        background-color: #3C71FA !important;
+        font-size: 16px;
+        font-weight: 600;
+        padding: 16px;
+        padding-left: 24px;
+        padding-right: 24px;
+        position: absolute;
+        bottom: 0;
+        border-radius: 4px;
+    }
+
+    .faint{
+        border-color: rgba(69, 75, 86, 0.80);
+    }
+
     
  
 </style>
@@ -1574,24 +1601,22 @@ As we look to the future, we are excited about the prospect of fully integrating
                             <h5 class="text-md mt-2 mb-4">{selectedCollection.nfts.length} Total</h5>
                         </div>
                         <p class="mt-4 mb-4 mr-8">{selectedCollection.bio}</p>
-                        <p class="text-sm mb-4 mr-8">{selectedCollection.termsAndConditions}</p>
+                        <p class="text-xs mb-4 mr-8">{selectedCollection.termsAndConditions}</p>
                                                 
                                                 
                         <p class="mb-4 font-medium">
                             Launchpad Price:<span class="ml-2 mr-2">{@html icpIcon(20,20)}</span> {selectedCollection.launchpadPrice} ICP
                         </p>
-                        
-  
-  
-  
-  
+                                        
+                        <hr class="border-t my-8 faint">
+
   
                       
                         <div class="artist-bio">
                             <div class="flex">
                                 <div class="artist-about-col">
-                                    <h5>About the Artist</h5>
-                                    <button>View Collection On Toniq</button>
+                                    <h2 class="text-2xl font-bold">About the Artist</h2>
+                                    <button class="action-button">View Collection On Toniq</button>
                                 </div>
                                 <div class="artist-detail-col">
                                     <div class="artist-picture-col">
