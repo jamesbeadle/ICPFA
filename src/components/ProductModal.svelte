@@ -1,11 +1,17 @@
 <script lang="ts">
     import { createEventDispatcher } from 'svelte';
+    import { onMount } from 'svelte';
+
     import type { Product } from '../types/product';
 
     const dispatch = createEventDispatcher();
 
     export let product: Product | null = null;
     export let showModal = false;
+
+    onMount(() => {
+        currentImageSrc = `shirts/shirt_${product?.teamId}_front.jpg`;
+    });
 
     function close() {
         dispatch('close');
@@ -14,6 +20,7 @@
     let sizes = ['S', 'M', 'L', 'XL'];
     let selectedSize = 'L';
     let quantity = 1;
+    let currentImageSrc = '';
 
     function increment() {
         quantity += 1;
@@ -24,6 +31,13 @@
             quantity -= 1;
         }
     }
+
+    function changeImage(imageType: 'front' | 'back'): void {
+        if (product) {
+            currentImageSrc = `shirts/shirt_${product.teamId}_${imageType}.jpg`;
+        }
+    }
+
 </script>
 
 <style>
@@ -40,7 +54,7 @@
         z-index: 9999;
     }
     .modal-content {
-        width: 600px; /* You can adjust based on your design */
+        width: 600px; 
         background: #000;
         border-radius: 10px;
         border-radius: 8px;
@@ -83,12 +97,12 @@
 
     .thumbnail-container {
         display: flex;
-        gap: 1rem; /* space between thumbnails */
+        gap: 1rem;
         margin-top: 1rem;
     }
 
     .thumbnail {
-        width: 80px; /* Adjust as needed */
+        width: 80px;
         height: 80px;
         border: 1px solid #FFF;
         display: flex;
@@ -106,7 +120,7 @@
     .close-button {
         background: none;
         border: none;
-        font-size: 1.5rem; /* Adjust size as needed */
+        font-size: 1.5rem;
         cursor: pointer;
     }
     
@@ -122,14 +136,14 @@
 
     .flex-container {
     display: flex;
-    justify-content: space-between;  /* This will spread the items evenly */
+    justify-content: space-between;
     align-items: center;
     border: 1px solid white;
 }
 
 .flex-item {
-    flex: 1;   /* This will make sure each item takes up equal space */
-    text-align: center;  /* Center the content of each item */
+    flex: 1;
+    text-align: center;
     padding: 5px;
 }
 
@@ -147,12 +161,12 @@
             </div>
             <div class="main-row">
                 <div class="large-img-col">
-                    <img src={`shirts/shirt_${product?.teamId}_front.jpg`} alt="Product" />
+                    <img src={currentImageSrc} alt="Product" />
                 </div>
                 <div class="product-detail-col">
                     <h2 class="product-title">{product?.name}</h2>
-                    <h2 class="product-description">{product?.description}</h2>
-                    <p>{product?.price.toFixed(2)} ICP</p>
+                    <h2 class="product-description mt-2">{product?.description}</h2>
+                    <p class="mt-4">{product?.price.toFixed(2)} ICP</p>
                     
                     
                 </div>
@@ -161,12 +175,29 @@
 
                 <div class="thumbnail-container">
                     <div class="thumbnail-col">
-                        <div class="thumbnail">
-                            <img src={`shirts/shirt_${product?.teamId}_front.jpg`} alt="Front view" class="w-full h-full object-cover" />
-                        </div>
-                        <div class="thumbnail">
-                            <img src={`shirts/shirt_${product?.teamId}_back.jpg`} alt="Back view" class="w-full h-full object-cover" />
-                        </div>
+                        <div 
+  class="thumbnail" 
+  role="button" 
+  tabindex="0" 
+  on:click={() => changeImage('front')} 
+  on:keydown={(event) => (event.key === 'Enter' || event.key === ' ') && changeImage('front')}
+  aria-label="Show front view"
+>
+    <img src={`shirts/shirt_${product?.teamId}_front.jpg`} alt="Front view" class="w-full h-full object-cover" />
+</div>
+
+<div 
+  class="thumbnail" 
+  role="button" 
+  tabindex="0" 
+  on:click={() => changeImage('back')} 
+  on:keydown={(event) => (event.key === 'Enter' || event.key === ' ') && changeImage('back')}
+  aria-label="Show back view"
+>
+    <img src={`shirts/shirt_${product?.teamId}_back.jpg`} alt="Back view" class="w-full h-full object-cover" />
+</div>
+
+
                     </div>
                     <div class="size-col">
                         <div class="bg-black text-white">
