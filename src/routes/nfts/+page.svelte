@@ -1431,7 +1431,11 @@ As we look to the future, we are excited about the prospect of fully integrating
     }
 
     .nft-table-panel{
+        background-color: #1a1a1a; 
         border: 1px solid #2E323A !important;
+        border-radius: 4px;
+        margin: 20px; 
+        padding: 24px;
     }
 
     .artist-about-col{
@@ -1590,55 +1594,55 @@ As we look to the future, we are excited about the prospect of fully integrating
                     <div class="text-left">
                        <div class="artist-panel">
 
-                        <div class="flex space-x-4 panel-row">
-                            {#each collections as collection, index}
-                                <button 
-                                    class="px-4 py-2 rounded shadow tab-header {selectedCollection === collection ? 'active-tab' : ''}"
-                                    on:click={() => { 
-                                        selectedCollection = collection; 
-                                        currentPage = 1; 
-                                    }}                            
-                                >
-                                    {collection.name}
-                                </button>
-                            {/each}
-                        </div>
+                            <div class="flex space-x-4 panel-row">
+                                {#each collections as collection, index}
+                                    <button 
+                                        class="px-4 py-2 rounded shadow tab-header {selectedCollection === collection ? 'active-tab' : ''}"
+                                        on:click={() => { 
+                                            selectedCollection = collection; 
+                                            currentPage = 1; 
+                                        }}                            
+                                    >
+                                        {collection.name}
+                                    </button>
+                                {/each}
+                            </div>
     
-                        <div class="panel-content">
-                            <div class="top-panel">
-                                <div class="flex justify-between items-center">
-                                    <h2 class="text-2xl font-bold">{selectedCollection.name}</h2>
-                                    <h5 class="text-md mt-2 mb-4">{selectedCollection.nfts.length} Total</h5>
-                                </div>
-                                <p class="mt-4 mb-4 mr-8">{selectedCollection.bio}</p>
-                                <p class="text-xs mb-4 mr-8">{selectedCollection.termsAndConditions}</p>
-                                                        
-                                                        
-                                <p class="mb-4 font-medium">
-                                    Launchpad Price:<span class="ml-2 mr-2">{@html icpIcon(20,20)}</span> {selectedCollection.launchpadPrice} ICP
-                                </p>
-                                                
-                                <hr class="border-t my-8 faint">
-                              
-                                <div class="artist-bio">
-                                    <div class="flex">
-                                        <div class="artist-about-col">
-                                            <h2 class="text-2xl font-bold">About the Artist</h2>
-                                            <button class="action-button">View Collection On Toniq</button>
-                                        </div>
-                                        <div class="artist-detail-col">
-                                            <div class="artist-picture-col">
-                                                <img class="artist-image" src="{selectedCollection.artistPicture}" alt="Ashutosh">
+                            <div class="panel-content">
+                                <div class="top-panel">
+                                    <div class="flex justify-between items-center">
+                                        <h2 class="text-2xl font-bold">{selectedCollection.name}</h2>
+                                        <h5 class="text-md mt-2 mb-4">{selectedCollection.nfts.length} Total</h5>
+                                    </div>
+                                    <p class="mt-4 mb-4 mr-8">{selectedCollection.bio}</p>
+                                    <p class="text-xs mb-4 mr-8">{selectedCollection.termsAndConditions}</p>
+                                                            
+                                                            
+                                    <p class="mb-4 font-medium">
+                                        Launchpad Price:<span class="ml-2 mr-2">{@html icpIcon(20,20)}</span> {selectedCollection.launchpadPrice} ICP
+                                    </p>
+                                                    
+                                    <hr class="border-t my-8 faint">
+                                
+                                    <div class="artist-bio">
+                                        <div class="flex">
+                                            <div class="artist-about-col">
+                                                <h2 class="text-2xl font-bold">About the Artist</h2>
+                                                <button class="action-button">View Collection On Toniq</button>
                                             </div>
-                                            <div class="artist-content-col">
-                                                <h2 class="text-xl font-bold">{selectedCollection.artistName}</h2>
-                                                <p class="text-sm">{selectedCollection.artistBio}</p>
+                                            <div class="artist-detail-col">
+                                                <div class="artist-picture-col">
+                                                    <img class="artist-image" src="{selectedCollection.artistPicture}" alt="Ashutosh">
+                                                </div>
+                                                <div class="artist-content-col">
+                                                    <h2 class="text-xl font-bold">{selectedCollection.artistName}</h2>
+                                                    <p class="text-sm">{selectedCollection.artistBio}</p>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
                        </div>
                        <div class="nft-table-panel">
                         <div class="mt-2">
