@@ -48,7 +48,7 @@
 
     const collections: Collection[] = [
         {
-            name: 'Open FPL Merchandising Rights NFT',
+            name: 'OPENFPL MERCHANDISING RIGHTS NFT',
             bio: 'The wallet holding an OpenFPL Merchandising Rights NFT will be sent 10% of relevant sales revenue immediately when a purchase is made through the ICPFA shop.',
             termsAndConditions: `Each NFT is associated with a specific club and shirt number combination. Relevant sales include any items sold on the ICPFA site pertaining to this combination. 
                 If an item is sold that is related to the club of your Merchandising NFT, but not linked to any of the original special shirt numbers, then the revenue will be divided amoung the special club NFT holders. 
@@ -56,8 +56,8 @@
                 Every NFT holder for that particular club will receive an equal share of this collective club merchandising revenue.
                 The ICPFA plans to expand its range of fantasy games into all leagues of football, this means that NFTs for relegated teams will still generate revenue while a team is absent from the OpenFPL game.
             `,
-            launchpadPrice: 250.00,
-            stoicLink: 'https://stoic.ic0.app/',
+            launchpadPrice: 150.00,
+            stoicLink: 'https://toniq.io/',
             nfts: [
                 {
                     name: 'Arsenal Home 14',
@@ -1075,15 +1075,15 @@
             artistPicture: 'ashutosh.jpg'
         },
         {
-            name: 'Podcast Revenue Share NFT',
+            name: 'PODCAST REVENUE SHARE NFT',
             bio: 'The wallet holding a Podcast Revenue Share NFT will receive a monthly payment related to the podcast revenue generated from OpenFPL podcasts.',
             termsAndConditions: `The OpenFPL Podcast is poised to launch initially as an audio podcast, with aspirations to venture into video content as our organisation scales. Our main podcast is designed to offer a vibrant and engaging experience, drawing inspiration from successful formats like Soccer AM. In addition, we have future plans to develop a series of fan-specific podcasts.
 
 Our ambition is to cultivate these fan-centric podcasts to achieve recognition on par with established platforms such as Arsenal Fan TV. We are dedicated to maintaining transparency with our audience. To this end, we will publish revenue figures monthly and ensure timely payments to NFT holders.
 
 As we look to the future, we are excited about the prospect of fully integrating an on-chain podcast infrastructure once it becomes accessible on the Internet Computer (IC) blockchain.`,
-            launchpadPrice: 100.00,
-            stoicLink: 'https://stoic.ic0.app/',
+            launchpadPrice: 50.00,
+            stoicLink: 'https://toniq.io/',
             nfts: [
                 {
                     name: 'Arsenal Podcast Punk',
@@ -1408,16 +1408,37 @@ As we look to the future, we are excited about the prospect of fully integrating
     .table-col-6{
         flex-basis: 10%;
     }
+
+    
+
+    .sidebar {
+        flex-basis: 20%; 
+        padding: 20px;  
+        background-color: #1a1a1a; 
+        color: white;
+        margin: 20px;     
+        border-radius: 4px;
+    }
+
+    .collection-detail {
+        flex-basis: 80%; 
+        padding: 20px;   
+        background-color: #2a2a2a; 
+        grid-template-columns: repeat(3, 1fr); 
+        margin: 20px; 
+        border-radius: 4px;
+    }
  
 </style>
  
-<section class="nft-section relative text-white">
+<div class="nft-section relative text-white">
     <div class="image-container relative">
         <img src="boardroom.jpg" alt="Community Fund" class="w-full">
         
         <div class="content absolute inset-y-2 w-full px-8 z-10">
             <div class="container-fluid flex md:flex-row flex-col">
                 <div class="sidebar">
+                    <h2 class="mb-4 text-left">FILTERS</h2>
                     <button 
                         on:click="{() => showTeams = !showTeams}" 
                         class="w-full text-left focus:outline-none"
@@ -1451,7 +1472,7 @@ As we look to the future, we are excited about the prospect of fully integrating
                     </button>
             
                     {#if showTeams}
-                        <div class="mt-2">
+                        <div class="mt-2 text-left">
                             {#each teams as team}
                                 <label class="block mb-2">
                                     <input 
@@ -1466,7 +1487,7 @@ As we look to the future, we are excited about the prospect of fully integrating
                         </div>
                     {/if}
                     
-                    <h3 class="mt-4">BY NUMBER</h3>
+                    <h3 class="mt-4 text-left">BY NUMBER</h3>
                     <select bind:value={numberFilter} 
                             class="w-full py-1 px-2 rounded border bg-gray-900 text-white focus:outline-none focus:border-custom-blue mt-2">
                         <option value="-1">All</option>
@@ -1475,7 +1496,7 @@ As we look to the future, we are excited about the prospect of fully integrating
                         {/each}
                     </select>
                 </div>
-                <div class="p-8 text-left">
+                <div class="collection-detail p-8 text-left">
                    
                     <div class="flex space-x-4 mb-6">
                         {#each collections as collection, index}
@@ -1556,4 +1577,4 @@ As we look to the future, we are excited about the prospect of fully integrating
             </div>  
         </div>
     </div>
-</section>
+</div>
