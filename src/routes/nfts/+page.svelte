@@ -1,5 +1,7 @@
 <script lang="ts">
     import type { Team } from '../../types/team';
+    import icpIcon from '../icons';
+    
     type NFT = {
         name: string;
         club: string;
@@ -1469,6 +1471,13 @@ As we look to the future, we are excited about the prospect of fully integrating
     .active-tab{
         color: #3C71FA !important;
     }
+    
+    p.mb-4.font-medium {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    
  
 </style>
  
@@ -1566,7 +1575,17 @@ As we look to the future, we are excited about the prospect of fully integrating
                         </div>
                         <p class="mt-4 mb-4 mr-8">{selectedCollection.bio}</p>
                         <p class="text-sm mb-4 mr-8">{selectedCollection.termsAndConditions}</p>
-                        <p class="mb-4 font-medium">Launchpad Price: {selectedCollection.launchpadPrice} ICP</p>
+                                                
+                                                
+                        <p class="mb-4 font-medium">
+                            Launchpad Price:<span class="ml-2 mr-2">{@html icpIcon(20,20)}</span> {selectedCollection.launchpadPrice} ICP
+                        </p>
+                        
+  
+  
+  
+  
+  
                       
                         <div class="artist-bio">
                             <div class="flex">
