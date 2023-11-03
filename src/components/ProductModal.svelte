@@ -39,7 +39,7 @@
 <div class="modal-overlay" role="button" tabindex="0" on:click={close} on:keydown={close}>
     <div class="modal-content" role="button" tabindex="0" on:click={e => e.stopPropagation()} on:keydown={e => e.stopPropagation()}>
         <!-- Product Details Here -->
-        <img src={product?.image} alt="Product" />
+        <img src={`shirts/shirt_${product?.teamId}_front.jpg`} alt="Product" />
         <h2>{product?.name}</h2>
         <p>{product?.price} ICP</p>
         <!-- Add more details and functionality based on your design -->
