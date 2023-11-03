@@ -1100,7 +1100,7 @@ As we look to the future, we are excited about the prospect of fully integrating
                     earned: 0,
                     roi: 0,
                     itemsSold: 0,
-                    teamId: 1
+                    teamId: 2
                 },
                 {
                     name: 'Bournemouth Podcast Punk',
@@ -1110,7 +1110,7 @@ As we look to the future, we are excited about the prospect of fully integrating
                     earned: 0,
                     roi: 0,
                     itemsSold: 0,
-                    teamId: 1
+                    teamId: 3
                 },
                 {
                     name: 'Brentford Podcast Punk',
@@ -1120,7 +1120,27 @@ As we look to the future, we are excited about the prospect of fully integrating
                     earned: 0,
                     roi: 0,
                     itemsSold: 0,
-                    teamId: 1
+                    teamId: 4
+                },
+                {
+                    name: 'Brighton Podcast Punk',
+                    club: 'Brighton',
+                    shirtNumber: 0,
+                    imageUrl: 'thumbs/punks/bri.jpg',
+                    earned: 0,
+                    roi: 0,
+                    itemsSold: 0,
+                    teamId: 5
+                },
+                {
+                    name: 'Burnley Podcast Punk',
+                    club: 'Burnley',
+                    shirtNumber: 0,
+                    imageUrl: 'thumbs/punks/bur.jpg',
+                    earned: 0,
+                    roi: 0,
+                    itemsSold: 0,
+                    teamId: 6
                 },
                 {
                     name: 'Chelsea Podcast Punk',
@@ -1130,7 +1150,7 @@ As we look to the future, we are excited about the prospect of fully integrating
                     earned: 0,
                     roi: 0,
                     itemsSold: 0,
-                    teamId: 1
+                    teamId: 7
                 },
                 {
                     name: 'Crystal Palace Podcast Punk',
@@ -1140,27 +1160,7 @@ As we look to the future, we are excited about the prospect of fully integrating
                     earned: 0,
                     roi: 0,
                     itemsSold: 0,
-                    teamId: 1
-                },
-                {
-                    name: 'Chelsea Podcast Punk',
-                    club: 'Chelsea',
-                    shirtNumber: 0,
-                    imageUrl: 'thumbs/punks/che.jpg',
-                    earned: 0,
-                    roi: 0,
-                    itemsSold: 0,
-                    teamId: 1
-                },
-                {
-                    name: 'Crystal Palace Podcast Punk',
-                    club: 'Crystal Palace',
-                    shirtNumber: 0,
-                    imageUrl: 'thumbs/punks/cry.jpg',
-                    earned: 0,
-                    roi: 0,
-                    itemsSold: 0,
-                    teamId: 1
+                    teamId: 8
                 },
                 {
                     name: 'Everton Podcast Punk',
@@ -1170,7 +1170,7 @@ As we look to the future, we are excited about the prospect of fully integrating
                     earned: 0,
                     roi: 0,
                     itemsSold: 0,
-                    teamId: 1
+                    teamId: 9
                 },
                 {
                     name: 'Fulham Podcast Punk',
@@ -1180,7 +1180,7 @@ As we look to the future, we are excited about the prospect of fully integrating
                     earned: 0,
                     roi: 0,
                     itemsSold: 0,
-                    teamId: 1
+                    teamId: 10
                 },
                 {
                     name: 'Liverpool Podcast Punk',
@@ -1190,7 +1190,7 @@ As we look to the future, we are excited about the prospect of fully integrating
                     earned: 0,
                     roi: 0,
                     itemsSold: 0,
-                    teamId: 1
+                    teamId: 11
                 },
                 {
                     name: 'Luton Podcast Punk',
@@ -1200,7 +1200,7 @@ As we look to the future, we are excited about the prospect of fully integrating
                     earned: 0,
                     roi: 0,
                     itemsSold: 0,
-                    teamId: 1
+                    teamId: 12
                 },
                 {
                     name: 'Man City Podcast Punk',
@@ -1210,7 +1210,7 @@ As we look to the future, we are excited about the prospect of fully integrating
                     earned: 0,
                     roi: 0,
                     itemsSold: 0,
-                    teamId: 1
+                    teamId: 13
                 },
                 {
                     name: 'Man United Podcast Punk',
@@ -1220,7 +1220,7 @@ As we look to the future, we are excited about the prospect of fully integrating
                     earned: 0,
                     roi: 0,
                     itemsSold: 0,
-                    teamId: 1
+                    teamId: 14
                 },
                 {
                     name: 'Newcastle Podcast Punk',
@@ -1230,7 +1230,7 @@ As we look to the future, we are excited about the prospect of fully integrating
                     earned: 0,
                     roi: 0,
                     itemsSold: 0,
-                    teamId: 1
+                    teamId: 15
                 },
                 {
                     name: 'Nottingham Forest Podcast Punk',
@@ -1240,7 +1240,7 @@ As we look to the future, we are excited about the prospect of fully integrating
                     earned: 0,
                     roi: 0,
                     itemsSold: 0,
-                    teamId: 1
+                    teamId: 16
                 },
                 {
                     name: 'Sheffield United Podcast Punk',
@@ -1250,7 +1250,7 @@ As we look to the future, we are excited about the prospect of fully integrating
                     earned: 0,
                     roi: 0,
                     itemsSold: 0,
-                    teamId: 1
+                    teamId: 17
                 },
                 {
                     name: 'Tottenham Podcast Punk',
@@ -1260,7 +1260,7 @@ As we look to the future, we are excited about the prospect of fully integrating
                     earned: 0,
                     roi: 0,
                     itemsSold: 0,
-                    teamId: 1
+                    teamId: 18
                 },
                 {
                     name: 'West Ham Podcast Punk',
@@ -1270,7 +1270,7 @@ As we look to the future, we are excited about the prospect of fully integrating
                     earned: 0,
                     roi: 0,
                     itemsSold: 0,
-                    teamId: 1
+                    teamId: 19
                 },
                 {
                     name: 'Wolves Podcast Punk',
@@ -1280,7 +1280,7 @@ As we look to the future, we are excited about the prospect of fully integrating
                     earned: 0,
                     roi: 0,
                     itemsSold: 0,
-                    teamId: 1
+                    teamId: 20
                 }
             ],
             artistName: 'Nina',
@@ -1517,7 +1517,7 @@ As we look to the future, we are excited about the prospect of fully integrating
                                         <span>{getPosition(index)}</span>
                                     </div>
                                     <div class="table-col-2">
-                                        <img src="{nft.imageUrl}" alt="{nft.name}" class="w-16 h-16 rounded shadow mr-4">
+                                        <img src="{nft.imageUrl}" alt="{nft.name}" class="rounded shadow mr-4 px-8">
                                     </div>
                                     <div class="table-col-3">
                                         <div class="flex-1">
@@ -1546,7 +1546,7 @@ As we look to the future, we are excited about the prospect of fully integrating
                         <div class="mx-1 p-0 text-xs flex items-center">
                             Page {currentPage}
                         </div>
-                        <button class="bg-custom-blue hover:bg-custom-blue text-white font-bold m-2 py-2 px-2 rounded w-24 text-xs" on:click={() => goToPage(currentPage + 1)} disabled={currentPage * itemsPerPage >= paginatedNFTs.length}>
+                        <button class="bg-custom-blue hover:bg-custom-blue text-white font-bold m-2 py-2 px-2 rounded w-24 text-xs" on:click={() => goToPage(currentPage + 1)} disabled={currentPage * itemsPerPage >= filteredNFTs.length}>
                             Next
                         </button>
                     </div>
