@@ -50,8 +50,11 @@
         {
             name: 'Open FPL Merchandising Rights NFT',
             bio: 'The wallet holding an OpenFPL Merchandising Rights NFT will be sent 10% of relevant sales revenue immediately when a purchase is made through the ICPFA shop.',
-            termsAndConditions: `Each NFT is associated with a specific club and shirt number combination. Relevant sales include any items sold on the ICPFA site pertaining to this combination. If an item is sold that is related to the club of your Merchandising NFT, but not linked to any of the original special shirt numbers, then the revenue will be divided. Every NFT holder for that particular club will receive an equal share of this collective club merchandising revenue.
-            The ICPFA plans to expand its range of fantasy games into all leagues of football, this means that NFTs for relegated teams will still generate revenue while a team is absent from the OpenFPL game.
+            termsAndConditions: `Each NFT is associated with a specific club and shirt number combination. Relevant sales include any items sold on the ICPFA site pertaining to this combination. 
+                If an item is sold that is related to the club of your Merchandising NFT, but not linked to any of the original special shirt numbers, then the revenue will be divided amoung the special club NFT holders. 
+                These additional items include shirts with no numbers and shirts for other numbers unrelated to your clubs special NFTs. No new NFTs will be minted for your club, ensuring your share is never watered down. 
+                Every NFT holder for that particular club will receive an equal share of this collective club merchandising revenue.
+                The ICPFA plans to expand its range of fantasy games into all leagues of football, this means that NFTs for relegated teams will still generate revenue while a team is absent from the OpenFPL game.
             `,
             launchpadPrice: 250.00,
             stoicLink: 'https://stoic.ic0.app/',
@@ -1333,7 +1336,6 @@ As we look to the future, we are excited about the prospect of fully integrating
 
         return a.shirtNumber - b.shirtNumber;
     }).slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
-
     
     function goToPage(page: number) {
         currentPage = page;
