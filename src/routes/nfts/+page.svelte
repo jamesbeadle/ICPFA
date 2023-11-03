@@ -62,7 +62,7 @@
             stoicLink: 'https://toniq.io/',
             nfts: [
                 {
-                    name: 'Arsenal Home 14',
+                    name: 'Arsenal # 14',
                     club: 'Arsenal',
                     shirtNumber: 14,
                     imageUrl: 'thumbs/shirts/1_ARS_14.jpg',
@@ -72,7 +72,7 @@
                     teamId: 1
                 },
                 {
-                    name: 'Arsenal Home 10',
+                    name: 'Arsenal # 10',
                     club: 'Arsenal',
                     shirtNumber: 10,
                     imageUrl: 'thumbs/shirts/1_ARS_10.jpg',
@@ -82,7 +82,7 @@
                     teamId: 1
                 },
                 {
-                    name: 'Arsenal Home 7',
+                    name: 'Arsenal # 7',
                     club: 'Arsenal',
                     shirtNumber: 7,
                     imageUrl: 'thumbs/shirts/1_ARS_7.jpg',
@@ -92,7 +92,7 @@
                     teamId: 1
                 },
                 {
-                    name: 'Arsenal Home 8',
+                    name: 'Arsenal # 8',
                     club: 'Arsenal',
                     shirtNumber: 8,
                     imageUrl: 'thumbs/shirts/1_ARS_8.jpg',
@@ -102,7 +102,7 @@
                     teamId: 1
                 },
                 {
-                    name: 'Arsenal Home 23',
+                    name: 'Arsenal # 23',
                     club: 'Arsenal',
                     shirtNumber: 23,
                     imageUrl: 'thumbs/shirts/1_ARS_23.jpg',
@@ -112,7 +112,7 @@
                     teamId: 1
                 },
                 {
-                    name: 'Arsenal Home 6',
+                    name: 'Arsenal # 6',
                     club: 'Arsenal',
                     shirtNumber: 6,
                     imageUrl: 'thumbs/shirts/1_ARS_6.jpg',
@@ -122,7 +122,7 @@
                     teamId: 1
                 },
                 {
-                    name: 'Aston Villa Home 9',
+                    name: 'Aston Villa # 9',
                     club: 'Aston Villa',
                     shirtNumber: 9,
                     imageUrl: 'thumbs/shirts/2_AVL_9.jpg',
@@ -132,7 +132,7 @@
                     teamId: 2
                 },
                 {
-                    name: 'Aston Villa Home 11',
+                    name: 'Aston Villa # 11',
                     club: 'Aston Villa',
                     shirtNumber: 11,
                     imageUrl: 'thumbs/shirts/2_AVL_11.jpg',
@@ -142,7 +142,7 @@
                     teamId: 2
                 },
                 {
-                    name: 'Aston Villa Home 10',
+                    name: 'Aston Villa # 10',
                     club: 'Aston Villa',
                     shirtNumber: 10,
                     imageUrl: 'thumbs/shirts/2_AVL_10.jpg',
@@ -152,7 +152,7 @@
                     teamId: 2
                 },
                 {
-                    name: 'Aston Villa Home 6',
+                    name: 'Aston Villa # 6',
                     club: 'Aston Villa',
                     shirtNumber: 6,
                     imageUrl: 'thumbs/shirts/2_AVL_6.jpg',
@@ -162,7 +162,7 @@
                     teamId: 2
                 },
                 {
-                    name: 'Aston Villa Home 7',
+                    name: 'Aston Villa # 7',
                     club: 'Aston Villa',
                     shirtNumber: 7,
                     imageUrl: 'thumbs/shirts/2_AVL_7.jpg',
@@ -172,7 +172,7 @@
                     teamId: 2
                 },
                 {
-                    name: 'Bournemouth Home 7',
+                    name: 'Bournemouth # 7',
                     club: 'Bournemouth',
                     shirtNumber: 7,
                     imageUrl: 'thumbs/shirts/3_BOU_7.jpg',
@@ -182,7 +182,7 @@
                     teamId: 3
                 },
                 {
-                    name: 'Bournemouth Home 24',
+                    name: 'Bournemouth # 24',
                     club: 'Bournemouth',
                     shirtNumber: 24,
                     imageUrl: 'thumbs/shirts/3_BOU_24.jpg',
@@ -192,7 +192,7 @@
                     teamId: 3
                 },
                 {
-                    name: 'Bournemouth Home 8',
+                    name: 'Bournemouth # 8',
                     club: 'Bournemouth',
                     shirtNumber: 8,
                     imageUrl: 'thumbs/shirts/3_BOU_8.jpg',
@@ -202,7 +202,7 @@
                     teamId: 3
                 },
                 {
-                    name: 'Bournemouth Home 13',
+                    name: 'Bournemouth # 13',
                     club: 'Bournemouth',
                     shirtNumber: 13,
                     imageUrl: 'thumbs/shirts/3_BOU_13.jpg',
@@ -212,7 +212,7 @@
                     teamId: 3
                 },
                 {
-                    name: 'Brentford Home 17',
+                    name: 'Brentford # 17',
                     club: 'Brentford',
                     shirtNumber: 17,
                     imageUrl: 'thumbs/shirts/4_BRE_17.jpg',
@@ -222,7 +222,7 @@
                     teamId: 4
                 },
                 {
-                    name: 'Brentford Home 19',
+                    name: 'Brentford # 19',
                     club: 'Brentford',
                     shirtNumber: 19,
                     imageUrl: 'thumbs/shirts/4_BRE_19.jpg',
@@ -232,7 +232,7 @@
                     teamId: 4
                 },
                 {
-                    name: 'Brentford Home 7',
+                    name: 'Brentford # 7',
                     club: 'Brentford',
                     shirtNumber: 7,
                     imageUrl: 'thumbs/shirts/4_BRE_7.jpg',
@@ -242,7 +242,7 @@
                     teamId: 4
                 },
                 {
-                    name: 'Brentford Home 10',
+                    name: 'Brentford # 10',
                     club: 'Brentford',
                     shirtNumber: 10,
                     imageUrl: 'thumbs/shirts/4_BRE_10.jpg',
@@ -252,7 +252,7 @@
                     teamId: 4
                 },
                 {
-                    name: 'Brighton Home 17',
+                    name: 'Brighton # 17',
                     club: 'Brighton',
                     shirtNumber: 17,
                     imageUrl: 'thumbs/shirts/5_BRI_17.jpg',
@@ -262,7 +262,7 @@
                     teamId: 5
                 },
                 {
-                    name: 'Brighton Home 25',
+                    name: 'Brighton # 25',
                     club: 'Brighton',
                     shirtNumber: 25,
                     imageUrl: 'thumbs/shirts/5_BRI_25.jpg',
@@ -272,7 +272,7 @@
                     teamId: 5
                 },
                 {
-                    name: 'Brighton Home 13',
+                    name: 'Brighton # 13',
                     club: 'Brighton',
                     shirtNumber: 13,
                     imageUrl: 'thumbs/shirts/5_BRI_13.jpg',
@@ -282,7 +282,7 @@
                     teamId: 5
                 },
                 {
-                    name: 'Brighton Home 5',
+                    name: 'Brighton # 5',
                     club: 'Brighton',
                     shirtNumber: 5,
                     imageUrl: 'thumbs/shirts/5_BRI_5.jpg',
@@ -292,7 +292,7 @@
                     teamId: 5
                 },
                 {
-                    name: 'Burnley Home 2',
+                    name: 'Burnley # 2',
                     club: 'Burnley',
                     shirtNumber: 2,
                     imageUrl: 'thumbs/shirts/6_BUR_2.jpg',
@@ -302,7 +302,7 @@
                     teamId: 6
                 },
                 {
-                    name: 'Burnley Home 5',
+                    name: 'Burnley # 5',
                     club: 'Burnley',
                     shirtNumber: 5,
                     imageUrl: 'thumbs/shirts/6_BUR_5.jpg',
@@ -312,7 +312,7 @@
                     teamId: 6
                 },
                 {
-                    name: 'Burnley Home 6',
+                    name: 'Burnley # 6',
                     club: 'Burnley',
                     shirtNumber: 6,
                     imageUrl: 'thumbs/shirts/6_BUR_6.jpg',
@@ -322,7 +322,7 @@
                     teamId: 6
                 },
                 {
-                    name: 'Burnley Home 11',
+                    name: 'Burnley # 11',
                     club: 'Burnley',
                     shirtNumber: 11,
                     imageUrl: 'thumbs/shirts/6_BUR_11.jpg',
@@ -332,7 +332,7 @@
                     teamId: 6
                 },
                 {
-                    name: 'Burnley Home 10',
+                    name: 'Burnley # 10',
                     club: 'Burnley',
                     shirtNumber: 10,
                     imageUrl: 'thumbs/shirts/6_BUR_10.jpg',
@@ -342,7 +342,7 @@
                     teamId: 6
                 },
                 {
-                    name: 'Chelsea Home 8',
+                    name: 'Chelsea # 8',
                     club: 'Chelsea',
                     shirtNumber: 8,
                     imageUrl: 'thumbs/shirts/7_CHE_8.jpg',
@@ -352,7 +352,7 @@
                     teamId: 7
                 },
                 {
-                    name: 'Chelsea Home 26',
+                    name: 'Chelsea # 26',
                     club: 'Chelsea',
                     shirtNumber: 26,
                     imageUrl: 'thumbs/shirts/7_CHE_26.jpg',
@@ -362,7 +362,7 @@
                     teamId: 7
                 },
                 {
-                    name: 'Chelsea Home 11',
+                    name: 'Chelsea # 11',
                     club: 'Chelsea',
                     shirtNumber: 11,
                     imageUrl: 'thumbs/shirts/7_CHE_11.jpg',
@@ -372,7 +372,7 @@
                     teamId: 7
                 },
                 {
-                    name: 'Chelsea Home 13',
+                    name: 'Chelsea # 13',
                     club: 'Chelsea',
                     shirtNumber: 13,
                     imageUrl: 'thumbs/shirts/7_CHE_13.jpg',
@@ -382,7 +382,7 @@
                     teamId: 7
                 },
                 {
-                    name: 'Chelsea Home 10',
+                    name: 'Chelsea # 10',
                     club: 'Chelsea',
                     shirtNumber: 10,
                     imageUrl: 'thumbs/shirts/7_CHE_10.jpg',
@@ -392,7 +392,7 @@
                     teamId: 7
                 },
                 {
-                    name: 'Chelsea Home 25',
+                    name: 'Chelsea # 25',
                     club: 'Chelsea',
                     shirtNumber: 25,
                     imageUrl: 'thumbs/shirts/7_CHE_25.jpg',
@@ -402,7 +402,7 @@
                     teamId: 7
                 },
                 {
-                    name: 'Crystal Palace Home 11',
+                    name: 'Crystal Palace # 11',
                     club: 'Crystal Palace',
                     shirtNumber: 11,
                     imageUrl: 'thumbs/shirts/8_CRY_11.jpg',
@@ -412,7 +412,7 @@
                     teamId: 8
                 },
                 {
-                    name: 'Crystal Palace Home 17',
+                    name: 'Crystal Palace # 17',
                     club: 'Crystal Palace',
                     shirtNumber: 17,
                     imageUrl: 'thumbs/shirts/8_CRY_17.jpg',
@@ -422,7 +422,7 @@
                     teamId: 8
                 },
                 {
-                    name: 'Crystal Palace Home 10',
+                    name: 'Crystal Palace # 10',
                     club: 'Crystal Palace',
                     shirtNumber: 10,
                     imageUrl: 'thumbs/shirts/8_CRY_10.jpg',
@@ -432,7 +432,7 @@
                     teamId: 8
                 },
                 {
-                    name: 'Crystal Palace Home 4',
+                    name: 'Crystal Palace # 4',
                     club: 'Crystal Palace',
                     shirtNumber: 4,
                     imageUrl: 'thumbs/shirts/8_CRY_4.jpg',
@@ -442,7 +442,7 @@
                     teamId: 8
                 },
                 {
-                    name: 'Crystal Palace Home 13',
+                    name: 'Crystal Palace # 13',
                     club: 'Crystal Palace',
                     shirtNumber: 13,
                     imageUrl: 'thumbs/shirts/8_CRY_13.jpg',
@@ -452,7 +452,7 @@
                     teamId: 8
                 },
                 {
-                    name: 'Everton Home 9',
+                    name: 'Everton # 9',
                     club: 'Everton',
                     shirtNumber: 9,
                     imageUrl: 'thumbs/shirts/9_EVE_9.jpg',
@@ -462,7 +462,7 @@
                     teamId: 9
                 },
                 {
-                    name: 'Everton Home 18',
+                    name: 'Everton # 18',
                     club: 'Everton',
                     shirtNumber: 18,
                     imageUrl: 'thumbs/shirts/9_EVE_18.jpg',
@@ -472,7 +472,7 @@
                     teamId: 9
                 },
                 {
-                    name: 'Everton Home 17',
+                    name: 'Everton # 17',
                     club: 'Everton',
                     shirtNumber: 17,
                     imageUrl: 'thumbs/shirts/9_EVE_17.jpg',
@@ -482,7 +482,7 @@
                     teamId: 9
                 },
                 {
-                    name: 'Everton Home 10',
+                    name: 'Everton # 10',
                     club: 'Everton',
                     shirtNumber: 10,
                     imageUrl: 'thumbs/shirts/9_EVE_10.jpg',
@@ -492,7 +492,7 @@
                     teamId: 9
                 },
                 {
-                    name: 'Everton Home 3',
+                    name: 'Everton # 3',
                     club: 'Everton',
                     shirtNumber: 3,
                     imageUrl: 'thumbs/shirts/9_EVE_3.jpg',
@@ -502,7 +502,7 @@
                     teamId: 9
                 },
                 {
-                    name: 'Everton Home 25',
+                    name: 'Everton # 25',
                     club: 'Everton',
                     shirtNumber: 25,
                     imageUrl: 'thumbs/shirts/9_EVE_25.jpg',
@@ -512,7 +512,7 @@
                     teamId: 9
                 },
                 {
-                    name: 'Fulham Home 13',
+                    name: 'Fulham # 13',
                     club: 'Fulham',
                     shirtNumber: 13,
                     imageUrl: 'thumbs/shirts/10_FUL_13.jpg',
@@ -522,7 +522,7 @@
                     teamId: 10
                 },
                 {
-                    name: 'Fulham Home 23',
+                    name: 'Fulham # 23',
                     club: 'Fulham',
                     shirtNumber: 23,
                     imageUrl: 'thumbs/shirts/10_FUL_23.jpg',
@@ -532,7 +532,7 @@
                     teamId: 10
                 },
                 {
-                    name: 'Fulham Home 9',
+                    name: 'Fulham # 9',
                     club: 'Fulham',
                     shirtNumber: 9,
                     imageUrl: 'thumbs/shirts/10_FUL_9.jpg',
@@ -542,7 +542,7 @@
                     teamId: 10
                 },
                 {
-                    name: 'Fulham Home 4',
+                    name: 'Fulham # 4',
                     club: 'Fulham',
                     shirtNumber: 4,
                     imageUrl: 'thumbs/shirts/10_FUL_4.jpg',
@@ -552,7 +552,7 @@
                     teamId: 10
                 },
                 {
-                    name: 'Liverpool Home 8',
+                    name: 'Liverpool # 8',
                     club: 'Liverpool',
                     shirtNumber: 8,
                     imageUrl: 'thumbs/shirts/11_LIV_8.jpg',
@@ -562,7 +562,7 @@
                     teamId: 11
                 },
                 {
-                    name: 'Liverpool Home 9',
+                    name: 'Liverpool # 9',
                     club: 'Liverpool',
                     shirtNumber: 9,
                     imageUrl: 'thumbs/shirts/11_LIV_9.jpg',
@@ -572,7 +572,7 @@
                     teamId: 11
                 },
                 {
-                    name: 'Liverpool Home 10',
+                    name: 'Liverpool # 10',
                     club: 'Liverpool',
                     shirtNumber: 10,
                     imageUrl: 'thumbs/shirts/11_LIV_10.jpg',
@@ -582,7 +582,7 @@
                     teamId: 11
                 },
                 {
-                    name: 'Liverpool Home 11',
+                    name: 'Liverpool # 11',
                     club: 'Liverpool',
                     shirtNumber: 11,
                     imageUrl: 'thumbs/shirts/11_LIV_11.jpg',
@@ -592,7 +592,7 @@
                     teamId: 11
                 },
                 {
-                    name: 'Liverpool Home 7',
+                    name: 'Liverpool # 7',
                     club: 'Liverpool',
                     shirtNumber: 7,
                     imageUrl: 'thumbs/shirts/11_LIV_7.jpg',
@@ -602,7 +602,7 @@
                     teamId: 11
                 },
                 {
-                    name: 'Liverpool Home 14',
+                    name: 'Liverpool # 14',
                     club: 'Liverpool',
                     shirtNumber: 14,
                     imageUrl: 'thumbs/shirts/11_LIV_14.jpg',
@@ -612,7 +612,7 @@
                     teamId: 11
                 },
                 {
-                    name: 'Luton Home 9',
+                    name: 'Luton # 9',
                     club: 'Luton',
                     shirtNumber: 9,
                     imageUrl: 'thumbs/shirts/12_LUT_9.jpg',
@@ -622,7 +622,7 @@
                     teamId: 12
                 },
                 {
-                    name: 'Luton Home 10',
+                    name: 'Luton # 10',
                     club: 'Luton',
                     shirtNumber: 10,
                     imageUrl: 'thumbs/shirts/12_LUT_10.jpg',
@@ -632,7 +632,7 @@
                     teamId: 12
                 },
                 {
-                    name: 'Man City Home 17',
+                    name: 'Man City # 17',
                     club: 'Man City',
                     shirtNumber: 17,
                     imageUrl: 'thumbs/shirts/13_MCI_17.jpg',
@@ -642,7 +642,7 @@
                     teamId: 13
                 },
                 {
-                    name: 'Man City Home 9',
+                    name: 'Man City # 9',
                     club: 'Man City',
                     shirtNumber: 9,
                     imageUrl: 'thumbs/shirts/13_MCI_9.jpg',
@@ -652,7 +652,7 @@
                     teamId: 13
                 },
                 {
-                    name: 'Man City Home 47',
+                    name: 'Man City # 47',
                     club: 'Man City',
                     shirtNumber: 47,
                     imageUrl: 'thumbs/shirts/13_MCI_47.jpg',
@@ -662,7 +662,7 @@
                     teamId: 13
                 },
                 {
-                    name: 'Man City Home 20',
+                    name: 'Man City # 20',
                     club: 'Man City',
                     shirtNumber: 20,
                     imageUrl: 'thumbs/shirts/13_MCI_20.jpg',
@@ -672,7 +672,7 @@
                     teamId: 13
                 },
                 {
-                    name: 'Man City Home 10',
+                    name: 'Man City # 10',
                     club: 'Man City',
                     shirtNumber: 10,
                     imageUrl: 'thumbs/shirts/13_MCI_10.jpg',
@@ -682,7 +682,7 @@
                     teamId: 13
                 },
                 {
-                    name: 'Man City Home 45',
+                    name: 'Man City # 45',
                     club: 'Man City',
                     shirtNumber: 45,
                     imageUrl: 'thumbs/shirts/13_MCI_45.jpg',
@@ -692,7 +692,7 @@
                     teamId: 13
                 },
                 {
-                    name: 'Man City Home 42',
+                    name: 'Man City # 42',
                     club: 'Man City',
                     shirtNumber: 42,
                     imageUrl: 'thumbs/shirts/13_MCI_42.jpg',
@@ -702,7 +702,7 @@
                     teamId: 13
                 },
                 {
-                    name: 'Man United Home 7',
+                    name: 'Man United # 7',
                     club: 'Man United',
                     shirtNumber: 7,
                     imageUrl: 'thumbs/shirts/14_MUN_7.jpg',
@@ -712,7 +712,7 @@
                     teamId: 14
                 },
                 {
-                    name: 'Man United Home 10',
+                    name: 'Man United # 10',
                     club: 'Man United',
                     shirtNumber: 10,
                     imageUrl: 'thumbs/shirts/14_MUN_10.jpg',
@@ -722,7 +722,7 @@
                     teamId: 14
                 },
                 {
-                    name: 'Man United Home 18',
+                    name: 'Man United # 18',
                     club: 'Man United',
                     shirtNumber: 18,
                     imageUrl: 'thumbs/shirts/14_MUN_18.jpg',
@@ -732,7 +732,7 @@
                     teamId: 14
                 },
                 {
-                    name: 'Man United Home 11',
+                    name: 'Man United # 11',
                     club: 'Man United',
                     shirtNumber: 11,
                     imageUrl: 'thumbs/shirts/14_MUN_11.jpg',
@@ -742,7 +742,7 @@
                     teamId: 14
                 },
                 {
-                    name: 'Man United Home 9',
+                    name: 'Man United # 9',
                     club: 'Man United',
                     shirtNumber: 9,
                     imageUrl: 'thumbs/shirts/14_MUN_9.jpg',
@@ -752,7 +752,7 @@
                     teamId: 14
                 },
                 {
-                    name: 'Man United Home 16',
+                    name: 'Man United # 16',
                     club: 'Man United',
                     shirtNumber: 16,
                     imageUrl: 'thumbs/shirts/14_MUN_16.jpg',
@@ -762,7 +762,7 @@
                     teamId: 14
                 },
                 {
-                    name: 'Man United Home 20',
+                    name: 'Man United # 20',
                     club: 'Man United',
                     shirtNumber: 20,
                     imageUrl: 'thumbs/shirts/14_MUN_20.jpg',
@@ -772,7 +772,7 @@
                     teamId: 14
                 },
                 {
-                    name: 'Newcastle Home 8',
+                    name: 'Newcastle # 8',
                     club: 'Newcastle',
                     shirtNumber: 8,
                     imageUrl: 'thumbs/shirts/15_NEW_8.jpg',
@@ -782,7 +782,7 @@
                     teamId: 15
                 },
                 {
-                    name: 'Newcastle Home 9',
+                    name: 'Newcastle # 9',
                     club: 'Newcastle',
                     shirtNumber: 9,
                     imageUrl: 'thumbs/shirts/15_NEW_9.jpg',
@@ -792,7 +792,7 @@
                     teamId: 15
                 },
                 {
-                    name: 'Newcastle Home 10',
+                    name: 'Newcastle # 10',
                     club: 'Newcastle',
                     shirtNumber: 10,
                     imageUrl: 'thumbs/shirts/15_NEW_10.jpg',
@@ -802,7 +802,7 @@
                     teamId: 15
                 },
                 {
-                    name: 'Newcastle Home 11',
+                    name: 'Newcastle # 11',
                     club: 'Newcastle',
                     shirtNumber: 11,
                     imageUrl: 'thumbs/shirts/15_NEW_11.jpg',
@@ -812,7 +812,7 @@
                     teamId: 15
                 },
                 {
-                    name: 'Newcastle Home 23',
+                    name: 'Newcastle # 23',
                     club: 'Newcastle',
                     shirtNumber: 23,
                     imageUrl: 'thumbs/shirts/15_NEW_23.jpg',
@@ -822,7 +822,7 @@
                     teamId: 15
                 },
                 {
-                    name: 'Nottingham Forest Home 9',
+                    name: 'Nottingham Forest # 9',
                     club: 'Nottingham Forest',
                     shirtNumber: 9,
                     imageUrl: 'thumbs/shirts/16_NFO_9.jpg',
@@ -832,7 +832,7 @@
                     teamId: 16
                 },
                 {
-                    name: 'Nottingham Forest Home 10',
+                    name: 'Nottingham Forest # 10',
                     club: 'Nottingham Forest',
                     shirtNumber: 10,
                     imageUrl: 'thumbs/shirts/16_NFO_10.jpg',
@@ -842,7 +842,7 @@
                     teamId: 16
                 },
                 {
-                    name: 'Nottingham Forest Home 7',
+                    name: 'Nottingham Forest # 7',
                     club: 'Nottingham Forest',
                     shirtNumber: 7,
                     imageUrl: 'thumbs/shirts/16_NFO_7.jpg',
@@ -852,7 +852,7 @@
                     teamId: 16
                 },
                 {
-                    name: 'Nottingham Forest Home 6',
+                    name: 'Nottingham Forest # 6',
                     club: 'Nottingham Forest',
                     shirtNumber: 6,
                     imageUrl: 'thumbs/shirts/16_NFO_6.jpg',
@@ -862,7 +862,7 @@
                     teamId: 16
                 },
                 {
-                    name: 'Sheffield United Home 9',
+                    name: 'Sheffield United # 9',
                     club: 'Sheffield United',
                     shirtNumber: 9,
                     imageUrl: 'thumbs/shirts/17_SHU_9.jpg',
@@ -872,7 +872,7 @@
                     teamId: 17
                 },
                 {
-                    name: 'Sheffield United Home 5',
+                    name: 'Sheffield United # 5',
                     club: 'Sheffield United',
                     shirtNumber: 5,
                     imageUrl: 'thumbs/shirts/17_SHU_5.jpg',
@@ -882,7 +882,7 @@
                     teamId: 17
                 },
                 {
-                    name: 'Sheffield United Home 6',
+                    name: 'Sheffield United # 6',
                     club: 'Sheffield United',
                     shirtNumber: 6,
                     imageUrl: 'thumbs/shirts/17_SHU_6.jpg',
@@ -892,7 +892,7 @@
                     teamId: 17
                 },
                 {
-                    name: 'Sheffield United Home 16',
+                    name: 'Sheffield United # 16',
                     club: 'Sheffield United',
                     shirtNumber: 16,
                     imageUrl: 'thumbs/shirts/17_SHU_16.jpg',
@@ -902,7 +902,7 @@
                     teamId: 17
                 },
                 {
-                    name: 'Tottenham Home 10',
+                    name: 'Tottenham # 10',
                     club: 'Tottenham',
                     shirtNumber: 10,
                     imageUrl: 'thumbs/shirts/18_TOT_10.jpg',
@@ -912,7 +912,7 @@
                     teamId: 18
                 },
                 {
-                    name: 'Tottenham Home 14',
+                    name: 'Tottenham # 14',
                     club: 'Tottenham',
                     shirtNumber: 14,
                     imageUrl: 'thumbs/shirts/18_TOT_14.jpg',
@@ -922,7 +922,7 @@
                     teamId: 18
                 },
                 {
-                    name: 'Tottenham Home 9',
+                    name: 'Tottenham # 9',
                     club: 'Tottenham',
                     shirtNumber: 9,
                     imageUrl: 'thumbs/shirts/18_TOT_9.jpg',
@@ -932,7 +932,7 @@
                     teamId: 18
                 },
                 {
-                    name: 'Tottenham Home 5',
+                    name: 'Tottenham # 5',
                     club: 'Tottenham',
                     shirtNumber: 5,
                     imageUrl: 'thumbs/shirts/18_TOT_5.jpg',
@@ -942,7 +942,7 @@
                     teamId: 18
                 },
                 {
-                    name: 'Tottenham Home 7',
+                    name: 'Tottenham # 7',
                     club: 'Tottenham',
                     shirtNumber: 7,
                     imageUrl: 'thumbs/shirts/18_TOT_7.jpg',
@@ -952,7 +952,7 @@
                     teamId: 18
                 },
                 {
-                    name: 'Tottenham Home 11',
+                    name: 'Tottenham # 11',
                     club: 'Tottenham',
                     shirtNumber: 11,
                     imageUrl: 'thumbs/shirts/18_TOT_11.jpg',
@@ -962,7 +962,7 @@
                     teamId: 18
                 },
                 {
-                    name: 'West Ham Home 16',
+                    name: 'West Ham # 16',
                     club: 'West Ham',
                     shirtNumber: 16,
                     imageUrl: 'thumbs/shirts/19_WHU_16.jpg',
@@ -972,7 +972,7 @@
                     teamId: 19
                 },
                 {
-                    name: 'West Ham Home 8',
+                    name: 'West Ham # 8',
                     club: 'West Ham',
                     shirtNumber: 8,
                     imageUrl: 'thumbs/shirts/19_WHU_8.jpg',
@@ -982,7 +982,7 @@
                     teamId: 19
                 },
                 {
-                    name: 'West Ham Home 10',
+                    name: 'West Ham # 10',
                     club: 'West Ham',
                     shirtNumber: 10,
                     imageUrl: 'thumbs/shirts/19_WHU_10.jpg',
@@ -992,7 +992,7 @@
                     teamId: 19
                 },
                 {
-                    name: 'West Ham Home 9',
+                    name: 'West Ham # 9',
                     club: 'West Ham',
                     shirtNumber: 9,
                     imageUrl: 'thumbs/shirts/19_WHU_9.jpg',
@@ -1002,7 +1002,7 @@
                     teamId: 19
                 },
                 {
-                    name: 'West Ham Home 26',
+                    name: 'West Ham # 26',
                     club: 'West Ham',
                     shirtNumber: 26,
                     imageUrl: 'thumbs/shirts/19_WHU_26.jpg',
@@ -1012,7 +1012,7 @@
                     teamId: 19
                 },
                 {
-                    name: 'Wolves Home 9',
+                    name: 'Wolves # 9',
                     club: 'Wolves',
                     shirtNumber: 9,
                     imageUrl: 'thumbs/shirts/20_WOL_9.jpg',
@@ -1022,7 +1022,7 @@
                     teamId: 20
                 },
                 {
-                    name: 'Wolves Home 8',
+                    name: 'Wolves # 8',
                     club: 'Wolves',
                     shirtNumber: 8,
                     imageUrl: 'thumbs/shirts/20_WOL_8.jpg',
@@ -1032,7 +1032,7 @@
                     teamId: 20
                 },
                 {
-                    name: 'Wolves Home 28',
+                    name: 'Wolves # 28',
                     club: 'Wolves',
                     shirtNumber: 28,
                     imageUrl: 'thumbs/shirts/20_WOL_28.jpg',
@@ -1042,7 +1042,7 @@
                     teamId: 20
                 },
                 {
-                    name: 'Wolves Home 11',
+                    name: 'Wolves # 11',
                     club: 'Wolves',
                     shirtNumber: 11,
                     imageUrl: 'thumbs/shirts/20_WOL_11.jpg',
@@ -1052,7 +1052,7 @@
                     teamId: 20
                 },
                 {
-                    name: 'Wolves Home 16',
+                    name: 'Wolves # 16',
                     club: 'Wolves',
                     shirtNumber: 16,
                     imageUrl: 'thumbs/shirts/20_WOL_16.jpg',

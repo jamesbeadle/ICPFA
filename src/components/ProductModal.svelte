@@ -10,6 +10,20 @@
     function close() {
         dispatch('close');
     }
+
+    let sizes = ['S', 'M', 'L', 'XL'];
+    let selectedSize = 'L';
+    let quantity = 1;
+
+    function increment() {
+        quantity += 1;
+    }
+
+    function decrement() {
+        if (quantity > 1) {
+            quantity -= 1;
+        }
+    }
 </script>
 
 <style>
@@ -26,23 +40,163 @@
         z-index: 9999;
     }
     .modal-content {
-        width: 400px; /* You can adjust based on your design */
-        background: white;
-        padding: 20px;
+        width: 600px; /* You can adjust based on your design */
+        background: #000;
         border-radius: 10px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        border-radius: 8px;
+        border: 1px solid #1a1d21;
+        box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.60);
     }
-    /* Add more styling based on your design */
+    .inner-modal{
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .main-row{
+        display: flex;
+    }
+    
+    .large-img-col{
+        flex-basis: 65%;
+    }
+
+    .product-detail-col{
+        flex-basis: 35%;
+    }
+
+    .product-title{
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+
+    .product-description{
+        font-size: 8px;
+        font-style: normal;
+        font-weight: 400;
+        text-transform: uppercase;
+        color: #C2C3C4;
+    }
+
+    .thumbnail-container {
+        display: flex;
+        gap: 1rem; /* space between thumbnails */
+        margin-top: 1rem;
+    }
+
+    .thumbnail {
+        width: 80px; /* Adjust as needed */
+        height: 80px;
+        border: 1px solid #FFF;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .header-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    
+    .close-button {
+        background: none;
+        border: none;
+        font-size: 1.5rem; /* Adjust size as needed */
+        cursor: pointer;
+    }
+    
+    .thumbnail-col{
+        flex-basis: 65%;
+        display: flex;
+        gap: 10px;  
+    }
+    
+    .size-col{
+        flex-basis: 35%;
+    }
+
+    .flex-container {
+    display: flex;
+    justify-content: space-between;  /* This will spread the items evenly */
+    align-items: center;
+    border: 1px solid white;
+}
+
+.flex-item {
+    flex: 1;   /* This will make sure each item takes up equal space */
+    text-align: center;  /* Center the content of each item */
+    padding: 5px;
+}
+
+
 </style>
 
 {#if showModal}
 <div class="modal-overlay" role="button" tabindex="0" on:click={close} on:keydown={close}>
     <div class="modal-content" role="button" tabindex="0" on:click={e => e.stopPropagation()} on:keydown={e => e.stopPropagation()}>
-        <!-- Product Details Here -->
-        <img src={`shirts/shirt_${product?.teamId}_front.jpg`} alt="Product" />
-        <h2>{product?.name}</h2>
-        <p>{product?.price} ICP</p>
-        <!-- Add more details and functionality based on your design -->
+        <div class="inner-modal">
+            
+            <div class="header-row">
+                <h5>Details</h5>
+                <button class="close-button" on:click={close} aria-label="Close">×</button>
+            </div>
+            <div class="main-row">
+                <div class="large-img-col">
+                    <img src={`shirts/shirt_${product?.teamId}_front.jpg`} alt="Product" />
+                </div>
+                <div class="product-detail-col">
+                    <h2 class="product-title">{product?.name}</h2>
+                    <h2 class="product-description">{product?.description}</h2>
+                    <p>{product?.price.toFixed(2)} ICP</p>
+                    
+                    
+                </div>
+            </div>
+            <div class="thumbnail-row">
+
+                <div class="thumbnail-container">
+                    <div class="thumbnail-col">
+                        <div class="thumbnail">
+                            <img src={`shirts/shirt_${product?.teamId}_front.jpg`} alt="Front view" class="w-full h-full object-cover" />
+                        </div>
+                        <div class="thumbnail">
+                            <img src={`shirts/shirt_${product?.teamId}_back.jpg`} alt="Back view" class="w-full h-full object-cover" />
+                        </div>
+                    </div>
+                    <div class="size-col">
+                        <div class="bg-black text-white">
+                            <!-- Size Selector -->
+                            <div class="flex mb-4">
+                                {#each sizes as size}
+                                    <button
+                                        class="mx-1 px-4 py-2 border border-white {selectedSize === size ? 'bg-blue-600' : 'bg-black'}"
+                                        on:click={() => selectedSize = size}
+                                    >
+                                        {size}
+                                    </button>
+                                {/each}
+                            </div>
+    
+                            <div class="flex-container">
+                                <button class="flex-item" on:click={decrement}>-</button>
+                                <div class="flex-item">{quantity}</div>
+                                <button class="flex-item" on:click={increment}>+</button>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Add to Cart Button -->
+                <button class="mt-4 w-full py-2 bg-blue-600 text-white uppercase disabled:bg-gray-400 disabled:text-gray-200" disabled>Add to Cart (Coming Soon)</button>
+            
+            </div>
+        </div>
     </div>
 </div>
 {/if}
