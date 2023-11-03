@@ -1411,7 +1411,9 @@ As we look to the future, we are excited about the prospect of fully integrating
         flex-basis: 10%;
     }
 
-    
+    .collection-container{
+        flex-basis: 80%;
+    }
 
     .sidebar {
         flex-basis: 20%; 
@@ -1422,12 +1424,13 @@ As we look to the future, we are excited about the prospect of fully integrating
         border: 1px solid #2E323A !important;
     }
 
-    .collection-detail {
-        flex-basis: 80%; 
-        background-color: #2a2a2a; 
-        grid-template-columns: repeat(3, 1fr); 
-        margin: 20px; 
+    .artist-panel{
+        border: 1px solid #2E323A !important;
         border-radius: 4px;
+        margin: 20px; 
+    }
+
+    .nft-table-panel{
         border: 1px solid #2E323A !important;
     }
 
@@ -1456,10 +1459,6 @@ As we look to the future, we are excited about the prospect of fully integrating
 
     .panel-row{
         background-color: #161819;
-        padding: 20px;
-    }
-
-    .panel-content{
         padding: 20px;
     }
 
@@ -1504,6 +1503,14 @@ As we look to the future, we are excited about the prospect of fully integrating
         border-color: rgba(69, 75, 86, 0.80);
     }
 
+    .top-panel{
+        background-color: rgba(26, 26, 29, 0.90);
+        padding: 20px;
+    }
+
+    .side-panel-content{
+        padding: 24px;
+    }
     
  
 </style>
@@ -1518,7 +1525,7 @@ As we look to the future, we are excited about the prospect of fully integrating
                     <div class="panel-row">
                         <h2 class="mb-4 text-left">FILTERS</h2>
                     </div>
-                    <div class="panel-content">
+                    <div class="side-panel-content">
                         <button 
                             on:click="{() => showTeams = !showTeams}" 
                             class="w-full text-left focus:outline-none"
@@ -1579,57 +1586,61 @@ As we look to the future, we are excited about the prospect of fully integrating
                     </div>
                     
                 </div>
-                <div class="collection-detail text-left">
-                   
-                    <div class="flex space-x-4 mb-6 panel-row">
-                        {#each collections as collection, index}
-                            <button 
-                                class="px-4 py-2 rounded shadow tab-header {selectedCollection === collection ? 'active-tab' : ''}"
-                                on:click={() => { 
-                                    selectedCollection = collection; 
-                                    currentPage = 1; 
-                                }}                            
-                            >
-                                {collection.name}
-                            </button>
-                        {/each}
-                    </div>
+                <div class="collection-container">
+                    <div class="text-left">
+                       <div class="artist-panel">
 
-                    <div class="panel-content">
-                        <div class="flex justify-between items-center">
-                            <h2 class="text-2xl font-bold">{selectedCollection.name}</h2>
-                            <h5 class="text-md mt-2 mb-4">{selectedCollection.nfts.length} Total</h5>
+                        <div class="flex space-x-4 panel-row">
+                            {#each collections as collection, index}
+                                <button 
+                                    class="px-4 py-2 rounded shadow tab-header {selectedCollection === collection ? 'active-tab' : ''}"
+                                    on:click={() => { 
+                                        selectedCollection = collection; 
+                                        currentPage = 1; 
+                                    }}                            
+                                >
+                                    {collection.name}
+                                </button>
+                            {/each}
                         </div>
-                        <p class="mt-4 mb-4 mr-8">{selectedCollection.bio}</p>
-                        <p class="text-xs mb-4 mr-8">{selectedCollection.termsAndConditions}</p>
-                                                
-                                                
-                        <p class="mb-4 font-medium">
-                            Launchpad Price:<span class="ml-2 mr-2">{@html icpIcon(20,20)}</span> {selectedCollection.launchpadPrice} ICP
-                        </p>
-                                        
-                        <hr class="border-t my-8 faint">
-
-  
-                      
-                        <div class="artist-bio">
-                            <div class="flex">
-                                <div class="artist-about-col">
-                                    <h2 class="text-2xl font-bold">About the Artist</h2>
-                                    <button class="action-button">View Collection On Toniq</button>
+    
+                        <div class="panel-content">
+                            <div class="top-panel">
+                                <div class="flex justify-between items-center">
+                                    <h2 class="text-2xl font-bold">{selectedCollection.name}</h2>
+                                    <h5 class="text-md mt-2 mb-4">{selectedCollection.nfts.length} Total</h5>
                                 </div>
-                                <div class="artist-detail-col">
-                                    <div class="artist-picture-col">
-                                        <img class="artist-image" src="{selectedCollection.artistPicture}" alt="Ashutosh">
-                                    </div>
-                                    <div class="artist-content-col">
-                                        <h2 class="text-xl font-bold">{selectedCollection.artistName}</h2>
-                                        <p class="text-sm">{selectedCollection.artistBio}</p>
+                                <p class="mt-4 mb-4 mr-8">{selectedCollection.bio}</p>
+                                <p class="text-xs mb-4 mr-8">{selectedCollection.termsAndConditions}</p>
+                                                        
+                                                        
+                                <p class="mb-4 font-medium">
+                                    Launchpad Price:<span class="ml-2 mr-2">{@html icpIcon(20,20)}</span> {selectedCollection.launchpadPrice} ICP
+                                </p>
+                                                
+                                <hr class="border-t my-8 faint">
+                              
+                                <div class="artist-bio">
+                                    <div class="flex">
+                                        <div class="artist-about-col">
+                                            <h2 class="text-2xl font-bold">About the Artist</h2>
+                                            <button class="action-button">View Collection On Toniq</button>
+                                        </div>
+                                        <div class="artist-detail-col">
+                                            <div class="artist-picture-col">
+                                                <img class="artist-image" src="{selectedCollection.artistPicture}" alt="Ashutosh">
+                                            </div>
+                                            <div class="artist-content-col">
+                                                <h2 class="text-xl font-bold">{selectedCollection.artistName}</h2>
+                                                <p class="text-sm">{selectedCollection.artistBio}</p>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
+                       </div>
+                       <div class="nft-table-panel">
                         <div class="mt-2">
                             <br>
                             <h3 class="text-xl font-semibold mb-4">NFTs by ROI</h3>
@@ -1659,18 +1670,23 @@ As we look to the future, we are excited about the prospect of fully integrating
                                 </div>
                             {/each}
                         </div>
-                    </div>
-
-                    <div class="flex justify-center mt-4 items-center panel-content">
-                        <button class="bg-custom-blue hover:bg-custom-blue text-white font-bold m-2 py-2 px-2 rounded w-24 text-xs" on:click={() => goToPage(currentPage - 1)} disabled={currentPage === 1}>
-                            Previous
-                        </button>
-                        <div class="mx-1 p-0 text-xs flex items-center">
-                            Page {currentPage}
+    
+                        <div class="flex justify-center mt-4 items-center panel-content">
+                            <button class="bg-custom-blue hover:bg-custom-blue text-white font-bold m-2 py-2 px-2 rounded w-24 text-xs" on:click={() => goToPage(currentPage - 1)} disabled={currentPage === 1}>
+                                Previous
+                            </button>
+                            <div class="mx-1 p-0 text-xs flex items-center">
+                                Page {currentPage}
+                            </div>
+                            <button class="bg-custom-blue hover:bg-custom-blue text-white font-bold m-2 py-2 px-2 rounded w-24 text-xs" on:click={() => goToPage(currentPage + 1)} disabled={currentPage * itemsPerPage >= filteredNFTs.length}>
+                                Next
+                            </button>
                         </div>
-                        <button class="bg-custom-blue hover:bg-custom-blue text-white font-bold m-2 py-2 px-2 rounded w-24 text-xs" on:click={() => goToPage(currentPage + 1)} disabled={currentPage * itemsPerPage >= filteredNFTs.length}>
-                            Next
-                        </button>
+                       </div>
+
+
+    
+                        
                     </div>
                 </div>
             </div>  
