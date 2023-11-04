@@ -21,6 +21,7 @@
     }
 
     function close() {
+        resetModal();
         dispatch('close');
     }
 
@@ -39,6 +40,11 @@
             currentImageSrc = (imageType === 'front') ? `shirts/${product.teamId}.jpg` : `shirts/${product.teamId}_${product.shirtNumber}.jpg`;
             activeImageType = imageType;
         }
+    }
+
+    function resetModal() {
+        quantity = 1;
+        selectedSize = 'M';
     }
 
 </script>
