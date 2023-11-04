@@ -66,8 +66,16 @@
         align-items: center;
     }
 
+    .profile-image-container {
+        display: flex; /* This defines a flex container */
+        justify-content: center; /* This centers the children on the main axis */
+        align-items: center; /* This centers the children on the cross axis */
+        min-height: 300px; /* Minimum height for the container */
+        flex-basis: 50%; /* Takes up half the width of the parent */
+    }
+
     .profile-text{
-        min-height: 300px;
+        min-height: 150px; /* Ensure the text section doesn't collapse */
     }
 
   </style>
@@ -78,16 +86,17 @@
         <h1 class="title-font sm:text-4xl text-2xl md:mb-4 mt-4 font-medium text-white">Our Team</h1>
         <div class="flex justify-center">
           <div class="flex border-2 rounded-lg border-gray-800 pl-8 pr-8 md:mt-4 md:p-0 md:pb-8 sm:flex-row flex-col">
-            <div class="md:text-left text-center md:flex-1 md:basis-1/2 mb-4 p-8">
-              <img src="{teamMembers[currentMemberIndex].image}" alt="{teamMembers[currentMemberIndex].name}" class="rounded-full profile-image w-64">
-            </div>
+            <div class="profile-image-container md:flex-1 md:basis-1/2 mb-4 p-8">
+                <img src="{teamMembers[currentMemberIndex].image}" alt="{teamMembers[currentMemberIndex].name}" class="rounded-full profile-image w-64 h-64 object-cover">
+              </div>
+              
             <div class="flex flex-col md:flex-1 md:basis-1/2 justify-center items-center">
               <div class="text-center mb-4">
-                <h3 class="text-2xl font-bold title-text">{teamMembers[currentMemberIndex].name}</h3>
-                <p class="text-xl title-text">{teamMembers[currentMemberIndex].role}</p>
+                <h3 class="text-2xl font-bold title-text mb-2">{teamMembers[currentMemberIndex].name}</h3>
+                <p class="text-xl title-text mb-2">{teamMembers[currentMemberIndex].role}</p>
                 <p class="profile-text">{teamMembers[currentMemberIndex].bio}</p>
               </div>
-              <div class="caret-container flex justify-center">
+              <div class="caret-container flex justify-center mb-4">
                 <button class="caret-button mr-3" on:click={goPrevious}>&lt;</button>
                 {#each teamMembers as member, index}
                   <span class="caret {currentMemberIndex === index ? 'active' : ''}"
