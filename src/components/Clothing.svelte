@@ -44,18 +44,17 @@
     {#each paginatedProducts as product, i}
      
          <div class="p-4 rounded-lg w-64 mx-auto">
-           <img class="w-full h-48 object-cover mb-3 shadow-md" src={activeImages[i] === `front_${i}` || activeImages[i] === '' ? `/shirts/shirt_${product.teamId}_front.jpg` : `/shirts/shirt_${product.teamId}_back.jpg`} alt="img">
-        
+            <img class="w-full h-48 object-cover mb-3 shadow-md" src={activeImages[i] === `front_${i}` || activeImages[i] === '' || product.shirtNumber === 0 ? `/shirts/${product.teamId}.jpg` : `/shirts/${product.teamId}_${product.shirtNumber}.jpg`} alt="img">
             <div class="flex gap-2 mb-3">
                 <button class={`image-button focus:outline-none p-1 rounded transition-all duration-200 ${activeImages.includes(`front_${i}`) ? 'border-2 border-gray-500' : 'border-none'}`} on:click={() => activeImages[i] = `front_${i}`}>
-                    <img class="w-16 h-16 object-cover" src={`/shirts/shirt_${product.teamId}_front.jpg`} alt="Thumbnail 1">
+                    <img class="w-16 h-16 object-cover" src={`/shirts/${product.teamId}.jpg`} alt="Thumbnail 1">
                 </button>
-    
-                <button class={`image-button focus:outline-none p-1 rounded transition-all duration-200 ${activeImages.includes(`back_${i}`) ? 'border-2 border-gray-500' : 'border-none'}`} on:click={() => activeImages[i] = `back_${i}`}>
-                    <img class="w-16 h-16 object-cover" src={`/shirts/shirt_${product.teamId}_back.jpg`} alt="Thumbnail 2">
-                </button>   
+
+                <button class={`image-button focus:outline-none p-1 rounded transition-all duration-200 ${activeImages.includes(`back_${i}`) && product.shirtNumber !== 0 ? 'border-2 border-gray-500' : 'border-none'}`} on:click={() => activeImages[i] = `back_${i}`}>
+                    <img class="w-16 h-16 object-cover" src={product.shirtNumber === 0 ? `/shirts/${product.teamId}.jpg` : `/shirts/${product.teamId}_${product.shirtNumber}.jpg`} alt="Thumbnail 2">
+                </button>    
             </div>
-        
+    
             <div class="flex justify-between items-center">
                 <div>
                     <h2 class="text-white font-bold mb-1 text-xs">{product.name}</h2>
@@ -70,11 +69,9 @@
                         <path d="M28.6667 5.66667H27.3333V4.33333C27.3333 3.97971 27.1929 3.64057 26.9428 3.39052C26.6928 3.14048 26.3536 3 26 3C25.6464 3 25.3072 3.14048 25.0572 3.39052C24.8071 3.64057 24.6667 3.97971 24.6667 4.33333V5.66667H23.3333C22.9797 5.66667 22.6406 5.80714 22.3905 6.05719C22.1405 6.30724 22 6.64638 22 7C22 7.35362 22.1405 7.69276 22.3905 7.94281C22.6406 8.19286 22.9797 8.33333 23.3333 8.33333H24.6667V9.66667C24.6667 10.0203 24.8071 10.3594 25.0572 10.6095C25.3072 10.8595 25.6464 11 26 11C26.3536 11 26.6928 10.8595 26.9428 10.6095C27.1929 10.3594 27.3333 10.0203 27.3333 9.66667V8.33333H28.6667C29.0203 8.33333 29.3594 8.19286 29.6095 7.94281C29.8595 7.69276 30 7.35362 30 7C30 6.64638 29.8595 6.30724 29.6095 6.05719C29.3594 5.80714 29.0203 5.66667 28.6667 5.66667Z" fill="white"/>
                     </svg>
                 </button>
-                
             </div>
         </div>
     {/each}
-
 </div>
 <div class="flex justify-center mt-4 items-center">
     <button class="bg-custom-blue hover:bg-custom-blue text-white font-bold m-2 py-2 px-2 rounded w-24 text-xs" on:click={() => goToPage(currentPage - 1)} disabled={currentPage === 1}>

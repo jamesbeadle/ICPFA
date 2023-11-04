@@ -8,9 +8,10 @@
 
     export let product: Product | null = null;
     export let showModal = false;
+    let activeImageType: 'front' | 'back' = 'front';
 
     onMount(() => {
-        currentImageSrc = `shirts/shirt_${product?.teamId}_front.jpg`;
+        currentImageSrc = `shirts/${product?.teamId}.jpg`;
     });
 
     function close() {
@@ -34,7 +35,8 @@
 
     function changeImage(imageType: 'front' | 'back'): void {
         if (product) {
-            currentImageSrc = `shirts/shirt_${product.teamId}_${imageType}.jpg`;
+            currentImageSrc = (imageType === 'front') ? `shirts/${product.teamId}.jpg` : `shirts/${product.teamId}_${product.shirtNumber}.jpg`;
+            activeImageType = imageType; // Set the active image type
         }
     }
 
@@ -104,10 +106,13 @@
     .thumbnail {
         width: 80px;
         height: 80px;
-        border: 1px solid #FFF;
+        border: 1px solid transparent;
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+    .thumbnail-active {
+        border-color: #FFF;
     }
 
     .header-row {
@@ -154,50 +159,37 @@
 <div class="modal-overlay" role="button" tabindex="0" on:click={close} on:keydown={close}>
     <div class="modal-content" role="button" tabindex="0" on:click={e => e.stopPropagation()} on:keydown={e => e.stopPropagation()}>
         <div class="inner-modal">
-            
             <div class="header-row">
                 <h5>Details</h5>
                 <button class="close-button" on:click={close} aria-label="Close">×</button>
             </div>
-            <div class="main-row">
+            <div class="main-row mt-4">
                 <div class="large-img-col">
-                    <img src={currentImageSrc} alt="Product" />
+                    <img class="pr-8" src={currentImageSrc} alt="Product" />
                 </div>
                 <div class="product-detail-col">
                     <h2 class="product-title">{product?.name}</h2>
                     <h2 class="product-description mt-2">{product?.description}</h2>
                     <p class="mt-4">{product?.price.toFixed(2)} ICP</p>
-                    
-                    
                 </div>
             </div>
             <div class="thumbnail-row">
-
                 <div class="thumbnail-container">
                     <div class="thumbnail-col">
-                        <div 
-  class="thumbnail" 
-  role="button" 
-  tabindex="0" 
-  on:click={() => changeImage('front')} 
-  on:keydown={(event) => (event.key === 'Enter' || event.key === ' ') && changeImage('front')}
-  aria-label="Show front view"
->
-    <img src={`shirts/shirt_${product?.teamId}_front.jpg`} alt="Front view" class="w-full h-full object-cover" />
-</div>
-
-<div 
-  class="thumbnail" 
-  role="button" 
-  tabindex="0" 
-  on:click={() => changeImage('back')} 
-  on:keydown={(event) => (event.key === 'Enter' || event.key === ' ') && changeImage('back')}
-  aria-label="Show back view"
->
-    <img src={`shirts/shirt_${product?.teamId}_back.jpg`} alt="Back view" class="w-full h-full object-cover" />
-</div>
-
-
+                        <div class="thumbnail {activeImageType === 'front' ? 'thumbnail-active' : ''}" role="button" tabindex="0" aria-label="Show front view"
+                            on:click={() => changeImage('front')} 
+                            on:keydown={(event) => (event.key === 'Enter' || event.key === ' ') && changeImage('front')}>
+                                <img src={`shirts/${product?.teamId}.jpg`} alt="Front view" class="w-full h-full object-cover" />
+                        </div>
+                        <div class="thumbnail {activeImageType === 'back' ? 'thumbnail-active' : ''}" role="button" tabindex="0" aria-label="Show back view"
+                            on:click={() => changeImage('back')} 
+                            on:keydown={(event) => (event.key === 'Enter' || event.key === ' ') && changeImage('back')}>
+                            {#if product?.teamId && product?.teamId > 0}
+                                <img src={`shirts/${product?.teamId}_${product?.shirtNumber}.jpg`} alt="Back view" class="w-full h-full object-cover" />
+                            {:else}
+                                <img src={`shirts/${product?.teamId}.jpg`} alt="Back view" class="w-full h-full object-cover" />
+                            {/if}
+                        </div>
                     </div>
                     <div class="size-col">
                         <div class="bg-black text-white">
