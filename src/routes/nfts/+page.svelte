@@ -1354,41 +1354,6 @@ As we look to the future, we are excited about the prospect of fully integrating
 
 
 <style>
-        .nft-section {
-        position: relative;
-        color: #ffffff;
-    }
- 
-    .image-container {
-        width: 100%;
-        position: relative;
-    }
- 
-    .image-container::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        background-color: rgba(0, 0, 0, 0.8);
-        z-index: 1;
-    }
- 
-    .image-container img {
-        width: 100%;
-        z-index: 0;
-    }
- 
-    .content {
-        position: absolute;
-        top: 2%;
-        z-index: 2;
-        padding-left: 32px;
-        padding-right: 32px;
-        text-align: center;
-        width: 100%;
-    }
 
     .table-col-1{
         flex-basis: 5%;
@@ -1525,192 +1490,183 @@ As we look to the future, we are excited about the prospect of fully integrating
     
  
 </style>
- 
-<div class="nft-section relative text-white">
-    <div class="image-container relative">
-        <img src="boardroom.jpg" alt="Community Fund" class="w-full">
+<div class="container-fluid flex md:flex-row flex-col">
+    <div class="sidebar">
+        <div class="panel-row">
+            <h2 class="text-left">FILTERS</h2>
+        </div>
+        <div class="side-panel-content">
+            <button 
+                on:click="{() => showTeams = !showTeams}" 
+                class="w-full text-left focus:outline-none"
+            >
+                <h3 class="flex justify-between items-center">
+                    BY TEAM
+                    {#if showTeams}
+                        <svg class="w-4 h-4" viewBox="0 0 24 24">
+                        <path 
+                            fill="none" 
+                            stroke="currentColor" 
+                            stroke-linecap="round" 
+                            stroke-linejoin="round" 
+                            stroke-width="2" 
+                            d="M19 13l-7-7-7 7"
+                        ></path>
+                        </svg>
+                    {:else}
+                        <svg class="w-4 h-4" viewBox="0 0 24 24">
+                            <path 
+                            fill="none" 
+                            stroke="currentColor" 
+                            stroke-linecap="round" 
+                            stroke-linejoin="round" 
+                            stroke-width="2" 
+                            d="M7 13l7 7 7-7"
+                        ></path>
+                        </svg>
+                    {/if}
+                </h3>
+            </button>
+    
+            {#if showTeams}
+                <div class="mt-2 text-left">
+                    {#each teams as team}
+                        <label class="block mb-2">
+                            <input 
+                                type="checkbox" 
+                                class="mr-2" 
+                                bind:group={selectedTeams} 
+                                value={team.id}
+                            >
+                            {team.name}
+                        </label>
+                    {/each}
+                </div>
+            {/if}
+            
+            {#if showNumberFilter}
+            <h3 class="mt-4 text-left">BY NUMBER</h3>
+            <select bind:value={numberFilter} 
+                    class="w-full py-1 px-2 rounded border bg-gray-900 text-white focus:outline-none focus:border-custom-blue mt-2">
+                <option value="-1">All</option>
+                {#each availableNumbers as number}
+                    <option value={number}>{number}</option>
+                {/each}
+            </select>
+            {/if}
+            
+        </div>
         
-        <div class="content">
-            <div class="container-fluid flex md:flex-row flex-col">
-                <div class="sidebar">
-                    <div class="panel-row">
-                        <h2 class="text-left">FILTERS</h2>
-                    </div>
-                    <div class="side-panel-content">
+    </div>
+    <div class="collection-container">
+        <div class="text-left">
+           <div class="artist-panel">
+
+                <div class="flex space-x-4 panel-row">
+                    {#each collections as collection, index}
                         <button 
-                            on:click="{() => showTeams = !showTeams}" 
-                            class="w-full text-left focus:outline-none"
+                            class="px-4 py-2 rounded shadow tab-header {selectedCollection === collection ? 'active-tab' : ''}"
+                            on:click={() => { 
+                                selectedCollection = collection; 
+                                currentPage = 1; 
+                            }}                            
                         >
-                            <h3 class="flex justify-between items-center">
-                                BY TEAM
-                                {#if showTeams}
-                                    <svg class="w-4 h-4" viewBox="0 0 24 24">
-                                    <path 
-                                        fill="none" 
-                                        stroke="currentColor" 
-                                        stroke-linecap="round" 
-                                        stroke-linejoin="round" 
-                                        stroke-width="2" 
-                                        d="M19 13l-7-7-7 7"
-                                    ></path>
-                                    </svg>
-                                {:else}
-                                    <svg class="w-4 h-4" viewBox="0 0 24 24">
-                                        <path 
-                                        fill="none" 
-                                        stroke="currentColor" 
-                                        stroke-linecap="round" 
-                                        stroke-linejoin="round" 
-                                        stroke-width="2" 
-                                        d="M7 13l7 7 7-7"
-                                    ></path>
-                                    </svg>
-                                {/if}
-                            </h3>
+                            {collection.name}
                         </button>
-                
-                        {#if showTeams}
-                            <div class="mt-2 text-left">
-                                {#each teams as team}
-                                    <label class="block mb-2">
-                                        <input 
-                                            type="checkbox" 
-                                            class="mr-2" 
-                                            bind:group={selectedTeams} 
-                                            value={team.id}
-                                        >
-                                        {team.name}
-                                    </label>
-                                {/each}
-                            </div>
-                        {/if}
-                        
-                        {#if showNumberFilter}
-                        <h3 class="mt-4 text-left">BY NUMBER</h3>
-                        <select bind:value={numberFilter} 
-                                class="w-full py-1 px-2 rounded border bg-gray-900 text-white focus:outline-none focus:border-custom-blue mt-2">
-                            <option value="-1">All</option>
-                            {#each availableNumbers as number}
-                                <option value={number}>{number}</option>
-                            {/each}
-                        </select>
-                        {/if}
-                        
-                    </div>
-                    
+                    {/each}
                 </div>
-                <div class="collection-container">
-                    <div class="text-left">
-                       <div class="artist-panel">
 
-                            <div class="flex space-x-4 panel-row">
-                                {#each collections as collection, index}
-                                    <button 
-                                        class="px-4 py-2 rounded shadow tab-header {selectedCollection === collection ? 'active-tab' : ''}"
-                                        on:click={() => { 
-                                            selectedCollection = collection; 
-                                            currentPage = 1; 
-                                        }}                            
-                                    >
-                                        {collection.name}
-                                    </button>
-                                {/each}
-                            </div>
-    
-                            <div>
-                                <div class="top-panel">
-                                    <div class="flex justify-between items-center">
-                                        <h2 class="text-2xl font-bold">{selectedCollection.name}</h2>
-                                        <h5 class="text-md mt-2 mb-4">{selectedCollection.nfts.length} Total</h5>
-                                    </div>
-                                    <p class="mt-4 mb-4 mr-8">{selectedCollection.bio}</p>
-                                    <p class="text-xs mb-4 mr-8">{selectedCollection.termsAndConditions}</p>
-                                                            
-                                                            
-                                    <p class="mb-4 font-medium">
-                                        Launchpad Price:<span class="ml-2 mr-2">{@html icpIcon(20,20)}</span> TBC
-                                    </p>
-                                                    
-                                    <hr class="border-t my-8 faint">
-                                
-                                    <div class="artist-bio">
-                                        <div class="flex">
-                                            <div class="artist-about-col">
-                                                <h2 class="text-2xl font-bold">About the Artist</h2>
-                                                <button class="action-button">View Collection On Toniq</button>
-                                            </div>
-                                            <div class="artist-detail-col">
-                                                <div class="artist-picture-col">
-                                                    <img class="artist-image" src="{selectedCollection.artistPicture}" alt="Ashutosh">
-                                                </div>
-                                                <div class="artist-content-col">
-                                                    <h2 class="text-xl font-bold">{selectedCollection.artistName}</h2>
-                                                    <p class="text-sm">{selectedCollection.artistBio}</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                       </div>
-                       <div class="nft-table-panel">
-                            <div class="panel-row mb-4">
-                                <h2 class="text-left">NFTs by ROI</h2>
-                            </div>
-                            <div class="panel-content">
-                                {#each paginatedNFTs as nft, index}
-                                    <div class="flex items-center mb-4 border-b pb-2">
-                                        <div class="table-col-1">
-                                            <span><p class="text-xs">{getPosition(index)}</p></span>
-                                        </div>
-                                        <div class="table-col-2">
-                                            <img src="{nft.imageUrl}" alt="{nft.name}" class="rounded shadow mr-4 px-8">
-                                        </div>
-                                        <div class="table-col-3">
-                                            <div class="flex-1">
-                                                <p class="text-xs">{nft.name}</p>
-                                            </div>
-                                        </div>
-                                        <div class="table-col-4">
-                                            <p class="text-xs">Club: <b>{nft.club}</b> | Shirt Number: <b>{nft.shirtNumber}</b> | Items Sold: <b>{nft.itemsSold}</b></p>
-                                        </div>
-                                        <div class="table-col-5">
-                                            <p class="text-xs ml-4">Earned - {nft.earned} ICP</p>
-                                        </div>
-                                        <div class="table-col-6">
-                                            <p class="text-xs text-indigo-600 ml-4">{nft.roi}% ROI</p>
-                                        </div>
+                <div>
+                    <div class="top-panel">
+                        <div class="flex justify-between items-center">
+                            <h2 class="text-2xl font-bold">{selectedCollection.name}</h2>
+                            <h5 class="text-md mt-2 mb-4">{selectedCollection.nfts.length} Total</h5>
+                        </div>
+                        <p class="mt-4 mb-4 mr-8">{selectedCollection.bio}</p>
+                        <p class="text-xs mb-4 mr-8">{selectedCollection.termsAndConditions}</p>
+                                                
+                                                
+                        <p class="mb-4 font-medium">
+                            Launchpad Price:<span class="ml-2 mr-2">{@html icpIcon(20,20)}</span> TBC
+                        </p>
                                         
-                                    </div>
-                                {/each}
-
-                            </div>
-                            <div class="flex justify-center items-center mb-4">
-                                <button
-                                  class="bg-custom-blue hover:bg-custom-blue text-white font-bold m-2 py-2 px-2 rounded w-24 text-xs disabled:bg-gray-400 disabled:text-gray-200"
-                                  on:click={() => goToPage(currentPage - 1)}
-                                  disabled={currentPage === 1}>
-                                    Previous
-                                </button>
-                                <div class="mx-1 p-0 text-xs flex items-center">
-                                  Page {currentPage}
+                        <hr class="border-t my-8 faint">
+                    
+                        <div class="artist-bio">
+                            <div class="flex">
+                                <div class="artist-about-col">
+                                    <h2 class="text-2xl font-bold">About the Artist</h2>
+                                    <button class="action-button">View Collection On Toniq</button>
                                 </div>
-                                <button
-                                  class="bg-custom-blue hover:bg-custom-blue text-white font-bold m-2 py-2 px-2 rounded w-24 text-xs disabled:bg-gray-400 disabled:text-gray-200"
-                                  on:click={() => goToPage(currentPage + 1)}
-                                  disabled={currentPage * itemsPerPage >= filteredNFTs.length}>
-                                    Next
-                                </button>
-                              </div>
-                              
-                       </div>
-
-
-    
-                        
+                                <div class="artist-detail-col">
+                                    <div class="artist-picture-col">
+                                        <img class="artist-image" src="{selectedCollection.artistPicture}" alt="Ashutosh">
+                                    </div>
+                                    <div class="artist-content-col">
+                                        <h2 class="text-xl font-bold">{selectedCollection.artistName}</h2>
+                                        <p class="text-sm">{selectedCollection.artistBio}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>  
+           </div>
+           <div class="nft-table-panel">
+                <div class="panel-row mb-4">
+                    <h2 class="text-left">NFTs by ROI</h2>
+                </div>
+                <div class="panel-content">
+                    {#each paginatedNFTs as nft, index}
+                        <div class="flex items-center mb-4 border-b pb-2">
+                            <div class="table-col-1">
+                                <span><p class="text-xs">{getPosition(index)}</p></span>
+                            </div>
+                            <div class="table-col-2">
+                                <img src="{nft.imageUrl}" alt="{nft.name}" class="rounded shadow mr-4 px-8">
+                            </div>
+                            <div class="table-col-3">
+                                <div class="flex-1">
+                                    <p class="text-xs">{nft.name}</p>
+                                </div>
+                            </div>
+                            <div class="table-col-4">
+                                <p class="text-xs">Club: <b>{nft.club}</b> | Shirt Number: <b>{nft.shirtNumber}</b> | Items Sold: <b>{nft.itemsSold}</b></p>
+                            </div>
+                            <div class="table-col-5">
+                                <p class="text-xs ml-4">Earned - {nft.earned} ICP</p>
+                            </div>
+                            <div class="table-col-6">
+                                <p class="text-xs text-indigo-600 ml-4">{nft.roi}% ROI</p>
+                            </div>
+                            
+                        </div>
+                    {/each}
+
+                </div>
+                <div class="flex justify-center items-center mb-4">
+                    <button
+                      class="bg-custom-blue hover:bg-custom-blue text-white font-bold m-2 py-2 px-2 rounded w-24 text-xs disabled:bg-gray-400 disabled:text-gray-200"
+                      on:click={() => goToPage(currentPage - 1)}
+                      disabled={currentPage === 1}>
+                        Previous
+                    </button>
+                    <div class="mx-1 p-0 text-xs flex items-center">
+                      Page {currentPage}
+                    </div>
+                    <button
+                      class="bg-custom-blue hover:bg-custom-blue text-white font-bold m-2 py-2 px-2 rounded w-24 text-xs disabled:bg-gray-400 disabled:text-gray-200"
+                      on:click={() => goToPage(currentPage + 1)}
+                      disabled={currentPage * itemsPerPage >= filteredNFTs.length}>
+                        Next
+                    </button>
+                  </div>
+                  
+           </div>
+
+
+
+            
         </div>
     </div>
 </div>
