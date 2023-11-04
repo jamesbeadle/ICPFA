@@ -58,7 +58,7 @@
                 Every NFT holder for that particular club will receive an equal share of this collective club merchandising revenue.
                 The ICPFA plans to expand its range of fantasy games into all leagues of football, this means that NFTs for relegated teams will still generate revenue while a team is absent from the OpenFPL game.
             `,
-            launchpadPrice: 150.00,
+            launchpadPrice: 0.00,
             stoicLink: 'https://toniq.io/',
             nfts: [
                 {
@@ -1084,7 +1084,7 @@
 Our ambition is to cultivate these fan-centric podcasts to achieve recognition on par with established platforms such as Arsenal Fan TV. We are dedicated to maintaining transparency with our audience. To this end, we will publish revenue figures monthly and ensure timely payments to NFT holders.
 
 As we look to the future, we are excited about the prospect of fully integrating an on-chain podcast infrastructure once it becomes accessible on the Internet Computer (IC) blockchain.`,
-            launchpadPrice: 50.00,
+            launchpadPrice: 0.00,
             stoicLink: 'https://toniq.io/',
             nfts: [
                 {
@@ -1628,7 +1628,7 @@ As we look to the future, we are excited about the prospect of fully integrating
                                                             
                                                             
                                     <p class="mb-4 font-medium">
-                                        Launchpad Price:<span class="ml-2 mr-2">{@html icpIcon(20,20)}</span> {selectedCollection.launchpadPrice} ICP
+                                        Launchpad Price:<span class="ml-2 mr-2">{@html icpIcon(20,20)}</span> TBC
                                     </p>
                                                     
                                     <hr class="border-t my-8 faint">
