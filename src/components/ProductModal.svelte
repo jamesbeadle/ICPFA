@@ -9,19 +9,20 @@
     export let product: Product | null = null;
     export let showModal = false;
     let activeImageType: 'front' | 'back' = 'front';
-
-    onMount(() => {
-        currentImageSrc = `shirts/${product?.teamId}.jpg`;
-    });
-
-    function close() {
-        dispatch('close');
-    }
-
     let sizes = ['S', 'M', 'L', 'XL'];
     let selectedSize = 'L';
     let quantity = 1;
     let currentImageSrc = '';
+
+    $: if (product) {
+        currentImageSrc = `shirts/${product.teamId}.jpg`;
+    } else {
+        currentImageSrc = '';
+    }
+
+    function close() {
+        dispatch('close');
+    }
 
     function increment() {
         quantity += 1;
@@ -36,7 +37,7 @@
     function changeImage(imageType: 'front' | 'back'): void {
         if (product) {
             currentImageSrc = (imageType === 'front') ? `shirts/${product.teamId}.jpg` : `shirts/${product.teamId}_${product.shirtNumber}.jpg`;
-            activeImageType = imageType; // Set the active image type
+            activeImageType = imageType;
         }
     }
 
