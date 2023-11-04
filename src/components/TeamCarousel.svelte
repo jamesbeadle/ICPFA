@@ -44,43 +44,9 @@
     function changeMember(index: number) {
         currentMemberIndex = index;
     }
-  </script>
+</script>
   
   <style>
-    .team-section {
-        position: relative;
-        color: #ffffff;
-    }
-
-
-    .content {
-        padding-left: 32px;
-        padding-right: 32px;
-    }
-
-    .text-center {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .text-center {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-    }
-    .profile-text {
-        font-size: 10px !important;
-        min-height: 100px;
-    }
-
-    .title-text{
-        font-size: 12px !important;
-        padding: 0px !important;
-        margin: 0px !important;
-    }
     .caret {
       display: inline-block;
       width: 12px;
@@ -89,73 +55,59 @@
       margin: 0 5px;
       border-radius: 50%;
     }
+
     .caret.active {
       background: white;
-    }/* Add this new CSS class */
-    .caret-wrapper {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px; /* Optional: Add some top margin for spacing */
-    }
-    .image-container img {
-        width: 100%;
-        max-width: 400px;  /* or whatever maximum width you prefer */
-        margin: 0 auto;  /* centers the image if it's less than 100% width */
-        z-index: 0;
-        display: block;  /* helps with the centering */
     }
 
-    @media (max-width: 767px) {
-        .image-container img {
-        width: 100%;
-        max-width: 100px;  /* or whatever maximum width you prefer */
-        margin: 0 auto;  /* centers the image if it's less than 100% width */
-        z-index: 0;
-        display: block;  /* helps with the centering */
-        }
+    .caret-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
-    @media (min-width: 768px) {
-        .image-container img {
-        width: 100%;
-        max-width: 200px;  /* or whatever maximum width you prefer */
-        margin: 0 auto;  /* centers the image if it's less than 100% width */
-        z-index: 0;
-        display: block;  /* helps with the centering */
-    }
+    .profile-text{
+        min-height: 300px;
     }
 
   </style>
-<section>
-    <div class="team-section">
-        <div class="image-container">
-        <div class="content">
-            <h1 class="text-4xl font-bold mb-2 mt-1">Our Team</h1>
-            <div class="text-center">
-                <img src="{teamMembers[currentMemberIndex].image}" alt="{teamMembers[currentMemberIndex].name}" class="rounded-full profile-image">
+
+<section class="text-white bg-gray-800 body-font">
+    <div class="mx-auto md:mx-16 flex pt-4 items-center justify-center flex-col">
+      <div class="text-center w-full">
+        <h1 class="title-font sm:text-4xl text-2xl md:mb-4 mt-4 font-medium text-white">Our Team</h1>
+        <div class="flex justify-center">
+          <div class="flex border-2 rounded-lg border-gray-800 pl-8 pr-8 md:mt-4 md:p-0 md:pb-8 sm:flex-row flex-col">
+            <div class="md:text-left text-center md:flex-1 md:basis-1/2 mb-4 p-8">
+              <img src="{teamMembers[currentMemberIndex].image}" alt="{teamMembers[currentMemberIndex].name}" class="rounded-full profile-image w-64">
+            </div>
+            <div class="flex flex-col md:flex-1 md:basis-1/2 justify-center items-center">
+              <div class="text-center mb-4">
                 <h3 class="text-2xl font-bold title-text">{teamMembers[currentMemberIndex].name}</h3>
                 <p class="text-xl title-text">{teamMembers[currentMemberIndex].role}</p>
                 <p class="profile-text">{teamMembers[currentMemberIndex].bio}</p>
-                </div>
-                <!-- Wrap the caret-container with another div -->
-            <div class="caret-wrapper">
-                <div class="caret-container">
-                <button on:click={goPrevious}>&lt;</button> 
+              </div>
+              <div class="caret-container flex justify-center">
+                <button class="caret-button mr-3" on:click={goPrevious}>&lt;</button>
                 {#each teamMembers as member, index}
-                    <span class="caret {currentMemberIndex === index ? 'active' : ''}" 
-                    on:click={() => changeMember(index)} 
-                    on:keydown={(event) => event.key === 'Enter' && changeMember(index)}
-                    tabindex="0" 
-                    role="button" 
-                    aria-label="Change to member {member.name}"></span>
-                {/each} 
-                <button on:click={goNext}>&gt;</button>
-                </div>
-            </div>
-    
-            
+                  <span class="caret {currentMemberIndex === index ? 'active' : ''}"
+                  on:click={() => changeMember(index)} 
+                  on:keydown={(event) => event.key === 'Enter' && changeMember(index)}
+                  tabindex="0" 
+                  role="button" 
+                  aria-label="Change to member {member.name}"></span>
+                {/each}
+                <button class="caret-button ml-3" on:click={goNext}>&gt;</button>
+              </div>
+            </div>  
+          </div>
         </div>
-        </div>
+      </div>
     </div>
-</section>
+  </section>
   
+    
+    
+
+
+

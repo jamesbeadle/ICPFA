@@ -108,7 +108,7 @@
   
   <!-- Text Section -->
   <section class="text-white bg-gray-900">
-      <div class="container px-5 py-10 mx-auto">
+      <div class="container py-10 mx-auto px-8 md:px-4">
           <div class="flex flex-wrap w-full mb-4">
               <div class="lg:w-2/3 mx-auto">
                     <h2 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-white">Good Causes</h2>

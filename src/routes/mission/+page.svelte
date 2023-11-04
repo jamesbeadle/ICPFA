@@ -7,24 +7,16 @@
                 <div class="flex border-2 rounded-lg border-gray-800 pl-8 pr-8 md:mt-4 md:p-0 md:pb-8 sm:flex-row flex-col">
                     <div class="md:text-left text-center md:flex-1 md:basis-1/2 mb-4 p-8">
                         <p class="leading-relaxed text-sm md:text-lg">
-                            Football is the world's most-watched sport, attracting an estimated 4 billion fans. 
-                            Beyond the pitch, football acts as a powerful catalyst for social improvement, community development, 
-                            and providing promising young talent with avenues to success.
+                            Football is the world's most popular sport, drawing in 4 billion fans. It's a force for social and community progress, providing young talent with pathways to success.
                         </p>
                         <p class="leading-relaxed text-sm md:text-lg mt-4">
-                            We have created the ICPFA to provide this huge fanbase a range of high quality apps, decentralised internet services and investment opportunities. 
-                            We feel doing this will attract a large number of new users to the ICP ecosystem. Our first DAO, OpenFPL, is improving on an existing Web2 service with 10m users.
+                            We've established the ICPFA to deliver top-tier applications, decentralized internet services, and investment options to this massive audience, aiming to bring a wave of new users to the ICP ecosystem. Our inaugural DAO, OpenFPL, enhances a Web2 service that already has a 10-million-strong user base.
                         </p>
                         <p class="leading-relaxed text-sm md:text-lg mt-4">
-                            The ICPFA Community Fund has been created for football related charitable projects around the world. 
-                            This fund will be used to make a positive impact to people's lives using football. 
+                            Additionally, the ICPFA Community Fund will support football-centric charitable endeavors worldwide, leveraging the sport to effect positive change in people’s lives.
                         </p>
                         <p class="leading-relaxed text-sm md:text-lg mt-4">
-                            The ICPFA Community Fund will be funded by the ICPFA founder, James Beadle. 
-                            For each ICPFA project that generates maturity interest or revenue, James will deposit 25% of his share into the ICPFA community fund.
-                        </p>
-                        <p class="leading-relaxed text-sm md:text-lg mt-4 mb-4">
-                            100% of the revenue from the FootballGod platform will also be added to the ICPFA community fund.
+                            James Beadle, the founder of ICPFA, has pledged to allocate 25% of his profits from each ICPFA project that yields interest or revenue to the Community Fund. Furthermore, all profits from the FootballGod platform will be channeled into the fund.
                         </p>
                     </div>
                     <div class="md:flex-1 md:basis-1/2 flex justify-center items-center">
