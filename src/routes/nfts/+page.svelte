@@ -1530,7 +1530,7 @@ As we look to the future, we are excited about the prospect of fully integrating
     <div class="image-container relative">
         <img src="boardroom.jpg" alt="Community Fund" class="w-full">
         
-        <div class="content absolute z-10">
+        <div class="content">
             <div class="container-fluid flex md:flex-row flex-col">
                 <div class="sidebar">
                     <div class="panel-row">
