@@ -1460,8 +1460,6 @@ As we look to the future, we are excited about the prospect of fully integrating
 
     .action-button {
         background-color: #3C71FA !important;
-        font-size: 16px;
-        font-weight: 600;
         padding: 16px;
         padding-left: 24px;
         padding-right: 24px;
@@ -1596,7 +1594,7 @@ As we look to the future, we are excited about the prospect of fully integrating
                             <div class="flex">
                                 <div class="artist-about-col">
                                     <h2 class="text-2xl font-bold">About the Artist</h2>
-                                    <button class="action-button">View Collection On Toniq</button>
+                                    <button class="action-button text-md">View Collection On Toniq</button>
                                 </div>
                                 <div class="artist-detail-col">
                                     <div class="artist-picture-col">

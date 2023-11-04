@@ -35,24 +35,6 @@
         margin-right: 10px; 
     }
     
-    @media (max-width: 767px) {
-        .footer {
-            font-size: 8px;
-        }
-    }
-    
-    @media (min-width: 768px) {
-        .footer {
-            font-size: 10px;
-        }
-    }
-
-    @media (min-width: 1200px) {
-        .footer {
-            font-size: 20px;
-        }
-    }
-
 </style>
 
 <footer class="footer">
@@ -63,7 +45,7 @@
   </div>
 
   <div class="footer-right">
-      <span class="text-white">Powered by Juno</span>
+      <span class="text-white text-sm">Powered by Juno</span>
       <a target="_blank" class="icon" href="https://juno.build"><img src="juno.png" alt="Juno Logo" class="juno-logo icon"></a>      
   </div>
 </footer>

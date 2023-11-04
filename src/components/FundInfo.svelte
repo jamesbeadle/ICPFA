@@ -20,9 +20,8 @@
     const formattedBalance = (balanceNumber / 1e8).toFixed(2);
     walletBalance.set(formattedBalance);
     loading.set(false);
-}
-
-
+  }
+  
   onMount(() => {
     fetchWalletBalance();
   });

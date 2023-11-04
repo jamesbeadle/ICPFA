@@ -90,7 +90,6 @@
     background: none;
     border: none;
     cursor: pointer;
-    font-size: 24px;
   }
 
   .burger-btn:focus {

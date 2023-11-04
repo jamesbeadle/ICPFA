@@ -89,21 +89,6 @@
         flex-basis: 35%;
     }
 
-    .product-title{
-        font-size: 20px;
-        font-style: normal;
-        font-weight: 600;
-        text-transform: uppercase;
-    }
-
-    .product-description{
-        font-size: 8px;
-        font-style: normal;
-        font-weight: 400;
-        text-transform: uppercase;
-        color: #C2C3C4;
-    }
-
     .thumbnail-container {
         display: flex;
         gap: 1rem;
@@ -132,7 +117,6 @@
     .close-button {
         background: none;
         border: none;
-        font-size: 1.5rem;
         cursor: pointer;
     }
     
@@ -168,15 +152,15 @@
         <div class="inner-modal">
             <div class="header-row">
                 <h5>Details</h5>
-                <button class="close-button" on:click={close} aria-label="Close">×</button>
+                <button class="close-button text-3xl" on:click={close} aria-label="Close">×</button>
             </div>
             <div class="main-row mt-4">
                 <div class="large-img-col">
                     <img class="pr-8" src={currentImageSrc} alt="Product" />
                 </div>
                 <div class="product-detail-col">
-                    <h2 class="product-title">{product?.name}</h2>
-                    <h2 class="product-description mt-2">{product?.description}</h2>
+                    <h2 class="text-2xl font-bold uppercase">{product?.name}</h2>
+                    <h2 class="text-md text-gray-400 mt-2">{product?.description}</h2>
                     <p class="mt-4">{product?.price.toFixed(2)} ICP</p>
                 </div>
             </div>

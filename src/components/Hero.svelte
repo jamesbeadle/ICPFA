@@ -13,7 +13,7 @@
 </div>
 
 <style>
-.hero {
-  height: 100vh;
-}
+  .hero {
+    height: 100vh;
+  }
 </style>
