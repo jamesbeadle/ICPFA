@@ -14,10 +14,12 @@
     );
   </script>
 
-<div class="flex flex-col h-screen">
+<div class="flex flex-col h-screen justify-between">
   <Navbar />
-  <div class="flex-grow">
+  <main class="mb-auto">
     <slot />
+  </main>
+  <div class="flex-grow">
   </div>
   <Footer />
 </div>
