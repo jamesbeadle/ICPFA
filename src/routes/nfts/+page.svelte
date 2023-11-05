@@ -1329,7 +1329,6 @@ As we look to the future, we are excited about the prospect of fully integrating
         showNumberFilter = filteredNFTs.filter(nft => nft.shirtNumber > 0).length > 0;
     }
 
-    // Reactive statement for pagination, which only works on filtered results
     $: paginatedNFTs = filteredNFTs.sort((a, b) => {
         if (b.earned !== a.earned) {
             return b.earned - a.earned;
@@ -1452,22 +1451,6 @@ As we look to the future, we are excited about the prospect of fully integrating
     .side-panel-content{
         padding: 24px;
     }
-
-    .artist-bio {
-    display: flex;
-    flex-direction: column;
-    @media (min-width: 768px) {
-        flex-direction: row;
-    }
-}
-
-.artist-about-col {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* This will push the button to the bottom */
-    height: 100%; /* Make sure it stretches to the full height of .artist-bio */
-}
-
  
 </style>
 <div class="container-fluid flex md:flex-row flex-col">
@@ -1592,37 +1575,33 @@ As we look to the future, we are excited about the prospect of fully integrating
                 </div>
            </div>
            <div class="nft-table-panel">
-                <div class="panel-row mb-4">
-                    <h2 class="text-left">NFTs by ROI</h2>
-                </div>
-                <div class="panel-content">
-                    {#each paginatedNFTs as nft, index}
-                        <div class="flex items-center mb-4 border-b pb-2">
-                            <div class="table-col-1">
-                                <span><p class="text-xs">{getPosition(index)}</p></span>
-                            </div>
-                            <div class="table-col-2">
-                                <img src="{nft.imageUrl}" alt="{nft.name}" class="rounded shadow mr-4 px-8">
-                            </div>
-                            <div class="table-col-3">
-                                <div class="flex-1">
-                                    <p class="text-xs">{nft.name}</p>
-                                </div>
-                            </div>
-                            <div class="table-col-4">
-                                <p class="text-xs">Club: <b>{nft.club}</b> | Shirt Number: <b>{nft.shirtNumber}</b> | Items Sold: <b>{nft.itemsSold}</b></p>
-                            </div>
-                            <div class="table-col-5">
-                                <p class="text-xs ml-4">Earned - {nft.earned} ICP</p>
-                            </div>
-                            <div class="table-col-6">
-                                <p class="text-xs text-indigo-600 ml-4">{nft.roi}% ROI</p>
-                            </div>
-                            
+            <div class="panel-row mb-4">
+                <h2 class="text-left">NFTs by ROI</h2>
+            </div>
+            <div class="panel-content">
+                {#each paginatedNFTs as nft, index}
+                    <div class="flex flex-col md:flex-row items-center justify-between mb-4 border-b pb-2">
+                        <div class="table-col-1 mb-2 md:mb-0">
+                            <p class="text-xs text-center md:text-left">{getPosition(index)}</p>
                         </div>
-                    {/each}
-
-                </div>
+                        <div class="table-col-2 mb-2 md:mb-0">
+                            <img src="{nft.imageUrl}" alt="{nft.name}" class="rounded shadow object-cover h-24 w-full md:w-24 md:h-24 mx-auto md:mx-0">
+                        </div>
+                        <div class="table-col-3 mb-2 md:mb-0">
+                            <p class="text-xs text-center md:text-left">{nft.name}</p>
+                        </div>
+                        <div class="table-col-4 mb-2 md:mb-0">
+                            <p class="text-xs text-center md:text-left">Club: <b>{nft.club}</b> | Shirt Number: <b>{nft.shirtNumber}</b> | Items Sold: <b>{nft.itemsSold}</b></p>
+                        </div>
+                        <div class="table-col-5 mb-2 md:mb-0">
+                            <p class="text-xs text-center md:text-left">Earned - {nft.earned} ICP</p>
+                        </div>
+                        <div class="table-col-6">
+                            <p class="text-xs text-center md:text-left text-indigo-600">{nft.roi}% ROI</p>
+                        </div>
+                    </div>
+                {/each}
+            </div>
                 <div class="flex justify-center items-center mb-4">
                     <button
                       class="bg-custom-blue hover:bg-custom-blue text-white font-bold m-2 py-2 px-2 rounded w-24 text-xs disabled:bg-gray-400 disabled:text-gray-200"
@@ -1639,13 +1618,8 @@ As we look to the future, we are excited about the prospect of fully integrating
                       disabled={currentPage * itemsPerPage >= filteredNFTs.length}>
                         Next
                     </button>
-                  </div>
-                  
+                </div>
            </div>
-
-
-
-            
         </div>
     </div>
 </div>
