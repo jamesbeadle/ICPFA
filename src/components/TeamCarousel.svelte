@@ -85,7 +85,7 @@
       <div class="text-center w-full">
         <h1 class="title-font sm:text-4xl text-2xl md:mb-4 mt-4 font-medium text-white">Our Team</h1>
         <div class="flex justify-center">
-          <div class="flex border-2 rounded-lg border-gray-800 pl-8 pr-8 md:mt-4 md:p-0 md:pb-8 sm:flex-row flex-col">
+          <div class="flex rounded-lg border-gray-800 pl-8 pr-8 md:mt-4 md:p-0 md:pb-8 sm:flex-row flex-col">
             <div class="profile-image-container md:flex-1 md:basis-1/2 mb-4 p-8">
                 <img src="{teamMembers[currentMemberIndex].image}" alt="{teamMembers[currentMemberIndex].name}" class="rounded-full profile-image w-64 h-64 object-cover">
               </div>

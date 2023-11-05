@@ -1405,29 +1405,6 @@ As we look to the future, we are excited about the prospect of fully integrating
         margin: 20px; 
     }
 
-    .artist-about-col{
-        flex-basis: 30%;
-    }
-
-    .artist-detail-col{
-        flex-basis: 70%;
-        display: flex;
-    }
-
-    .artist-picture-col{
-        flex-basis: 20%;
-    }
-
-    .artist-content-col{
-        flex-basis: 80%;
-        padding-left: 24px;
-        padding-right: 24px;
-    }
-
-    .artist-image{
-        border-radius: 8px !important;
-    }
-
     .panel-row{
         background-color: #161819;
         padding: 20px;
@@ -1448,25 +1425,15 @@ As we look to the future, we are excited about the prospect of fully integrating
         justify-content: flex-start;
     }
 
-    .artist-bio {
-        display: flex;
-        flex-direction: column; 
-    }
-
-    .artist-about-col {
-        flex: 1;
-        position: relative;  
-    }
-
     .action-button {
         background-color: #3C71FA !important;
         padding: 16px;
         padding-left: 24px;
         padding-right: 24px;
-        position: absolute;
-        bottom: 0;
         border-radius: 4px;
+        margin-top: auto; 
     }
+    
 
     .faint{
         border-color: rgba(69, 75, 86, 0.80);
@@ -1485,7 +1452,22 @@ As we look to the future, we are excited about the prospect of fully integrating
     .side-panel-content{
         padding: 24px;
     }
-    
+
+    .artist-bio {
+    display: flex;
+    flex-direction: column;
+    @media (min-width: 768px) {
+        flex-direction: row;
+    }
+}
+
+.artist-about-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* This will push the button to the bottom */
+    height: 100%; /* Make sure it stretches to the full height of .artist-bio */
+}
+
  
 </style>
 <div class="container-fluid flex md:flex-row flex-col">
@@ -1573,37 +1555,36 @@ As we look to the future, we are excited about the prospect of fully integrating
                         </button>
                     {/each}
                 </div>
+                
+                <div class="top-panel">
+                    <div class="flex justify-between items-center">
+                        <h2 class="text-sm md:text-2xl font-bold">{selectedCollection.name}</h2>
+                        <h5 class="text-sm md:text-xl">{selectedCollection.nfts.length} Total</h5>
+                    </div>
+                    <p class="mt-4 mb-4 mr-8">{selectedCollection.bio}</p>
+                    <p class="text-xs mb-4 mr-8">{selectedCollection.termsAndConditions}</p>
+                                            
+                                            
+                    <p class="mb-4 font-medium">
+                        Launchpad Price:<span class="ml-2 mr-2">{@html icpIcon(20,20)}</span> TBC
+                    </p>
+                                    
+                    <hr class="border-t my-8 faint">
 
-                <div>
-                    <div class="top-panel">
-                        <div class="flex justify-between items-center">
-                            <h2 class="text-2xl font-bold">{selectedCollection.name}</h2>
-                            <h5 class="text-md mt-2 mb-4">{selectedCollection.nfts.length} Total</h5>
+
+                    <div class="flex flex-col md:flex-row">
+                        <div class="md:w-1/3 bg-gray-800 text-white p-4 flex flex-col justify-between">
+                            <h2 class="text-2xl font-bold mb-4">About the Artist</h2>
+                            <button class="action-button bg-blue-500 text-white w-full py-2 rounded">View Collection On Toniq</button>
                         </div>
-                        <p class="mt-4 mb-4 mr-8">{selectedCollection.bio}</p>
-                        <p class="text-xs mb-4 mr-8">{selectedCollection.termsAndConditions}</p>
-                                                
-                                                
-                        <p class="mb-4 font-medium">
-                            Launchpad Price:<span class="ml-2 mr-2">{@html icpIcon(20,20)}</span> TBC
-                        </p>
-                                        
-                        <hr class="border-t my-8 faint">
-                    
-                        <div class="artist-bio">
-                            <div class="flex">
-                                <div class="artist-about-col">
-                                    <h2 class="text-2xl font-bold">About the Artist</h2>
-                                    <button class="action-button text-md">View Collection On Toniq</button>
+                        <div class="md:w-2/3 bg-gray-900 text-white p-4">
+                            <div class="flex flex-col md:flex-row md:items-center">
+                                <div class="md:w-1/4 mb-4 md:mb-0">
+                                    <img class="rounded w-full" src="{selectedCollection.artistPicture}" alt="{selectedCollection.artistName}">
                                 </div>
-                                <div class="artist-detail-col">
-                                    <div class="artist-picture-col">
-                                        <img class="artist-image" src="{selectedCollection.artistPicture}" alt="Ashutosh">
-                                    </div>
-                                    <div class="artist-content-col">
-                                        <h2 class="text-xl font-bold">{selectedCollection.artistName}</h2>
-                                        <p class="text-sm">{selectedCollection.artistBio}</p>
-                                    </div>
+                                <div class="md:w-3/4 md:pl-4">
+                                    <h2 class="text-xl font-bold mb-2">{selectedCollection.artistName}</h2>
+                                    <p class="text-sm">{selectedCollection.artistBio}</p>
                                 </div>
                             </div>
                         </div>

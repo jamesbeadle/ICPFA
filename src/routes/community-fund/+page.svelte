@@ -50,7 +50,7 @@
           <div class="text-center w-full">
               <h1 class="title-font sm:text-4xl text-2xl mb-4 mt-4 font-medium text-white">The ICPFA Community Fund</h1>
               <div class="flex justify-center">
-                    <div class="flex border-2 rounded-lg border-gray-800 p-8 mt-4 md:p-0 md:pb-8 sm:flex-row flex-col lg:w-2/3">
+                    <div class="flex rounded-lg p-8 mt-4 md:p-0 md:pb-8 sm:flex-row flex-col lg:w-2/3">
                         <div class="md:text-left text-center md:flex-1 md:basis-3/5 mb-4">
                             <p class="text-xs text-gray-400">Balance</p>
                             {#if $loading}
