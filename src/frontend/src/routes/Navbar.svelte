@@ -6,7 +6,6 @@
     "/mission",
     "/team",
     "/projects",
-    "/community-fund",
     "/nfts",
     "/shop",
   ];
@@ -62,13 +61,6 @@
         </li>
         <li class="mx-2">
           <a
-            href="/community-fund"
-            class="text-white hover:text-gray-400 {currentClass[3]}"
-            >Community Fund</a
-          >
-        </li>
-        <li class="mx-2">
-          <a
             href="/nfts"
             class="text-white hover:text-gray-400 {currentClass[4]}">NFTs</a
           >
@@ -97,13 +89,6 @@
         <li>
           <a href="/projects" class={currentClass[2]} on:click={toggleMenu}
             >Projects</a
-          >
-        </li>
-        <li>
-          <a
-            href="/community-fund"
-            class={currentClass[3]}
-            on:click={toggleMenu}>Community Fund</a
           >
         </li>
         <li>

@@ -8,29 +8,11 @@
       bio: "James spent his early career building financial solutions in the energy sector and then moved into building interactive experiences for Arcstream AV up until the end of 2022. Working alongside large brands such as Ford, Coca-Cola, McKinsey, GSK and more has equipped him with the skills to ensure products are beautifully designed and intrinsically easy to use. James discovered the Internet Computer blockchain in early 2023, with the principles of the IC resonating strongly with his personal beliefs. He feels extremely lucky to be able to contribute to our decentralised future.",
     },
     {
-      name: "X: @daydrinkr",
+      name: "George Robinson",
       role: "Community Manager",
       image: "daydrinkr.jpg",
       bio: "George has been in Crypto since 2020 and a part of the ICP community since 2021. A lifelong fan of all things football, he’s actively involved in the fantasy game, watching live football as well as playing for a local club! A computer science graduate, George combines his passion for technology with his enthusiasm for the game. ",
-    },
-    {
-      name: "X: @DfinityDesigner",
-      role: "Designer",
-      image: "dfd.jpg",
-      bio: "The DfinityDesigner is dedicated to transforming the Internet Computer through a user-centered, minimalist design approach. Crafting innovative online products, redefining user experiences, and creating unique brands for the ICP community are his expertise. Projects like OpenFPL and the ICPFA site exemplify his ability to ensure consistent brand identities and unique UI designs. Partnering with him guarantees a cohesive brand identity across our portfolio.",
-    },
-    {
-      name: "X: @ICP_Insider",
-      role: "Community Ambassador",
-      image: "icpinsider.jpg",
-      bio: "ICP_Insider has been part of the ICP community since genesis, forming strong connections within all areas of the ICP ecosystem. Time and again he has provided valuable community connections along with playing an important role in the promotion of ICPFA services.",
-    },
-    {
-      name: "X: @madmaxic",
-      role: "Gameplay Designer",
-      image: "max.jpg",
-      bio: "MadMax is a former avid player of Football Manager who now makes key contributions to OpenFPL gameplay rules. He entered the crypto space with Ethereum in 2015 and deepened his involvement in 2019 with the Internet Computer Protocol. Committed to creating a middleman-free, autonomous world, he prioritizes technology and science over money.",
-    },
+    }
   ];
 
   function goPrevious() {
