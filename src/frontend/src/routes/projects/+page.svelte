@@ -12,7 +12,8 @@
       imagePath: "OpenFPL.png",
       showButton: true,
       buttonText: "Map NFT to IID",
-      redirect: "nft-mapping",
+      redirect: "https://3qkuw-fiaaa-aaaal-qdfsq-cai.icp0.io/",
+      external: true,
     },
     {
       name: "OpenFPL NFTs",
@@ -24,6 +25,7 @@
       imagePath: "boardroom.jpg",
       buttonText: "Details",
       redirect: "nfts",
+      external: false,
     },
     {
       name: "FootballGod",
@@ -35,6 +37,7 @@
       showButton: false,
       buttonText: "",
       redirect: "",
+      external: false,
     },
     {
       name: "The OpenFPL Podcast",
@@ -46,6 +49,7 @@
       showButton: false,
       buttonText: "",
       redirect: "",
+      external: false,
     },
     {
       name: "Football News",
@@ -57,6 +61,7 @@
       showButton: false,
       buttonText: "",
       redirect: "",
+      external: false,
     },
     {
       name: "Euro 2024",
@@ -68,6 +73,7 @@
       showButton: false,
       buttonText: "",
       redirect: "",
+      external: false,
     },
   ];
 </script>

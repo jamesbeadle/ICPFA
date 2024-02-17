@@ -27,13 +27,23 @@
               {project.description}
             </h1>
             {#if project.showButton}
-              <a href="/{project.redirect}">
-                <button
-                  type="button"
-                  class="text-xs px-2 py-3 text-white custom-button rounded focus:outline-none mb-2 mt-2"
-                  >{project.buttonText}</button
-                >
-              </a>
+              {#if project.external}
+                <a target="_blank" href={project.redirect}>
+                  <button
+                    type="button"
+                    class="text-xs px-2 py-3 text-white custom-button rounded focus:outline-none mb-2 mt-2"
+                    >{project.buttonText}</button
+                  >
+                </a>
+              {:else}
+                <a href="/{project.redirect}">
+                  <button
+                    type="button"
+                    class="text-xs px-2 py-3 text-white custom-button rounded focus:outline-none mb-2 mt-2"
+                    >{project.buttonText}</button
+                  >
+                </a>
+              {/if}
             {/if}
           </div>
           <div class="flex justify-between items-center mt-2">

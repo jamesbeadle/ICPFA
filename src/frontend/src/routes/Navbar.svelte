@@ -2,13 +2,7 @@
   import { page } from "$app/stores";
 
   let menuOpen = false;
-  const routes = [
-    "/mission",
-    "/team",
-    "/projects",
-    "/nfts",
-    "/shop",
-  ];
+  const routes = ["/mission", "/team", "/projects", "/nfts", "/shop"];
   let currentClass: string[] = [];
 
   $: currentClass = routes.map((route) =>

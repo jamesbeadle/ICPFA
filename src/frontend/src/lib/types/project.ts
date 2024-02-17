@@ -8,4 +8,5 @@ export type Project = {
   showButton: boolean;
   buttonText: string;
   redirect: string;
+  external: boolean;
 };

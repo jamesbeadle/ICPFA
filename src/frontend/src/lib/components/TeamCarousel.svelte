@@ -12,7 +12,7 @@
       role: "Community Manager",
       image: "daydrinkr.jpg",
       bio: "George has been in Crypto since 2020 and a part of the ICP community since 2021. A lifelong fan of all things football, he’s actively involved in the fantasy game, watching live football as well as playing for a local club! A computer science graduate, George combines his passion for technology with his enthusiasm for the game. ",
-    }
+    },
   ];
 
   function goPrevious() {
