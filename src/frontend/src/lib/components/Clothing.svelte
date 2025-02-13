@@ -86,6 +86,7 @@
           >
         </div>
         <button
+          aria-label="showModal"
           class="ml-2 bg-custom-blue hover:bg-custom-blue text-white font-bold py-2 px-4 rounded"
           on:click={() => showProductModal(product)}
         >

@@ -5,7 +5,7 @@
     class="absolute inset-0 w-full h-full object-cover"
     loading="lazy"
   />
-  <div class="absolute inset-0 opacity-50" />
+  <div class="absolute inset-0 opacity-50"></div>
   <div
     class="relative z-10 flex flex-col justify-center items-center h-full text-center text-white"
   >

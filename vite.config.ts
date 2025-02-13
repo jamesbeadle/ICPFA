@@ -6,6 +6,7 @@ import { dirname, join, resolve } from "path";
 import { fileURLToPath } from "url";
 import type { UserConfig } from "vite";
 import { defineConfig, loadEnv } from "vite";
+import type { PluginBuild } from "esbuild";
 
 const file = fileURLToPath(new URL("package.json", import.meta.url));
 const json = readFileSync(file, "utf8");
@@ -15,27 +16,25 @@ const { version } = JSON.parse(json);
 // npm run build = local
 // dfx deploy = local
 // dfx deploy --network ic = ic
-// dfx deploy --network staging = staging
 const network = process.env.DFX_NETWORK ?? "local";
-
 const readCanisterIds = ({
   prefix,
 }: {
   prefix?: string;
 }): Record<string, string> => {
-  const canisterIdsJsonFile = ["ic", "staging"].includes(network)
-    ? join(process.cwd(), "canister_ids.json")
-    : join(process.cwd(), ".dfx", "local", "canister_ids.json");
+  const canisterIdsJsonFile =
+    network === "ic"
+      ? join(process.cwd(), "canister_ids.json")
+      : join(process.cwd(), ".dfx", "local", "canister_ids.json");
 
   try {
     type Details = {
       ic?: string;
-      staging?: string;
       local?: string;
     };
 
     const config: Record<string, Details> = JSON.parse(
-      readFileSync(canisterIdsJsonFile, "utf-8")
+      readFileSync(canisterIdsJsonFile, "utf-8"),
     );
 
     return Object.entries(config).reduce((acc, current: [string, Details]) => {
@@ -48,8 +47,7 @@ const readCanisterIds = ({
       };
     }, {});
   } catch (e) {
-    console.warn(`Could not get canister ID from ${canisterIdsJsonFile}: ${e}`);
-    return {};
+    throw Error(`Could not get canister ID from ${canisterIdsJsonFile}: ${e}`);
   }
 };
 
@@ -64,8 +62,6 @@ const config: UserConfig = {
     preprocessorOptions: {
       scss: {
         additionalData: `
-          @use "./node_modules/@dfinity/gix-components/dist/styles/mixins/media";
-          @use "./node_modules/@dfinity/gix-components/dist/styles/mixins/text";
         `,
       },
     },
@@ -80,8 +76,8 @@ const config: UserConfig = {
           const lazy = ["@dfinity/nns"];
 
           if (
-            ["@sveltejs", "svelte", "@dfinity/gix-components", ...lazy].find(
-              (lib) => folder.includes(lib)
+            ["@sveltejs", "svelte", ...lazy].find((lib) =>
+              folder.includes(lib),
             ) === undefined &&
             folder.includes("node_modules")
           ) {
@@ -103,31 +99,45 @@ const config: UserConfig = {
         inject({
           modules: { Buffer: ["buffer", "Buffer"] },
         }),
+        {
+          name: "fix-node-globals-polyfill",
+          setup(build: PluginBuild) {
+            build.onResolve(
+              { filter: /_virtual-process-polyfill_\.js/ },
+              ({ path }) => ({ path }),
+            );
+          },
+        } as any, // Type assertion to bypass the type mismatch
       ],
     },
   },
   // proxy /api to port 4943 during development
   server: {
     proxy: {
-      "/api": "http://localhost:4943",
+      "/api": "http://localhost:8080",
+    },
+    watch: {
+      ignored: ["**/.dfx/**", "**/.github/**"],
     },
   },
   optimizeDeps: {
     esbuildOptions: {
+      // Node.js global to browser globalThis
       define: {
         global: "globalThis",
       },
+      // Enable esbuild polyfill plugins
       plugins: [
         NodeModulesPolyfillPlugin(),
         {
           name: "fix-node-globals-polyfill",
-          setup(build) {
+          setup(build: PluginBuild) {
             build.onResolve(
               { filter: /_virtual-process-polyfill_\.js/ },
-              ({ path }) => ({ path })
+              ({ path }) => ({ path }),
             );
           },
-        },
+        } as any, // Type assertion to bypass the type mismatch
       ],
     },
   },
@@ -144,9 +154,9 @@ export default defineConfig((): UserConfig => {
       network === "ic"
         ? "production"
         : network === "staging"
-        ? "staging"
-        : "development",
-      process.cwd()
+          ? "staging"
+          : "development",
+      process.cwd(),
     ),
     ...readCanisterIds({ prefix: "VITE_" }),
   };
@@ -161,6 +171,9 @@ export default defineConfig((): UserConfig => {
       },
       VITE_APP_VERSION: JSON.stringify(version),
       VITE_DFX_NETWORK: JSON.stringify(network),
+      "process.env.CANISTER_ID_BACKEND": JSON.stringify(
+        process.env.CANISTER_ID_BACKEND,
+      ),
     },
   };
 });

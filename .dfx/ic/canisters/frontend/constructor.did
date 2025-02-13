@@ -1,277 +1,200 @@
+type AssetCanisterArgs = variant { Upgrade : UpgradeArgs; Init : InitArgs };
 type BatchId = nat;
-type ChunkId = nat;
-type Key = text;
-type Time = int;
-
-type CreateAssetArguments = record {
-  key : Key;
-  content_type : text;
-  max_age : opt nat64;
-  headers : opt vec HeaderField;
-  enable_aliasing : opt bool;
-  allow_raw_access : opt bool;
-};
-
-// Add or change content for an asset, by content encoding
-type SetAssetContentArguments = record {
-  key : Key;
-  content_encoding : text;
-  chunk_ids : vec ChunkId;
-  sha256 : opt blob;
-};
-
-// Remove content for an asset, by content encoding
-type UnsetAssetContentArguments = record {
-  key : Key;
-  content_encoding : text;
-};
-
-// Delete an asset
-type DeleteAssetArguments = record {
-  key : Key;
-};
-
-// Reset everything
-type ClearArguments = record {};
-
 type BatchOperationKind = variant {
-  CreateAsset : CreateAssetArguments;
-  SetAssetContent : SetAssetContentArguments;
-
   SetAssetProperties : SetAssetPropertiesArguments;
-
+  CreateAsset : CreateAssetArguments;
   UnsetAssetContent : UnsetAssetContentArguments;
   DeleteAsset : DeleteAssetArguments;
-
+  SetAssetContent : SetAssetContentArguments;
   Clear : ClearArguments;
 };
-
+type ChunkId = nat;
+type ClearArguments = record {};
 type CommitBatchArguments = record {
   batch_id : BatchId;
   operations : vec BatchOperationKind;
 };
-
 type CommitProposedBatchArguments = record {
   batch_id : BatchId;
   evidence : blob;
 };
-
 type ComputeEvidenceArguments = record {
   batch_id : BatchId;
   max_iterations : opt nat16;
 };
-
-type DeleteBatchArguments = record {
-  batch_id : BatchId;
-};
-
-type HeaderField = record { text; text };
-
-type HttpRequest = record {
-  method : text;
-  url : text;
-  headers : vec HeaderField;
-  body : blob;
-  certificate_version : opt nat16;
-};
-
-type HttpResponse = record {
-  status_code : nat16;
-  headers : vec HeaderField;
-  body : blob;
-  streaming_strategy : opt StreamingStrategy;
-};
-
-type StreamingCallbackHttpResponse = record {
-  body : blob;
-  token : opt StreamingCallbackToken;
-};
-
-type StreamingCallbackToken = record {
-  key : Key;
-  content_encoding : text;
-  index : nat;
-  sha256 : opt blob;
-};
-
-type StreamingStrategy = variant {
-  Callback : record {
-    callback : func(StreamingCallbackToken) -> (opt StreamingCallbackHttpResponse) query;
-    token : StreamingCallbackToken;
-  };
-};
-
-type SetAssetPropertiesArguments = record {
-  key : Key;
-  max_age : opt opt nat64;
-  headers : opt opt vec HeaderField;
-  allow_raw_access : opt opt bool;
-  is_aliased : opt opt bool;
-};
-
 type ConfigurationResponse = record {
   max_batches : opt nat64;
-  max_chunks : opt nat64;
   max_bytes : opt nat64;
+  max_chunks : opt nat64;
 };
-
 type ConfigureArguments = record {
   max_batches : opt opt nat64;
-  max_chunks : opt opt nat64;
   max_bytes : opt opt nat64;
+  max_chunks : opt opt nat64;
 };
-
-type Permission = variant {
-  Commit;
-  ManagePermissions;
-  Prepare;
+type CreateAssetArguments = record {
+  key : Key;
+  content_type : text;
+  headers : opt vec HeaderField;
+  allow_raw_access : opt bool;
+  max_age : opt nat64;
+  enable_aliasing : opt bool;
 };
-
+type DeleteAssetArguments = record { key : Key };
+type DeleteBatchArguments = record { batch_id : BatchId };
 type GrantPermission = record {
+  permission : Permission;
   to_principal : principal;
-  permission : Permission;
 };
-type RevokePermission = record {
-  of_principal : principal;
-  permission : Permission;
+type HeaderField = record { text; text };
+type HttpRequest = record {
+  url : text;
+  method : text;
+  body : blob;
+  headers : vec HeaderField;
+  certificate_version : opt nat16;
 };
-type ListPermitted = record { permission : Permission };
-
-type ValidationResult = variant { Ok : text; Err : text };
-
-type AssetCanisterArgs = variant {
-  Init : InitArgs;
-  Upgrade : UpgradeArgs;
+type HttpResponse = record {
+  body : blob;
+  headers : vec HeaderField;
+  streaming_strategy : opt StreamingStrategy;
+  status_code : nat16;
 };
-
 type InitArgs = record {};
-
-type UpgradeArgs = record {
-  set_permissions : opt SetPermissions;
+type Key = text;
+type ListPermitted = record { permission : Permission };
+type Permission = variant { Prepare; ManagePermissions; Commit };
+type RevokePermission = record {
+  permission : Permission;
+  of_principal : principal;
 };
-
-/// Sets the list of principals granted each permission.
+type SetAssetContentArguments = record {
+  key : Key;
+  sha256 : opt blob;
+  chunk_ids : vec ChunkId;
+  content_encoding : text;
+};
+type SetAssetPropertiesArguments = record {
+  key : Key;
+  headers : opt opt vec HeaderField;
+  is_aliased : opt opt bool;
+  allow_raw_access : opt opt bool;
+  max_age : opt opt nat64;
+};
 type SetPermissions = record {
   prepare : vec principal;
   commit : vec principal;
   manage_permissions : vec principal;
 };
-
-service : (asset_canister_args : opt AssetCanisterArgs) -> {
+type StreamingCallbackHttpResponse = record {
+  token : opt StreamingCallbackToken;
+  body : blob;
+};
+type StreamingCallbackToken = record {
+  key : Key;
+  sha256 : opt blob;
+  index : nat;
+  content_encoding : text;
+};
+type StreamingStrategy = variant {
+  Callback : record {
+    token : StreamingCallbackToken;
+    callback : func (StreamingCallbackToken) -> (
+        opt StreamingCallbackHttpResponse,
+      ) query;
+  };
+};
+type Time = int;
+type UnsetAssetContentArguments = record { key : Key; content_encoding : text };
+type UpgradeArgs = record { set_permissions : opt SetPermissions };
+type ValidationResult = variant { Ok : text; Err : text };
+service : (opt AssetCanisterArgs) -> {
   api_version : () -> (nat16) query;
-
-  get : (
-    record {
-      key : Key;
-      accept_encodings : vec text;
-    },
-  ) -> (
-    record {
-      content : blob; // may be the entirety of the content, or just chunk index 0
-      content_type : text;
-      content_encoding : text;
-      sha256 : opt blob; // sha256 of entire asset encoding, calculated by dfx and passed in SetAssetContentArguments
-      total_length : nat; // all chunks except last have size == content.size()
-    },
-  ) query;
-
-  // if get() returned chunks > 1, call this to retrieve them.
-  // chunks may or may not be split up at the same boundaries as presented to create_chunk().
-  get_chunk : (
-    record {
-      key : Key;
-      content_encoding : text;
-      index : nat;
-      sha256 : opt blob; // sha256 of entire asset encoding, calculated by dfx and passed in SetAssetContentArguments
-    },
-  ) -> (record { content : blob }) query;
-
-  list : (record {}) -> (
-    vec record {
-      key : Key;
-      content_type : text;
-      encodings : vec record {
-        content_encoding : text;
-        sha256 : opt blob; // sha256 of entire asset encoding, calculated by dfx and passed in SetAssetContentArguments
-        length : nat; // Size of this encoding's blob. Calculated when uploading assets.
-        modified : Time;
-      };
-    },
-  ) query;
-
-  certified_tree : (record {}) -> (
-    record {
-      certificate : blob;
-      tree : blob;
-    },
-  ) query;
-
-  create_batch : (record {}) -> (record { batch_id : BatchId });
-
-  create_chunk : (record { batch_id : BatchId; content : blob }) -> (record { chunk_id : ChunkId });
-
-  // Perform all operations successfully, or reject
-  commit_batch : (CommitBatchArguments) -> ();
-
-  // Save the batch operations for later commit
-  propose_commit_batch : (CommitBatchArguments) -> ();
-
-  // Given a batch already proposed, perform all operations successfully, or reject
-  commit_proposed_batch : (CommitProposedBatchArguments) -> ();
-
-  // Compute a hash over the CommitBatchArguments.  Call until it returns Some(evidence).
-  compute_evidence : (ComputeEvidenceArguments) -> (opt blob);
-
-  // Delete a batch that has been created, or proposed for commit, but not yet committed
-  delete_batch : (DeleteBatchArguments) -> ();
-
-  create_asset : (CreateAssetArguments) -> ();
-  set_asset_content : (SetAssetContentArguments) -> ();
-  unset_asset_content : (UnsetAssetContentArguments) -> ();
-
-  delete_asset : (DeleteAssetArguments) -> ();
-
-  clear : (ClearArguments) -> ();
-
-  // Single call to create an asset with content for a single content encoding that
-  // fits within the message ingress limit.
-  store : (
-    record {
-      key : Key;
-      content_type : text;
-      content_encoding : text;
-      content : blob;
-      sha256 : opt blob;
-    },
-  ) -> ();
-
-  http_request : (request : HttpRequest) -> (HttpResponse) query;
-  http_request_streaming_callback : (token : StreamingCallbackToken) -> (opt StreamingCallbackHttpResponse) query;
-
   authorize : (principal) -> ();
-  deauthorize : (principal) -> ();
-  list_authorized : () -> (vec principal);
-  grant_permission : (GrantPermission) -> ();
-  revoke_permission : (RevokePermission) -> ();
-  list_permitted : (ListPermitted) -> (vec principal);
-  take_ownership : () -> ();
-
-  get_asset_properties : (key : Key) -> (
-    record {
-      max_age : opt nat64;
-      headers : opt vec HeaderField;
-      allow_raw_access : opt bool;
-      is_aliased : opt bool;
-    },
-  ) query;
-  set_asset_properties : (SetAssetPropertiesArguments) -> ();
-
-  get_configuration : () -> (ConfigurationResponse);
+  certified_tree : (record {}) -> (
+      record { certificate : blob; tree : blob },
+    ) query;
+  clear : (ClearArguments) -> ();
+  commit_batch : (CommitBatchArguments) -> ();
+  commit_proposed_batch : (CommitProposedBatchArguments) -> ();
+  compute_evidence : (ComputeEvidenceArguments) -> (opt blob);
   configure : (ConfigureArguments) -> ();
-
+  create_asset : (CreateAssetArguments) -> ();
+  create_batch : (record {}) -> (record { batch_id : BatchId });
+  create_chunk : (record { content : blob; batch_id : BatchId }) -> (
+      record { chunk_id : ChunkId },
+    );
+  create_chunks : (record { content : vec blob; batch_id : BatchId }) -> (
+      record { chunk_ids : vec ChunkId },
+    );
+  deauthorize : (principal) -> ();
+  delete_asset : (DeleteAssetArguments) -> ();
+  delete_batch : (DeleteBatchArguments) -> ();
+  get : (record { key : Key; accept_encodings : vec text }) -> (
+      record {
+        content : blob;
+        sha256 : opt blob;
+        content_type : text;
+        content_encoding : text;
+        total_length : nat;
+      },
+    ) query;
+  get_asset_properties : (Key) -> (
+      record {
+        headers : opt vec HeaderField;
+        is_aliased : opt bool;
+        allow_raw_access : opt bool;
+        max_age : opt nat64;
+      },
+    ) query;
+  get_chunk : (
+      record {
+        key : Key;
+        sha256 : opt blob;
+        index : nat;
+        content_encoding : text;
+      },
+    ) -> (record { content : blob }) query;
+  get_configuration : () -> (ConfigurationResponse);
+  grant_permission : (GrantPermission) -> ();
+  http_request : (HttpRequest) -> (HttpResponse) query;
+  http_request_streaming_callback : (StreamingCallbackToken) -> (
+      opt StreamingCallbackHttpResponse,
+    ) query;
+  list : (record {}) -> (
+      vec record {
+        key : Key;
+        encodings : vec record {
+          modified : Time;
+          sha256 : opt blob;
+          length : nat;
+          content_encoding : text;
+        };
+        content_type : text;
+      },
+    ) query;
+  list_authorized : () -> (vec principal);
+  list_permitted : (ListPermitted) -> (vec principal);
+  propose_commit_batch : (CommitBatchArguments) -> ();
+  revoke_permission : (RevokePermission) -> ();
+  set_asset_content : (SetAssetContentArguments) -> ();
+  set_asset_properties : (SetAssetPropertiesArguments) -> ();
+  store : (
+      record {
+        key : Key;
+        content : blob;
+        sha256 : opt blob;
+        content_type : text;
+        content_encoding : text;
+      },
+    ) -> ();
+  take_ownership : () -> ();
+  unset_asset_content : (UnsetAssetContentArguments) -> ();
+  validate_commit_proposed_batch : (CommitProposedBatchArguments) -> (
+      ValidationResult,
+    );
+  validate_configure : (ConfigureArguments) -> (ValidationResult);
   validate_grant_permission : (GrantPermission) -> (ValidationResult);
   validate_revoke_permission : (RevokePermission) -> (ValidationResult);
   validate_take_ownership : () -> (ValidationResult);
-  validate_commit_proposed_batch : (CommitProposedBatchArguments) -> (ValidationResult);
-  validate_configure : (ConfigureArguments) -> (ValidationResult);
-};
+}

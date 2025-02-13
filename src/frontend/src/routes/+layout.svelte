@@ -9,6 +9,6 @@
   <main class="mb-auto">
     <slot />
   </main>
-  <div class="flex-grow" />
+  <div class="flex-grow"></div>
   <Footer />
 </div>

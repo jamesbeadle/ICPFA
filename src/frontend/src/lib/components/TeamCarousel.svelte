@@ -66,7 +66,7 @@
                 >&lt;</button
               >
               {#each teamMembers as member, index}
-                <span
+                <div
                   class="caret {currentMemberIndex === index ? 'active' : ''}"
                   on:click={() => changeMember(index)}
                   on:keydown={(event) =>
@@ -74,7 +74,7 @@
                   tabindex="0"
                   role="button"
                   aria-label="Change to member {member.name}"
-                />
+                ></div>
               {/each}
               <button class="caret-button ml-3" on:click={goNext}>&gt;</button>
             </div>

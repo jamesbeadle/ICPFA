@@ -20,7 +20,7 @@
       <a href="/" class="text-white hover:text-gray-400">
         <img src="logo.png" alt="Logo" class="h-8 w-auto logo" />
       </a>
-      <button class="burger-btn md:hidden" on:click={toggleMenu}>
+      <button class="burger-btn md:hidden" on:click={toggleMenu} aria-label="showMenu">
         <svg
           width="24"
           height="18"
