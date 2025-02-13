@@ -1,5 +1,8 @@
 <script>
   import Hero from "$lib/components/Hero.svelte";
-</script>
+  import Layout from "./Layout.svelte";
 
-<Hero />
+</script>
+<Layout>
+  <Hero />
+</Layout>

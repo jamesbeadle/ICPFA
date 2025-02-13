@@ -27,3 +27,7 @@ body {
 .custom-button {
   background-color: #3c71fa !important;
 }
+
+.bg-frontend-update {
+  @apply bg-black text-white;
+}
