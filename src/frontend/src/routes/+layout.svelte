@@ -5,8 +5,8 @@
 
   import "../app.css";
   import { appStore } from "$lib/stores/app-store";
-  import Navbar from "./Navbar.svelte";
-  import Footer from "./Footer.svelte";
+    import Footer from "$lib/components/shared/footer.svelte";
+    import Header from "$lib/components/shared/header.svelte";
 
   onMount(async () => {
     console.log("checking")
@@ -22,7 +22,7 @@
 </script>
 
 <div class="flex flex-col h-screen justify-between bg-black">
-  <Navbar />
+  <Header />
   <main class="mb-auto">
     <slot />
   </main>
