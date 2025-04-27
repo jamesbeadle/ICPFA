@@ -20,7 +20,7 @@
         <a href="/" class="text-white hover:text-gray-400">
           <img src="logo.png" alt="Logo" class="h-8 w-auto logo" />
         </a>
-        <button class="burger-btn md:hidden" on:click={toggleMenu} aria-label="showMenu">
+        <button class="burger-btn md:hidden" onclick={toggleMenu} aria-label="showMenu">
           <svg
             width="24"
             height="18"
@@ -71,25 +71,19 @@
       <div class={menuOpen ? "menu-open" : ""}>
         <ul class="mobile-menu">
           <li>
-            <a href="/mission" class={currentClass[0]} on:click={toggleMenu}
+            <a href="/mission" class={currentClass[0]} onclick={toggleMenu}
               >The Mission</a
             >
           </li>
           <li>
-            <a href="/team" class={currentClass[1]} on:click={toggleMenu}
+            <a href="/team" class={currentClass[1]} onclick={toggleMenu}
               >Our Team</a
             >
           </li>
           <li>
-            <a href="/projects" class={currentClass[2]} on:click={toggleMenu}
-              >Projects</a
+            <a href="/cup" class={currentClass[1]} onclick={toggleMenu}
+              >The ICPFA Cup</a
             >
-          </li>
-          <li>
-            <a href="/nfts" class={currentClass[4]} on:click={toggleMenu}>NFTs</a>
-          </li>
-          <li>
-            <a href="/shop" class={currentClass[5]} on:click={toggleMenu}>Shop</a>
           </li>
         </ul>
       </div>

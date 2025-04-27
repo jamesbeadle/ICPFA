@@ -4,29 +4,41 @@
   import Toasts from "$lib/components/toasts/toasts.svelte";
 
   import "../app.css";
-  import { appStore } from "$lib/stores/app-store";
-    import Footer from "$lib/components/shared/footer.svelte";
-    import Header from "$lib/components/shared/header.svelte";
+  import Footer from "$lib/components/shared/footer.svelte";
+  import Header from "$lib/components/shared/header.svelte";
+  import type { Snippet } from 'svelte';
+  import LocalSpinner from "$lib/components/shared/local-spinner.svelte";
+
+    
+  interface Props { children: Snippet }
+  let { children }: Props = $props();
+    
+  let isLoading = $state(true);
+
+  const init = async () => {
+    if (!browser) return;
+  };
 
   onMount(async () => {
-    console.log("checking")
-    await appStore.checkServerVersion();
-    console.log("done")
+    console.log("mounting")
+    if (browser) {
+      document.querySelector('#app-spinner')?.remove();
+    }
+    await init();
+    isLoading = false;
   });
-
-  $: (() => {
-    if (!browser) return;
-    const spinner = document.querySelector("body > #app-spinner");
-    spinner?.remove();
-  })();
 </script>
 
+{#if browser && isLoading}
+  <LocalSpinner />
+  {:else}
 <div class="flex flex-col h-screen justify-between bg-black">
   <Header />
   <main class="mb-auto">
-    <slot />
+    {@render children()}
   </main>
   <div class="flex-grow"></div>
   <Footer />
   <Toasts />
 </div>
+{/if}
